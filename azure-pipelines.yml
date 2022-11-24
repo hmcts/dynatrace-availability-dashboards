@@ -84,7 +84,7 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                echo "##vso[task.setvariable variable=TF_VAR_dynatrace-platops-api-key;issecret=true;isOutput=true]$(dynatrace-platops-api-key)"
+                echo "##vso[task.setvariable variable=TF_VAR_DYNATRACE_PLATOPS_API_KEY;issecret=true;isOutput=true]$(dynatrace-platops-api-key)"
               failOnStderr: true
 
           - template: steps/terraform.yaml@cnp-azuredevops-libraries

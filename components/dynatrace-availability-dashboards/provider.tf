@@ -12,11 +12,7 @@ terraform {
     }
   }
 }
-provider "azurerm" {
-  features {}
-  subscription_id = var.dt_data_key_vault.subscription_id
-}
 provider "dynatrace" {
   dt_env_url   = var.dt_env_url
-  dt_api_token = var.dynatrace-platops-api-key
+  dt_api_token = var.DYNATRACE_PLATOPS_API_KEY
 }
