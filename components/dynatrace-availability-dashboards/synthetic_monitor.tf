@@ -16,7 +16,7 @@ resource "dynatrace_http_monitor" "availability" {
     }
   }
   enabled   = each.value.enabled
-  name      = each.value.name
+  name      = "${each.value.management_zone_name}-${each.value.name}"
   frequency = 1
   locations = each.value.locations
   anomaly_detection {

@@ -1,18 +1,12 @@
 synthetic_monitors:
-  - name: CFT-CNP-sboxplum-frontend
+  - name: plum-frontend
+    management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       # SYNTHETIC_LOCATION-CC3E4D2657A13D18"
       - GEOLOCATION-B8D793BCA914E0AF
       - GEOLOCATION-8888B6EC387C46E6
       - GEOLOCATION-C196364332B5D8E2
-    management_zone_name: CFT-CNP-SBOX
-    tags:
-      # example showing tags
-      - key: SVCOFF1
-        context: CONTEXTLESS
-        source: RULE_BASED
-        value: SVCOFF0001306
     requests:
       - url: http://plum.sandbox.platform.hmcts.net/health
         description: plum.sandbox.platform.hmcts.net
