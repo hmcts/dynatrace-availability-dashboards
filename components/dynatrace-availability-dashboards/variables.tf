@@ -1,3 +1,4 @@
+variable "dynatrace-platops-api-key" { default = null }
 variable "env" { default = "demo" }
 variable "product" { default = null }
 variable "builtFrom" { default = null }

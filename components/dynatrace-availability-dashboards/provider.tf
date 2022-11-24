@@ -18,5 +18,5 @@ provider "azurerm" {
 }
 provider "dynatrace" {
   dt_env_url   = var.dt_env_url
-  dt_api_token = data.azurerm_key_vault_secret.dt_api_token.value
+  dt_api_token = var.dynatrace-platops-api-key
 }
