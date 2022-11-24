@@ -24,6 +24,16 @@ parameters:
   - name: environment_components
     type: object
     default:
+    - deployment: 'sbox_dynatrace_availability_dashboards'
+      environment: 'sbox'
+      component: 'dynatrace-availability-dashboards'
+      service_connection: 'dts-sharedservices-sbox'
+      dependsOn: 'Precheck'
+      keyvault:
+        service_connection: 'DCD-CFT-Sandbox'
+        name: 'infra-vault-nonprod'
+        secret_name: 'dynatrace-platops-api-key'
+
     - deployment: 'demo_dynatrace_availability_dashboards'
       environment: 'demo'
       component: 'dynatrace-availability-dashboards'
