@@ -1,0 +1,33 @@
+service_level_objectives:
+  - name: demo slo
+    disabled: false
+    metric_expression: 'builtin:service.successes.server.rate'
+      #numerator: 'builtin:service.errors.server.successCount'
+    denominator: 'builtin:service.requestCount.total'
+    evaluation: AGGREGATE
+    filter: 'mzName("CFT-CCD-DEMO"),type("SERVICE")'
+    target: 95
+    warning: 97.5
+    timeframe: "-1d"
+
+  - name: demo slo2
+    disabled: false
+    metric_expression: 'builtin:service.successes.server.rate'
+      #numerator: 'builtin:service.errors.server.successCount'
+    denominator: 'builtin:service.requestCount.total'
+    evaluation: AGGREGATE
+    filter: 'mzName("CFT-CCD-DEMO"),type("SERVICE")'
+    target: 95
+    warning: 97.5
+    timeframe: "-1d"
+
+  - name: demo slo3
+    disabled: false
+    metric_expression: 'builtin:service.successes.server.rate'
+      #numerator: 'builtin:service.errors.server.successCount'
+    denominator: 'builtin:service.requestCount.total'
+    evaluation: AGGREGATE
+    filter: 'mzName("CFT-CCD-DEMO"),type("SERVICE")'
+    target: 95
+    warning: 97.5
+    timeframe: "-1d"
