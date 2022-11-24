@@ -6,10 +6,6 @@ terraform {
       version = "1.14.1"
       source  = "dynatrace-oss/dynatrace"
     }
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.32.0"
-    }
   }
 }
 provider "dynatrace" {

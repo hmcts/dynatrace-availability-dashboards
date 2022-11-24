@@ -8,7 +8,7 @@ resources:
   repositories:
   - repository: cnp-azuredevops-libraries
     type: github
-    ref: refs/heads/master
+    ref: refs/heads/DTSPO-10748
     name: hmcts/cnp-azuredevops-libraries
     endpoint: 'hmcts (1)'
 
@@ -79,14 +79,6 @@ stages:
               SecretsFilter: ${{ deployment.keyvault.secret_name }}
               RunAsPreJob: true
 
-          - task: Bash@3
-            displayName: Set dynatrace API key as TF_VAR
-            inputs:
-              targetType: 'inline'
-              script: |
-                echo "##vso[task.setvariable variable=TF_VAR_DYNATRACE_PLATOPS_API_KEY;issecret=true;isOutput=true]$(dynatrace-platops-api-key)"
-              failOnStderr: true
-
           - template: steps/terraform.yaml@cnp-azuredevops-libraries
             parameters:
               overrideAction: ${{ parameters.overrideAction }}
@@ -95,3 +87,5 @@ stages:
               serviceConnection: ${{ deployment.service_connection }}
               terraformInitSubscription: ${{ variables.terraformInitSubscription }}
               product: ${{ variables.product }}
+              tf_env_vars:
+                TF_VAR_DYNATRACE_PLATOPS_API_KEY: $(dynatrace-platops-api-key)
