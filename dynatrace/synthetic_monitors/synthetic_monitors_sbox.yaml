@@ -40,4 +40,4 @@ synthetic_monitors:
             pass_if_found: false
           - type: patternConstraint
             value: '"status":"UP"'
-            pass_if_found: false
+            pass_if_found: true
