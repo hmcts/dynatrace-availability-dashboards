@@ -4,10 +4,10 @@ resource "dynatrace_dashboard" "availability" {
     shared = true
     owner  = "platops"
     tags   = ["environment=${var.env}"]
+    unknowns = jsonencode({
+      popularity = 10
+    })
   }
-  unknowns = jsonencode({
-    popularity = 1
-  })
   dynamic "tile" {
     iterator = slo
     for_each = dynatrace_slo.availability
