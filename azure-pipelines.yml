@@ -1,0 +1,101 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - main
+
+resources:
+  repositories:
+  - repository: cnp-azuredevops-libraries
+    type: github
+    ref: refs/heads/DTSPO-10748
+    name: hmcts/cnp-azuredevops-libraries
+    endpoint: 'hmcts (1)'
+
+parameters:
+  - name: overrideAction
+    type: string
+    default: plan
+    values:
+    - plan
+    - apply
+    - destroy
+
+  - name: environment_components
+    type: object
+    default:
+    - deployment: 'sbox_dynatrace_availability_dashboards'
+      environment: 'sbox'
+      component: 'dynatrace-availability-dashboards'
+      service_connection: 'dts-sharedservices-sbox'
+      dependsOn: 'Precheck'
+      keyvault:
+        service_connection: 'DCD-CFT-Sandbox'
+        name: 'infra-vault-nonprod'
+        secret_name: 'dynatrace-platops-api-key'
+
+    - deployment: 'demo_dynatrace_availability_dashboards'
+      environment: 'demo'
+      component: 'dynatrace-availability-dashboards'
+      service_connection: 'dts-sharedservices-demo'
+      dependsOn: 'Precheck'
+      keyvault:
+        service_connection: 'DCD-CFT-Sandbox'
+        name: 'infra-vault-nonprod'
+        secret_name: 'dynatrace-platops-api-key'
+
+variables:
+  - name: timeoutInMinutes
+    value: 60
+  - name: agentPool
+    value: ubuntu-latest
+  - name: build
+    value: $(Build.BuildNumber)
+  - name: product
+    value: dynatrace-availability-dashboards
+  - name: terraformInitSubscription
+    value: 04d27a32-7a07-48b3-95b8-3c8691e1a263
+  - template: vars/input-variables.yaml@cnp-azuredevops-libraries
+
+stages:
+  - stage: Precheck
+    jobs:
+      - job:
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+        steps:
+          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
+            parameters:
+              keyvaultName: 'infra-vault-nonprod'
+              keyvaultSecret: 'azure-devops-token'
+              serviceConnection: 'DCD-CFT-Sandbox'
+
+  - ${{ each deployment in parameters.environment_components }}:
+    - stage: ${{ deployment.deployment }}
+      dependsOn: ${{ deployment.dependsOn }}
+      jobs:
+        - job: TerraformPlanApply
+          pool:
+            vmImage: ${{ variables.agentPool }}
+          timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+          steps:
+
+          - task: AzureKeyVault@2
+            displayName: 'Pre-job: Retrieve keyvault secret for Dynatrace API Key'
+            inputs:
+              azureSubscription: ${{ deployment.keyvault.service_connection }}
+              KeyVaultName: ${{ deployment.keyvault.name }}
+              SecretsFilter: ${{ deployment.keyvault.secret_name }}
+              RunAsPreJob: true
+
+          - template: steps/terraform.yaml@cnp-azuredevops-libraries
+            parameters:
+              overrideAction: ${{ parameters.overrideAction }}
+              environment: ${{ deployment.environment }}
+              component: ${{ deployment.component }}
+              serviceConnection: ${{ deployment.service_connection }}
+              terraformInitSubscription: ${{ variables.terraformInitSubscription }}
+              product: ${{ variables.product }}
+              tf_env_vars:
+                TF_VAR_DYNATRACE_PLATOPS_API_KEY: $(dynatrace-platops-api-key)

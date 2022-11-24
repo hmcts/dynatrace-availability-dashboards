@@ -1,0 +1,23 @@
+management_zones:
+  - name: CFT-CCD-DEMO
+    enabled: true
+    # non required description
+    description: description of the management zone
+
+  - name: CFT-CIVILMONEYCLAIMS-DEMO
+    enabled: true
+
+  - name: CFT-DIVORCE-DEMO
+    enabled: true
+
+  - name: CFT-FEESPAYMENT-DEMO
+    enabled: true
+
+  - name: CFT-IDAM-DEMO
+    enabled: true
+
+  - name: CFT-NOFAULTDIVORCE-DEMO
+    enabled: true
+
+  - name: CFT-PROBATE-DEMO
+    enabled: true

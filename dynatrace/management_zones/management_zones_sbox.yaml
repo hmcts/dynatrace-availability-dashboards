@@ -1,0 +1,3 @@
+management_zones:
+  - name: CFT-CNP-SBOX
+    enabled: true
