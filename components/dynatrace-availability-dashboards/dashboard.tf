@@ -1,11 +1,14 @@
 resource "dynatrace_dashboard" "availability" {
+  lifecycle {
+    ignore_changes = [dashboard_metadata[0].unknowns]
+  }
   dashboard_metadata {
     name   = "${upper(var.env)} Environment Availability"
     shared = true
     owner  = "platops"
     tags   = ["environment=${var.env}"]
     unknowns = jsonencode({
-      popularity = 10
+      popularity = 1
     })
   }
   dynamic "tile" {
