@@ -4,7 +4,7 @@ synthetic_monitors:
     management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18"
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
       - url: http://plum.sandbox.platform.hmcts.net/health
         description: plum.sandbox.platform.hmcts.net
