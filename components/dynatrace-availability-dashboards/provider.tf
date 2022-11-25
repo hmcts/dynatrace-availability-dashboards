@@ -10,5 +10,5 @@ terraform {
 }
 provider "dynatrace" {
   dt_env_url   = var.dt_env_url
-  dt_api_token = var.DYNATRACE_PLATOPS_API_KEY
+  dt_api_token = var.dynatrace_platops_api_key
 }
