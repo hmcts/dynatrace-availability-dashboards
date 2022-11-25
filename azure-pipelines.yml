@@ -26,7 +26,7 @@ parameters:
     default:
     - deployment: 'sbox_dynatrace_availability_dashboards'
       environment: 'sbox'
-      component: 'dynatrace-availability-dashboards'
+      component: 'dt-availability-dashboards'
       service_connection: 'dts-sharedservices-sbox'
       dependsOn: 'Precheck'
       keyvault:
@@ -36,7 +36,7 @@ parameters:
 
     - deployment: 'demo_dynatrace_availability_dashboards'
       environment: 'demo'
-      component: 'dynatrace-availability-dashboards'
+      component: 'dt-availability-dashboards'
       service_connection: 'dts-sharedservices-demo'
       dependsOn: 'Precheck'
       keyvault:
@@ -52,7 +52,7 @@ variables:
   - name: build
     value: $(Build.BuildNumber)
   - name: product
-    value: dynatrace-availability-dashboards
+    value: dt-availability-dashboards
   - name: terraformInitSubscription
     value: 04d27a32-7a07-48b3-95b8-3c8691e1a263
   - template: vars/input-variables.yaml@cnp-azuredevops-libraries
