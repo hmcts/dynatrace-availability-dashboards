@@ -97,5 +97,5 @@ stages:
               serviceConnection: ${{ deployment.service_connection }}
               terraformInitSubscription: ${{ variables.terraformInitSubscription }}
               product: ${{ variables.product }}
-              tf_env_vars:
-                TF_VAR_DYNATRACE_PLATOPS_API_KEY: $(dynatrace-platops-api-key)
+              terraformEnvironmentVariables:
+                TF_VAR_dynatrace_platops_api_key: $(dynatrace-platops-api-key)
