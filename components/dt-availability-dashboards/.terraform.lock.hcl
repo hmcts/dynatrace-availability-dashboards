@@ -1,0 +1,43 @@
+# This file is maintained automatically by "terraform init".
+# Manual edits may be lost in future updates.
+
+provider "registry.terraform.io/dynatrace-oss/dynatrace" {
+  version     = "1.14.1"
+  constraints = "1.14.1"
+  hashes = [
+    "h1:upEJCCnYdokBYQndjMrHiwA9CkMfYTFr7XxV/21xoVM=",
+    "zh:09c79e352faff8a6b0469618ccdaacae1190ad8041d2a6e159b3ab964318fc4c",
+    "zh:348cc56322cb29d656f8b3c247e8f67b33aa2ac0de8f18f883d6029ec0767684",
+    "zh:5e48b9111fb055a80122c3f5469d8e3a7216c68c2cd212ca9713b27281a6646a",
+    "zh:5e8804a01b27ac6255bf6723958d12fabd3ae3bd2f180085b8de3a993aa61906",
+    "zh:668791aa6c4ad0db6065c36b5e82b0cdfd6a6c0fe8daf71e7154952a9b503205",
+    "zh:6d42d6a5d694ec8b9e4dcad6794c64414e0e4d74c92c777df64cf470f6f544e8",
+    "zh:7bc1998fe8ac1283af79dd7dfb4a7476c1b88d1e3806560fb61303151402336e",
+    "zh:85ff3ad1a67bd911dce120343382ff18aaed15ea5b2554cb693d03b24bf7e891",
+    "zh:a6a53a43d38700b5a1fbd13f0b7993dd9b1333bb275384f585bbaeed3771fa84",
+    "zh:aae08e6e9b377e9afd8c9a3c00e17056ed89e4db27ff582dbc6d37a9b325f186",
+    "zh:ad15fe20e82e95d569747252406e79f0bccbdb24a8b84258c6e63f9b61cc9c8e",
+    "zh:b97c97c8ec72576d518e46fd26a6d37c168b547f5c89fbd48d3f404f082dc14f",
+    "zh:bd8bfe50e147d7050d7883808229db9c53077ed3c6bf9d1cb83600d26d723d4b",
+    "zh:cf2a5eee27ceca2a647ccbc6f4a4467dd2fe8f53288b5d046abfea1142959711",
+  ]
+}
+
+provider "registry.terraform.io/hashicorp/azurerm" {
+  version = "3.32.0"
+  hashes = [
+    "h1:zjaayFSTUOxL0J0vE3MSPGbUNVxbUkQv76THmtrAM4Q=",
+    "zh:3ee1992144e6bf9801c44df0ed1e10413fa83ad605e3ce751cb342dd46904c41",
+    "zh:4f083079909f929b76c0cb2819b107803ecbf26c761832aaa1e7b4a667025665",
+    "zh:52ad565c4bd37c2b4f0bba78639277ef98caaebf2c4c00c67a2659561079c21c",
+    "zh:5ecf7a8470e066cc27b837a8fbc9a02629bb85797007475539983496bcccbc53",
+    "zh:6348154495cd838862b27a9bc0a2714e8f76cd2919df55fce8da0f64ce240ab1",
+    "zh:8325c4f5f65e30bba2537c7df702c80ae29999fba6194c258b075b3cbde5a709",
+    "zh:8b4d33aa76474a9fac9a6859e759c03ffeadb787abf7a9ba5a05b4ca3914c008",
+    "zh:95ccd31450909582ebcf01548ee20df658049783530d79adcb53a601bb163597",
+    "zh:c104f977b96c6402276c82a8d9d6fee14381511e832e9c3593e589e5ee4e708c",
+    "zh:e12372a41a981c24323a467f6c54b0a17e26c85a0fb569e4b733b2a76c9ba6b6",
+    "zh:e80bf9b674914f91ed00984758288b7266ba5772fad728cd1b4cd2f776851ed8",
+    "zh:f569b65999264a9416862bca5cd2a6177d94ccb0424f3a4ef424428912b9cb3c",
+  ]
+}
