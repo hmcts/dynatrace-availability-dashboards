@@ -1,2 +1,2 @@
 env        = "sbox"
-dt_env_url = "https://hmv80311.live.dynatrace.com"
+dt_env_url = "https://yrk32651.live.dynatrace.com"
