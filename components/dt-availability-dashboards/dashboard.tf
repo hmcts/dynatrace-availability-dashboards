@@ -3,7 +3,7 @@ resource "dynatrace_dashboard" "availability" {
     ignore_changes = [dashboard_metadata[0].unknowns]
   }
   dashboard_metadata {
-    name   = "${upper(var.env)} Environment Availability"
+    name   = "${upper(var.env)} - Environment Availability"
     shared = true
     preset = true
     owner  = "jay.walaszek@justice.gov.uk"
