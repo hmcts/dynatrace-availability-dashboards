@@ -1,6 +1,11 @@
+resource "time_sleep" "wait_for_management_zones" {
+  depends_on      = [dynatrace_management_zone.availability]
+  create_duration = "30s"
+}
+
 resource "dynatrace_slo" "availability" {
   // SLOs cannot be created before management zones, which can take some time to create
-  depends_on = [dynatrace_management_zone.availability]
+  depends_on = [time_sleep.wait_for_management_zones]
   for_each = {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
