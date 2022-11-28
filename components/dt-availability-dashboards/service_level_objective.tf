@@ -1,4 +1,5 @@
 resource "dynatrace_slo" "availability" {
+  depends_on = [dynatrace_management_zone.availability]
   for_each = {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
