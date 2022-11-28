@@ -2,7 +2,11 @@
 management_zones:
   - name: CFT-CNP-SBOX
     enabled: true
+  - name: CFT-DOCMOSIS-SBOX
+    enabled: true
   - name: CFT-IDAM-SBOX
     enabled: true
-  - name: CFT-IDAM-SBOX2
+  - name: CFT-MONITORING-SBOX
+    enabled: true
+  - name: CFT-RPE-SBOX
     enabled: true
