@@ -1,24 +1,22 @@
 ---
 management_zones:
-  - name: CFT-CCD-DEMO
+  - name: CFT-ADOPTION-DEMO
     enabled: true
-    # non required description
-    description: description of the management zone
-
-  - name: CFT-CIVILMONEYCLAIMS-DEMO
+  - name: CFT-FEES-PAY-DEMO
     enabled: true
-
-  - name: CFT-DIVORCE-DEMO
+  - name: CFT-IA-DEMO
     enabled: true
-
-  - name: CFT-FEESPAYMENT-DEMO
-    enabled: true
-
   - name: CFT-IDAM-DEMO
     enabled: true
-
-  - name: CFT-NOFAULTDIVORCE-DEMO
+  - name: CFT-LAU-DEMO
     enabled: true
-
-  - name: CFT-PROBATE-DEMO
+  - name: CFT-MONEY-CLAIMS-DEMO
+    enabled: true
+  - name: CFT-NFDIV-DEMO
+    enabled: true
+  - name: CFT-PCQ-DEMO
+    enabled: true
+  - name: CFT-PRIVATE-LAW-DEMO
+    enabled: true
+  - name: CFT-XUI-DEMO
     enabled: true
