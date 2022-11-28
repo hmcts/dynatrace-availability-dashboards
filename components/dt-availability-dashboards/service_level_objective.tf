@@ -1,5 +1,5 @@
 resource "time_sleep" "wait_for_management_zones" {
-  depends_on = [dynatrace_management_zone.availability]
+  depends_on      = [dynatrace_management_zone.availability]
   create_duration = "30s"
 }
 
