@@ -20,6 +20,15 @@ resource "dynatrace_http_monitor" "availability" {
       }
     }
   }
+  tags {
+    tag {
+      # hardcoded tags created by dynatrace instance.
+      context = "CONTEXTLESS"
+      key     = "SVCOFF1"
+      source  = "RULE_BASED"
+      value   = "SVCOFF0001322"
+    }
+  }
   dynamic "tags" {
     # support non required tags
     iterator = tag
