@@ -1,19 +1,13 @@
 ---
 synthetic_monitors:
-  - name: ac-int-gateway-ccd
-    management_zone_name: CFT-CCD-DEMO
+  - name: xui-mo-webapp-nodejs
+    management_zone_name: CFT-XUI-DEMO
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    tags:
-      # example showing tags
-      - key: SVCOFF1
-        context: CONTEXTLESS
-        source: RULE_BASED
-        value: SVCOFF0001306
     requests:
-      - url: http://ac-int-gateway-ccd.demo.platform.hmcts.net/health
-        description: ac-int-gateway-ccd.demo.platform.hmcts.net
+      - url: http://manage-org.demo.platform.hmcts.net/health
+        description: manage-org.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -22,15 +16,174 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-
-  - name: civil-citizen-ui
-    management_zone_name: CFT-CIVILMONEYCLAIMS-DEMO
+  - name: adoption-web-nodejs
+    management_zone_name: CFT-ADOPTION-DEMO
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.demo.platform.hmcts.net/health
-        description: civil-citizen-ui.demo.platform.hmcts.net
+      - url: http://adoption-web.demo.platform.hmcts.net/health
+        description: adoption-web.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-paymentoutcome-web-nodejs
+    management_zone_name: CFT-FEES-PAY-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://paymentoutcome-web.demo.platform.hmcts.net/health
+        description: paymentoutcome-web.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-aip-frontend-nodejs
+    management_zone_name: CFT-IA-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://immigration-appeal.demo.platform.hmcts.net/health
+        description: immigration-appeal.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-user-dashboard-nodejs
+    management_zone_name: CFT-IDAM-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-user-dashboard.demo.platform.hmcts.net/health
+        description: idam-user-dashboard.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: lau-frontend-int-nodejs
+    management_zone_name: CFT-LAU-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://lau-int.demo.platform.hmcts.net/health
+        description: lau-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: cmc-citizen-frontend-nodejs
+    management_zone_name: CFT-MONEY-CLAIMS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://moneyclaims.demo.platform.hmcts.net/health
+        description: moneyclaims.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: nfdiv-frontend-nodejs
+    management_zone_name: CFT-NFDIV-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://nfdiv.demo.platform.hmcts.net/health
+        description: nfdiv.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: pcq-frontend-int-nodejs
+    management_zone_name: CFT-PCQ-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://pcq-int.demo.platform.hmcts.net/health
+        description: pcq-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: pcq-frontend-nodejs
+    management_zone_name: CFT-PCQ-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://pcq.demo.platform.hmcts.net/health
+        description: pcq.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: prl-citizen-frontend-nodejs
+    management_zone_name: CFT-PRIVATE-LAW-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://privatelaw.demo.platform.hmcts.net/health
+        description: privatelaw.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: xui-ao-webapp-nodejs
+    management_zone_name: CFT-XUI-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://administer-orgs.demo.platform.hmcts.net/health
+        description: administer-orgs.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
