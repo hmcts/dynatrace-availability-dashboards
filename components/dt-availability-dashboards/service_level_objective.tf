@@ -1,4 +1,6 @@
 resource "dynatrace_slo" "availability" {
+  // SLOs cannot be created before management zones, which can take some time to create
+  depends_on = [dynatrace_management_zone.availability]
   for_each = {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
