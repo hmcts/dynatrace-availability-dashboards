@@ -1,24 +1,72 @@
 ---
 trigger: none
 
+resources:
+  repositories:
+    - repository: cnp-azuredevops-libraries
+      type: github
+      ref: refs/heads/master
+      name: hmcts/cnp-azuredevops-libraries
+      endpoint: 'hmcts (1)'
+
+parameters:
+  - name: overrideAction
+    type: string
+    default: plan
+    values:
+      - plan
+      - apply
+      - destroy
+
+  - name: environment_components
+    type: object
+    default:
+      - deployment: 'sbox_dynatrace_availability_dashboards'
+        environment: 'sbox'
+        component: 'dt-availability-dashboards'
+        service_connection: 'dts-sharedservices-sbox'
+        dependsOn: 'Precheck'
+        keyvault:
+          service_connection: 'DCD-CFT-Sandbox'
+          name: 'infra-vault-nonprod'
+          secret_name: 'dynatrace-platops-api-key'
+
+variables:
+  - name: timeoutInMinutes
+    value: 60
+  - name: agentPool
+    value: ubuntu-latest
+  - template: vars/input-variables.yaml@cnp-azuredevops-libraries
+
 stages:
-  - stage: test
+  - stage: Precheck
     jobs:
       - job:
+        pool:
+          vmImage: ${{ variables.agentPool }}
+        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
         steps:
-        - task: AzureCLI@2
-          inputs:
-            azureSubscription: 'OPS-APPROVAL-GATE-SBOX-ENVS'
-            scriptType: 'bash'
-            scriptLocation: 'inlineScript'
-            inlineScript: |
-              eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-              brew install Azure/kubelogin/kubelogin
-              az account set --subscription b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
-              az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks
-              kubelogin convert-kubeconfig -l spn --client-id $servicePrincipalId --client-secret $servicePrincipalKey
-              kubectl get no
-              kubectl get ingress --all-namespaces=true -ojson
-            addSpnToEnvironment: true
+          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
+            parameters:
+              keyvaultName: 'infra-vault-nonprod'
+              keyvaultSecret: 'azure-devops-token'
+              serviceConnection: 'DCD-CFT-Sandbox'
 
-
+  - ${{ each deployment in parameters.environment_components }}:
+      - stage: ${{ deployment.deployment }}
+        dependsOn: ${{ deployment.dependsOn }}
+        jobs:
+          - job:
+            pool:
+              vmImage: ${{ variables.agentPool }}
+            timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+            steps:
+              - task: AzureCLI@2
+                inputs:
+                  azureSubscription: 'DCD-CFTAPPS-SBOX'
+                  scriptType: 'bash'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: |
+                    az account set --subscription b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
+                    az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks --admin
+                    kubectl get ingress --all-namespaces=true -ojson
