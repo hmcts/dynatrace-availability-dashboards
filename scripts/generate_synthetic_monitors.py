@@ -81,6 +81,7 @@ management_zones_yaml_path = (
 
 
 def main():
+    logger.info(f'##vso[task.logissue type=warning;]testissue')
     logger.info(f"Environment is {environment}")
     logger.info(f"Trying to retrieve ingress objects from {context}...")
     kubectl_data = get_kubectl_ingress(stdin, context)
