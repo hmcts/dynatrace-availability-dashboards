@@ -13,24 +13,24 @@ parameters:
   - name: environment_components
     type: object
     default:
-      - deployment: sbox_dynatrace_availability_dashboards
+      - deployment: sbox_dt_availability_dashboards_yaml
         environment: sbox
-        component: dt-availability-dashboards
+        component: dt-availability-dashboards-yaml
         service_connection: dcd-cftapps-sbox
         department: cft
         aks:
           subscription: DCD-CFTAPPS-SBOX
           resource_group: cft-sbox-00-rg
           name: cft-sbox-00-aks
-      - deployment: demo_dynatrace_availability_dashboards
-        environment: demo
-        component: dt-availability-dashboards
-        service_connection: dcd-cftapps-demo
-        department: cft
-        aks:
-          subscription: DCD-CFTAPPS-demo
-          resource_group: cft-demo-00-rg
-          name: cft-demo-00-aks
+            #      - deployment: demo_dt_availability_dashboards_yaml
+            #        environment: demo
+            #        component: dt-availability-dashboards-yaml
+            #        service_connection: dcd-cftapps-demo
+            #        department: cft
+            #        aks:
+            #          subscription: DCD-CFTAPPS-DEMO
+            #          resource_group: cft-demo-00-rg
+            #          name: cft-demo-00-aks
 
 variables:
   - name: timeoutInMinutes
@@ -50,6 +50,7 @@ stages:
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
             steps:
               - task: AzureCLI@2
+                displayName: Generate YAML definitions
                 inputs:
                   azureSubscription: ${{ deployment.service_connection }}
                   scriptType: 'bash'
