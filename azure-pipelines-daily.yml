@@ -10,26 +10,18 @@ resources:
       endpoint: 'hmcts (1)'
 
 parameters:
-  - name: overrideAction
-    type: string
-    default: plan
-    values:
-      - plan
-      - apply
-      - destroy
-
   - name: environment_components
     type: object
     default:
-      - deployment: 'sbox_dynatrace_availability_dashboards'
-        environment: 'sbox'
-        component: 'dt-availability-dashboards'
-        service_connection: 'dts-sharedservices-sbox'
-        dependsOn: 'Precheck'
-        keyvault:
-          service_connection: 'DCD-CFT-Sandbox'
-          name: 'infra-vault-nonprod'
-          secret_name: 'dynatrace-platops-api-key'
+      - deployment: sbox_dynatrace_availability_dashboards
+        environment: sbox
+        component: dt-availability-dashboards
+        service_connection: dcd-cftapps-sbox
+        department: cft
+        aks:
+          subscription_id: b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
+          resource_group: cft-sbox-00-rg
+          name: cft-sbox-00-aks
 
 variables:
   - name: timeoutInMinutes
@@ -39,19 +31,6 @@ variables:
   - template: vars/input-variables.yaml@cnp-azuredevops-libraries
 
 stages:
-  - stage: Precheck
-    jobs:
-      - job:
-        pool:
-          vmImage: ${{ variables.agentPool }}
-        timeoutInMinutes: ${{ variables.timeoutInMinutes }}
-        steps:
-          - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
-            parameters:
-              keyvaultName: 'infra-vault-nonprod'
-              keyvaultSecret: 'azure-devops-token'
-              serviceConnection: 'DCD-CFT-Sandbox'
-
   - ${{ each deployment in parameters.environment_components }}:
       - stage: ${{ deployment.deployment }}
         dependsOn: ${{ deployment.dependsOn }}
@@ -63,11 +42,22 @@ stages:
             steps:
               - task: AzureCLI@2
                 inputs:
-                  azureSubscription: 'DCD-CFTAPPS-SBOX'
+                  azureSubscription: ${{ deployment.service_connection }}
                   scriptType: 'bash'
                   scriptLocation: 'inlineScript'
                   inlineScript: |
-                    az account set --subscription b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
-                    az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks --admin
-                    python3 -m pip install -r scripts/requirements.txt
-                    python3 scripts/generate_synthetic_monitors.py --environment sbox --department cft --context cft-sbox-00-aks-admin
+                    az account set --subscription ${{ deployment.aks.subscription_id }}
+                    az aks get-credentials \
+                      --resource-group ${{ deployment.aks.resource_group }} \
+                      --name ${{ deployment.aks.name }} --admin
+
+                    printf "\nInstall python requirements\n\n"
+                    cat scripts/requirements.txt
+                    printf "\n\n"
+                    python3 -m pip install --quiet -r scripts/requirements.txt
+                    printf "\n\n"
+
+                    python3 scripts/generate_synthetic_monitors.py \
+                      --environment ${{ deployment.environment }} \
+                      --department ${{ deployment.department }} \
+                      --context ${{ deployment.aks.name }}-admin
