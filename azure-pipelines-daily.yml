@@ -10,6 +10,8 @@ resources:
       endpoint: 'hmcts (1)'
 
 parameters:
+  - name: kvConnectedServiceName
+    default: 'azurerm-sandbox'
   - name: environment_components
     type: object
     default:
@@ -50,6 +52,18 @@ stages:
               vmImage: ${{ variables.agentPool }}
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
             steps:
+              - checkout: self
+                persistCredentials: true
+                clean: true
+
+              - task: AzureKeyVault@1
+                displayName: 'Get GitHub API token from Keyvault'
+                inputs:
+                  runAsPreJob: false
+                  ConnectedServiceName: ${{ parameters.kvConnectedServiceName }}
+                  keyVaultName: 'infra-vault-nonprod'
+                  secretsFilter: 'github-api-token'
+
               - task: AzureCLI@2
                 displayName: ${{ deployment.environment }} - generate YAML definitions
                 inputs:
@@ -85,3 +99,32 @@ stages:
                       --environment ${{ deployment.environment }} \
                       --department ${{ deployment.department }} \
                       --context $aks_name-admin
+
+              - task: Bash@3
+                displayName: Push changes and create PR
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                    branch=yaml_autogenerate_${{ deployment.environment }}
+                    echo $(github-api-token) | gh auth login --with-token
+
+                    git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
+                    git config --global user.name hmcts-dependency-updater
+
+                    pre_commit=$(git rev-parse HEAD)
+                    git checkout -b $branch
+                    git add -A dynatrace/
+                    git commit -m "Regenerate YAML definitions for dynatrace"
+                    # Only force push to remote if changes detected
+                    git diff $pre_commit --exit-code || git push --set-upstream origin $branch -f
+
+                    { # test if PR is already opened
+                    gh pr view $branch --json state | grep OPEN
+                    } || { # open PR if none opened
+                    gh pr create \
+                      --title "${{ deployment.environment }} - Update YAML definitions" \
+                      --body "Sample body" \
+                      --base main \
+                      --head $branch
+                    }
+                  failOnStderr: false
