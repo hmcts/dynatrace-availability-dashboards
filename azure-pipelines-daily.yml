@@ -8,7 +8,7 @@ stages:
         steps:
         - task: AzureCLI@2
           inputs:
-            azureSubscription: 'DTS-CFTSBOX-INTSVC'
+            azureSubscription: 'DCD-CFTAPPS-SBOX'
             scriptType: 'bash'
             scriptLocation: 'inlineScript'
             failOnStandardError: true
