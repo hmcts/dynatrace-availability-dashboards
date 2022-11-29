@@ -22,15 +22,15 @@ parameters:
           subscription: DCD-CFTAPPS-SBOX
           resource_group: cft-sbox-00-rg
           name: cft-sbox-00-aks
-            #      - deployment: demo_dt_availability_dashboards_yaml
-            #        environment: demo
-            #        component: dt-availability-dashboards-yaml
-            #        service_connection: dcd-cftapps-demo
-            #        department: cft
-            #        aks:
-            #          subscription: DCD-CFTAPPS-DEMO
-            #          resource_group: cft-demo-00-rg
-            #          name: cft-demo-00-aks
+      - deployment: demo_dt_availability_dashboards_yaml
+        environment: demo
+        component: dt-availability-dashboards-yaml
+        service_connection: dcd-cftapps-demo
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-DEMO
+          resource_group: cft-demo-00-rg
+          name: cft-demo-00-aks
 
 variables:
   - name: timeoutInMinutes
@@ -44,13 +44,14 @@ stages:
       - stage: ${{ deployment.deployment }}
         dependsOn: ${{ deployment.dependsOn }}
         jobs:
-          - job:
+          - job: ${{ deployment.environment }}_generate_yaml
+            displayName: ${{ deployment.environment }} - generate yaml
             pool:
               vmImage: ${{ variables.agentPool }}
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
             steps:
               - task: AzureCLI@2
-                displayName: Generate YAML definitions
+                displayName: ${{ deployment.environment }} - generate YAML definitions
                 inputs:
                   azureSubscription: ${{ deployment.service_connection }}
                   scriptType: 'bash'

@@ -1,9 +1,10 @@
+import os
 import sys
 import json
 import logging
 import yaml
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("default")
 
 
 class Dumper(yaml.Dumper):
@@ -143,3 +144,10 @@ def read_yaml(yaml_file_path):
             return yaml.safe_load(f)
         except Exception as e:
             raise Exception(e)
+
+
+def log_message(message):
+    logger.info(message)
+    is_ado = os.getenv("SYSTEM_ACCESSTOKEN")
+    if is_ado:
+        logger.info(f"##vso[task.logissue type=warning;]{message}")
