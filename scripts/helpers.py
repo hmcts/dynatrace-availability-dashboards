@@ -57,7 +57,7 @@ def get_kubectl_ingress(stdin, context_name):
         raise Exception(e)
 
 
-def filter_ingress(data):
+def filter_ingress(data, environment):
     data_filtered = [
         {
             "name": item["metadata"]["name"],
@@ -75,6 +75,7 @@ def filter_ingress(data):
             and item["metadata"]["annotations"]["kubernetes.io/ingress.class"]
             == "traefik-no-proxy"
         )
+        or (environment == "sbox")
     ]
     return data_filtered
 
