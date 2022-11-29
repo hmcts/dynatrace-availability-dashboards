@@ -14,6 +14,7 @@ if [ $? -eq 1 ]; then
    python3 -m pip install pyyaml --user
 fi
 
+# python3 -m pip install -r requirements.txt
 python3 generate_synthetic_monitors.py \
     --environment demo \
     --department cft \
