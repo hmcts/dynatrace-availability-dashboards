@@ -51,12 +51,14 @@ stages:
                     aks_name=${{ deployment.aks.name }}
 
                     { # try 00 cluster
+                    printf "\nTrying cluster $aks_name $aks_resource_group"
                     az aks get-credentials \
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
                     } || { # try 01 cluster
                     aks_resource_group=$(echo $aks_resource_group|sed 's/-01-/-00-/g')
                     aks_name=$(echo $aks_name|sed 's/-01-/-00-/g')
+                    printf "\nTrying cluster $aks_name $aks_resource_group"
                     az aks get-credentials \
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
