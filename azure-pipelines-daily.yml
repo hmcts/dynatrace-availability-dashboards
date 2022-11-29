@@ -1,0 +1,15 @@
+---
+trigger: none
+
+stages:
+  - stage: test
+    jobs:
+      - job:
+        steps:
+          - task: AzureKeyVault@2
+            displayName: 'Pre-job: Retrieve keyvault secret for Dynatrace API Key'
+            inputs:
+              azureSubscription: ${{ deployment.keyvault.service_connection }}
+              KeyVaultName: ${{ deployment.keyvault.name }}
+              SecretsFilter: ${{ deployment.keyvault.secret_name }}
+              RunAsPreJob: true
