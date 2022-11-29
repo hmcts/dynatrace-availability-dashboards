@@ -7,7 +7,7 @@ resource "dynatrace_management_zone" "availability" {
   name        = each.value.name
   description = try(each.value.description, null)
   rules {
-    enabled           = each.value.enabled
+    enabled           = try(each.value.enabled, true)
     type              = "HTTP_MONITOR"
     propagation_types = []
     conditions {
