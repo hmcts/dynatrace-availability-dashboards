@@ -20,8 +20,8 @@ parameters:
         department: cft
         aks:
           subscription_id: b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
-          resource_group: cft-sbox-00-rg
-          name: cft-sbox-00-aks
+          resource_group: cft-sbox-01-rg
+          name: cft-sbox-01-aks
 
 variables:
   - name: timeoutInMinutes
@@ -55,8 +55,8 @@ stages:
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
                     } || { # try 01 cluster
-                    aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
-                    aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
+                    aks_resource_group=$(echo $aks_resource_group|sed 's/-01-/-00-/g')
+                    aks_name=$(echo $aks_name|sed 's/-01-/-00-/g')
                     az aks get-credentials \
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
