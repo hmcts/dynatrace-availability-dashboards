@@ -6,10 +6,15 @@ stages:
     jobs:
       - job:
         steps:
-          - task: AzureKeyVault@2
-            displayName: 'Pre-job: Retrieve keyvault secret for Dynatrace API Key'
-            inputs:
-              azureSubscription: ${{ deployment.keyvault.service_connection }}
-              KeyVaultName: ${{ deployment.keyvault.name }}
-              SecretsFilter: ${{ deployment.keyvault.secret_name }}
-              RunAsPreJob: true
+        - task: AzureCLI@2
+          inputs:
+            azureSubscription: 'DTS-CFTSBOX-INTSVC'
+            scriptType: 'bash'
+            scriptLocation: 'inlineScript'
+            failOnStandardError: true
+            inlineScript: |
+              az account set --subscription b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
+              az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks
+              
+
+
