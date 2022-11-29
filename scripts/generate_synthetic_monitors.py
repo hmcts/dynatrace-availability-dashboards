@@ -10,8 +10,8 @@ from helpers import (
     filter_ingress,
     read_yaml,
     format_dt_monitors_yaml,
-    merge_synthetic_monitors_yaml,
-    merge_management_zones,
+    handle_synthetic_monitors_yaml,
+    handle_management_zones,
 )
 
 logger = logging.getLogger(__name__)
@@ -82,7 +82,7 @@ management_zones_yaml_path = (
 
 def main():
     logger.info(f"Environment is {environment}")
-    logger.info("Trying to retrieve ingress objects from {context}...")
+    logger.info(f"Trying to retrieve ingress objects from {context}...")
     kubectl_data = get_kubectl_ingress(stdin, context)
     kubectl_data_filtered = filter_ingress(kubectl_data)
     # Handle synthetic monitors
@@ -90,40 +90,33 @@ def main():
     generated_yaml_monitors = format_dt_monitors_yaml(
         department, kubectl_data_filtered, environment
     )
-    existing_yaml_monitors = read_yaml(monitors_yaml_path)["synthetic_monitors"]
+
     (
         monitors_final_yaml,
         monitors_count,
         generated_management_zones,
-    ) = merge_synthetic_monitors_yaml(existing_yaml_monitors, generated_yaml_monitors)
+    ) = handle_synthetic_monitors_yaml(generated_yaml_monitors)
 
     with open(monitors_yaml_path, "w") as f:
         try:
             f.write(monitors_final_yaml)
-            logger.info(
-                f"Number of synthetic monitors before: {len(existing_yaml_monitors)}"
-            )
-            logger.info(f"Number of synthetic monitors after: {monitors_count}")
+            logger.info(f"Number of synthetic monitors generated: {monitors_count}")
             logger.info(f"New {monitors_count} objects written to {monitors_yaml_path}")
         except Exception as e:
             logger.exception(e)
 
     # Handle management zones
     logger.info("Handling management_zones...")
-    existing_yaml_management_zones = read_yaml(management_zones_yaml_path)[
-        "management_zones"
-    ]
-    management_zones_final_yaml, management_zones_count = merge_management_zones(
-        existing_yaml_management_zones, generated_management_zones
+    management_zones_final_yaml, management_zones_count = handle_management_zones(
+        generated_management_zones
     )
 
     with open(management_zones_yaml_path, "w") as f:
         try:
             f.write(management_zones_final_yaml)
             logger.info(
-                f"Number of management zones before: {len(existing_yaml_management_zones)}"
+                f"Number of management_zones generated: {management_zones_count}"
             )
-            logger.info(f"Number of management_zones after: {management_zones_count}")
             logger.info(
                 f"New {management_zones_count} objects written to {management_zones_yaml_path}"
             )

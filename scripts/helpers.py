@@ -1,4 +1,5 @@
 import sys
+import json
 import logging
 import yaml
 
@@ -108,10 +109,8 @@ def format_dt_monitors_yaml(department, data_filtered, environment):
     ]
 
 
-def merge_synthetic_monitors_yaml(existing_yaml, generated_yaml):
+def handle_synthetic_monitors_yaml(generated_yaml):
     monitors_dict = {}
-    for item in existing_yaml:
-        monitors_dict[item["name"]] = item
     for item in generated_yaml:
         monitors_dict[item["name"]] = item
     monitors_dict_new = dict({"synthetic_monitors": list(monitors_dict.values())})
@@ -121,15 +120,11 @@ def merge_synthetic_monitors_yaml(existing_yaml, generated_yaml):
     return "---\n" + monitors_new_yaml, object_count, management_zones
 
 
-def merge_management_zones(existing_yaml, management_zones_list):
+def handle_management_zones(management_zones_list):
     management_zones_dict = {}
-    for item in existing_yaml:
-        management_zones_dict[item["name"]] = item
 
     for item in set(management_zones_list):
-        # Do not update override items in case they have enabled flag set to false.
-        if item not in management_zones_dict:
-            management_zones_dict[item] = {"name": item}
+        management_zones_dict[item] = {"name": item}
 
     management_zones_dict_new = dict(
         {"management_zones": list(management_zones_dict.values())}
