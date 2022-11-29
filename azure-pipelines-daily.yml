@@ -47,9 +47,20 @@ stages:
                   scriptLocation: 'inlineScript'
                   inlineScript: |
                     az account set --subscription ${{ deployment.aks.subscription_id }}
+                    aks_resource_group=${{ deployment.aks.resource_group }}
+                    aks_name=${{ deployment.aks.name }}
+
+                    { # try 00 cluster
                     az aks get-credentials \
-                      --resource-group ${{ deployment.aks.resource_group }} \
-                      --name ${{ deployment.aks.name }} --admin
+                      --resource-group $aks_resource_group \
+                      --name $aks_name --admin
+                    } || { # try 01 cluster
+                    aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
+                    aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
+                    az aks get-credentials \
+                      --resource-group $aks_resource_group \
+                      --name $aks_name --admin
+                    }
 
                     printf "\nInstall python requirements\n\n"
                     cat scripts/requirements.txt
@@ -60,4 +71,4 @@ stages:
                     python3 scripts/generate_synthetic_monitors.py \
                       --environment ${{ deployment.environment }} \
                       --department ${{ deployment.department }} \
-                      --context ${{ deployment.aks.name }}-admin
+                      --context $aks_name-admin
