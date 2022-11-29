@@ -16,7 +16,7 @@ stages:
               brew install Azure/kubelogin/kubelogin
               az account set --subscription b72ab7b7-723f-4b18-b6f6-03b0f2c6a1bb
               az aks get-credentials --resource-group cft-sbox-00-rg --name cft-sbox-00-aks
-              kubelogin convert-kubeconfig -l spn --client-id $servicePrincipalId--client-secret $servicePrincipalKey
+              kubelogin convert-kubeconfig -l spn --client-id $servicePrincipalId --client-secret $servicePrincipalKey
               kubectl get no
               kubectl get ingress --all-namespaces=true -ojson
             addSpnToEnvironment: true
