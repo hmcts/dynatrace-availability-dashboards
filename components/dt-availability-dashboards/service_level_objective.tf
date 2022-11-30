@@ -1,7 +1,7 @@
 resource "time_sleep" "wait_for_management_zones" {
   depends_on       = [dynatrace_management_zone.availability]
-  create_duration  = "30s"
-  destroy_duration = "30s"
+  create_duration  = "90s"
+  destroy_duration = "90s"
   triggers = {
     zones = filebase64sha256("${path.module}/${local.config_path}/management_zones/management_zones_${var.env}.yaml")
   }

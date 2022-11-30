@@ -1,7 +1,7 @@
 ---
 management_zones:
   - name: CFT-CNP-SBOX
+  - name: CFT-CNP1-SBOX
+  - name: CFT-CNP2-SBOX
   - name: CFT-DOCMOSIS-SBOX
   - name: CFT-IDAM-SBOX
-  - name: CFT-IDAM-SBOX1
-  - name: CFT-IDAM-SBOX2
