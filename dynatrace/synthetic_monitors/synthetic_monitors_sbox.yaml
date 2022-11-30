@@ -1,37 +1,5 @@
 ---
 synthetic_monitors:
-  - name: plum3-frontend-nodejs
-    management_zone_name: CFT3-CNP-SBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://plum.sandbox.platform.hmcts.net/health
-        description: plum.sandbox.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: plum4-frontend-nodejs
-    management_zone_name: CFT4-CNP-SBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://plum.sandbox.platform.hmcts.net/health
-        description: plum.sandbox.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: plum-frontend-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true

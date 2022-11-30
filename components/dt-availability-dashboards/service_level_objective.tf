@@ -1,4 +1,6 @@
 resource "time_sleep" "management_zones" {
+  // Wait 5 seconds before creation of each slo's to avoid issues with dynatrace API
+  // returning non existient management zone.
   for_each = {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
