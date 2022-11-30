@@ -7,6 +7,9 @@ resource "dynatrace_http_monitor" "availability" {
   name      = "${each.value.management_zone_name}-${each.value.name}"
   frequency = 1
   locations = each.value.locations
+  lifecycle {
+    ignore_changes = [tags]
+  }
   anomaly_detection {
     loading_time_thresholds {
       enabled = true
