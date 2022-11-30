@@ -3,8 +3,8 @@ resource "time_sleep" "management_zones" {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
   }
-  create_duration  = "15s"
-  destroy_duration = "15s"
+  create_duration  = "5s"
+  destroy_duration = "5s"
   triggers = {
     name = each.value.name
   }

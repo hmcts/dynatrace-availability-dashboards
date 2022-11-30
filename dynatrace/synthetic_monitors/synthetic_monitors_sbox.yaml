@@ -1,7 +1,7 @@
 ---
 synthetic_monitors:
-  - name: plum1-frontend-nodejs
-    management_zone_name: CFT1-CNP-SBOX
+  - name: plum3-frontend-nodejs
+    management_zone_name: CFT3-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
@@ -16,8 +16,8 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: plum2-frontend-nodejs
-    management_zone_name: CFT2-CNP-SBOX
+  - name: plum4-frontend-nodejs
+    management_zone_name: CFT4-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
