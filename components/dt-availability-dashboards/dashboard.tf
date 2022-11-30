@@ -6,7 +6,7 @@ resource "dynatrace_dashboard" "availability" {
     name   = "${upper(var.env)} - Environment Availability"
     shared = true
     preset = true
-    owner  = "jay.walaszek@justice.gov.uk"
+    owner  = "PlatformOperations"
     tags   = ["environment=${var.env}"]
     unknowns = jsonencode({
       popularity = 1
