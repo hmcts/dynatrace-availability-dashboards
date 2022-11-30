@@ -105,7 +105,7 @@ stages:
                 inputs:
                   targetType: 'inline'
                   script: |
-                    set -x
+                    set -x #TODO
                     git fetch --all
                     branch=yaml_autogenerate_${{ deployment.environment }}
                     echo $(github-api-token) | gh auth login --with-token
@@ -135,7 +135,16 @@ stages:
                              dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml)" ]; then
                         echo "no changes against main branch"
                     else
-                        if [ $(git rev-parse remotes/origin/$branch) ] && [ -z "$(git diff $branch -- \
+                        # Determine if remote branch already exists
+                        if [[ $(git ls-remote --exit-code --heads origin $branch) ]]; then
+                            echo "remote branch $branch already exists on remote."
+                            remote_branch_exists=true
+                        else
+                            echo "remote branch $branch does not exist on remote."
+                            remote_branch_exists=false
+                        fi
+                        # Determine if there are changes against PR branch
+                        if [ $remote_branch_exists ] && [ -z "$(git diff $branch -- \
                                  dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
                                  dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml)" ]; then
                             echo "no changes against $branch branch"
