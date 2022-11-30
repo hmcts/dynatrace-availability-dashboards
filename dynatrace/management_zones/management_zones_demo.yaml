@@ -1,19 +1,19 @@
 ---
 management_zones:
-  - name: CFT-SSCS-DEMO
-  - name: CFT-PRIVATE-LAW-DEMO
-  - name: CFT-IA-DEMO
   - name: CFT-PCQ-DEMO
-  - name: CFT-CIVIL-DEMO
+  - name: CFT-ADOPTION-DEMO
+  - name: CFT-BAR-DEMO
+  - name: CFT-CCD-DEMO
+  - name: CFT-LAU-DEMO
+  - name: CFT-PROBATE-DEMO
+  - name: CFT-IDAM-DEMO
   - name: CFT-ET-DEMO
   - name: CFT-XUI-DEMO
-  - name: CFT-NFDIV-DEMO
   - name: CFT-DIVORCE-DEMO
-  - name: CFT-IDAM-DEMO
-  - name: CFT-BAR-DEMO
-  - name: CFT-ADOPTION-DEMO
   - name: CFT-FEES-PAY-DEMO
-  - name: CFT-PROBATE-DEMO
-  - name: CFT-LAU-DEMO
+  - name: CFT-IA-DEMO
+  - name: CFT-NFDIV-DEMO
+  - name: CFT-PRIVATE-LAW-DEMO
+  - name: CFT-CIVIL-DEMO
   - name: CFT-MONEY-CLAIMS-DEMO
-  - name: CFT-CCD-DEMO
+  - name: CFT-SSCS-DEMO
