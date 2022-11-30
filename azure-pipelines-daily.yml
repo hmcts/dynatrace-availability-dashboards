@@ -105,7 +105,6 @@ stages:
                 inputs:
                   targetType: 'inline'
                   script: |
-                    set -x
                     git fetch --all
                     branch=yaml_autogenerate_${{ deployment.environment }}
                     echo $(github-api-token) | gh auth login --with-token
@@ -113,28 +112,26 @@ stages:
                     git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
                     git config --global user.name hmcts-dependency-updater
 
-                    tmpdir="$(mktemp --directory)"
-                    cp -rf dynatrace $tmpdir/dynatrace
+                    rm -rf /tmp/dynatrace
+                    cp -rf dynatrace /tmp/dynatrace
                     git add -A
                     git stash
                     git checkout -b $branch origin/main
                     pre_commit=$(git rev-parse HEAD)
                     rm -rf dynatrace
-                    mv $tmpdir/dynatrace dynatrace
+                    mv /tmp/dynatrace dynatrace
                     git add dynatrace/\*
                     git commit -m "Regenerate YAML definitions for dynatrace"
 
                     # Only force push to remote if changes detected
-                    git diff $pre_commit --exit-code dynatrace/ > /dev/null
+                    git diff $pre_commit --exit-code > /dev/null
                     if [ $? -eq 0 ]; then
                         echo "No changes detected against main branch"
                     else
-                        git rev-parse remotes/origin/$branch
+                        pr_commit=$(git rev-parse remotes/origin/$branch)
                         if [ $? -eq 0 ]; then
                             echo "PR branch already exists on remote. Will compare against it"
-                            #git diff HEAD remotes/origin/$branch --exit-code dynatrace/
-                            git branch --set-upstream-to=origin/$branch $branch
-                            git diff @ @{upstream} --exit-code dynatrace/
+                            git diff $pr_commit --exit-code > /dev/null
                             if [ $? -eq 0 ]; then
                                 echo "No changes detected against remote PR branch. Do nothing"
                             else
