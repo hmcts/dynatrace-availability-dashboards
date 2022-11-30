@@ -1,0 +1,137 @@
+---
+trigger: none
+
+resources:
+  repositories:
+    - repository: cnp-azuredevops-libraries
+      type: github
+      ref: refs/heads/master
+      name: hmcts/cnp-azuredevops-libraries
+      endpoint: 'hmcts (1)'
+
+parameters:
+  - name: kvConnectedServiceName
+    default: 'azurerm-sandbox'
+  - name: environment_components
+    type: object
+    default:
+      - deployment: sbox_dt_availability_dashboards_yaml
+        environment: sbox
+        component: dt-availability-dashboards-yaml
+        service_connection: dcd-cftapps-sbox
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-SBOX
+          resource_group: cft-sbox-00-rg
+          name: cft-sbox-00-aks
+      - deployment: demo_dt_availability_dashboards_yaml
+        environment: demo
+        component: dt-availability-dashboards-yaml
+        service_connection: dcd-cftapps-demo
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-DEMO
+          resource_group: cft-demo-00-rg
+          name: cft-demo-00-aks
+
+variables:
+  - name: timeoutInMinutes
+    value: 60
+  - name: agentPool
+    value: ubuntu-latest
+  - template: vars/input-variables.yaml@cnp-azuredevops-libraries
+
+stages:
+  - ${{ each deployment in parameters.environment_components }}:
+      - stage: ${{ deployment.deployment }}
+        dependsOn: ${{ deployment.dependsOn }}
+        jobs:
+          - job: ${{ deployment.environment }}_generate_yaml
+            displayName: ${{ deployment.environment }} - generate yaml
+            pool:
+              vmImage: ${{ variables.agentPool }}
+            timeoutInMinutes: ${{ variables.timeoutInMinutes }}
+            steps:
+              - checkout: self
+                persistCredentials: true
+                clean: true
+
+              - task: AzureKeyVault@1
+                displayName: 'Get GitHub API token from Keyvault'
+                inputs:
+                  runAsPreJob: false
+                  ConnectedServiceName: ${{ parameters.kvConnectedServiceName }}
+                  keyVaultName: 'infra-vault-nonprod'
+                  secretsFilter: 'github-api-token'
+
+              - task: AzureCLI@2
+                displayName: ${{ deployment.environment }} - generate YAML definitions
+                inputs:
+                  azureSubscription: ${{ deployment.service_connection }}
+                  scriptType: 'bash'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: |
+                    az account set --subscription ${{ deployment.aks.subscription }}
+                    aks_resource_group=${{ deployment.aks.resource_group }}
+                    aks_name=${{ deployment.aks.name }}
+
+                    { # try 00 cluster
+                    printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
+                    az aks get-credentials \
+                      --resource-group $aks_resource_group \
+                      --name $aks_name --admin
+                    } || { # try 01 cluster
+                    aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
+                    aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
+                    printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
+                    az aks get-credentials \
+                      --resource-group $aks_resource_group \
+                      --name $aks_name --admin
+                    }
+
+                    printf "\nInstall python requirements\n\n"
+                    cat scripts/requirements.txt
+                    printf "\n\n"
+                    python3 -m pip install --quiet -r scripts/requirements.txt
+                    printf "\n\n"
+
+                    python3 scripts/generate_synthetic_monitors.py \
+                      --environment ${{ deployment.environment }} \
+                      --department ${{ deployment.department }} \
+                      --context $aks_name-admin
+
+              - task: Bash@3
+                displayName: Push changes and create PR
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                    set -x
+                    git fetch --all
+                    branch=yaml_autogenerate_${{ deployment.environment }}
+                    echo $(github-api-token) | gh auth login --with-token
+
+                    git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
+                    git config --global user.name hmcts-dependency-updater
+
+                    # Only force push to remote if changes detected
+                    #
+                    if [ -z "$(git diff origin/main -- \
+                             dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
+                             dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml)" ]; then
+                        echo "no changes"
+                    else
+                        echo "changes detected against main branch"
+                        echo "deleting the remote branch $branch which should then close the PR if one exists"
+                        git push origin --delete $branch || true
+                        git checkout -b $branch
+                        git add dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
+                            dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml
+                        git commit -m "${{ deployment.environment }} - Add autogenerated YAML objects"
+                        git push --set-upstream origin $branch
+                        gh pr create \
+                          --title "${{ deployment.environment }} - Update YAML definitions" \
+                          --body "Sample body" \
+                          --base main \
+                          --head $branch
+                    fi
+                  failOnStderr: false
