@@ -1,6 +1,6 @@
 ---
 management_zones:
   - name: CFT-LABS-SBOX
-  - name: CFT-IDAM-SBOX
   - name: CFT-DOCMOSIS-SBOX
   - name: CFT-CNP-SBOX
+  - name: CFT-IDAM-SBOX
