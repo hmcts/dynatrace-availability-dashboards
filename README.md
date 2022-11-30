@@ -30,11 +30,9 @@
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | n/a | `any` | `null` | no |
-| <a name="input_dt_env_url"></a> [dt\_env\_url](#input\_dt\_env\_url) | n/a | `string` | n/a | yes |
-| <a name="input_dynatrace_platops_api_key"></a> [dynatrace\_platops\_api\_key](#input\_dynatrace\_platops\_api\_key) | n/a | `any` | `null` | no |
-| <a name="input_env"></a> [env](#input\_env) | n/a | `any` | `null` | no |
-| <a name="input_product"></a> [product](#input\_product) | n/a | `any` | `null` | no |
+| <a name="input_dt_env_url"></a> [dt\_env\_url](#input\_dt\_env\_url) | Dynatrace environment URL | `string` | n/a | yes |
+| <a name="input_dynatrace_platops_api_key"></a> [dynatrace\_platops\_api\_key](#input\_dynatrace\_platops\_api\_key) | Dynatrace API access key | `string` | n/a | yes |
+| <a name="input_env"></a> [env](#input\_env) | Environment key | `string` | n/a | yes |
 
 ## Outputs
 
