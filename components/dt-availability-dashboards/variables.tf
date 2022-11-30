@@ -10,7 +10,7 @@ variable "builtFrom" {
 }
 variable "env" {
   type        = string
-  description = "Environment key"
+  description = "Name of the environment to build in"
 }
 variable "dt_env_url" {
   type        = string
