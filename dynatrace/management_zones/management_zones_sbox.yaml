@@ -1,19 +1,6 @@
 ---
 management_zones:
-<<<<<<< HEAD
+  - name: CFT-IDAM-SBOX
   - name: CFT-CNP-SBOX
-    enabled: true
-  - name: CFT-DOCMOSIS-SBOX
-    enabled: true
-  - name: CFT-IDAM-SBOX
-    enabled: true
-  - name: CFT-MONITORING-SBOX
-    enabled: true
-  - name: CFT-RPE-SBOX
-    enabled: true
-=======
-  - name: CFT-IDAM-SBOX
   - name: CFT-DOCMOSIS-SBOX
   - name: CFT-LABS-SBOX
-  - name: CFT-CNP-SBOX
->>>>>>> 2da8968 (Test commit changes detection)
