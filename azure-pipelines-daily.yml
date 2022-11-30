@@ -105,6 +105,7 @@ stages:
                 inputs:
                   targetType: 'inline'
                   script: |
+                    set -x
                     git fetch --all
                     branch=yaml_autogenerate_${{ deployment.environment }}
                     echo $(github-api-token) | gh auth login --with-token
@@ -124,17 +125,16 @@ stages:
                     git commit -m "Regenerate YAML definitions for dynatrace"
 
                     # Only force push to remote if changes detected
-                    git diff $pre_commit --exit-code > /dev/null
+                    git diff $pre_commit --exit-code dynatrace/ > /dev/null
                     if [ $? -eq 0 ]; then
                         echo "No changes detected against main branch"
                     else
-                        pr_commit=$(git rev-parse remotes/origin/$branch)
+                        git rev-parse remotes/origin/$branch
                         if [ $? -eq 0 ]; then
                             echo "PR branch already exists on remote. Will compare against it"
-                            # Ensure unstaged files are removed from diff
-                            git status
-                            git restore .
-                            git diff $pr_commit --exit-code > /dev/null
+                            #git diff HEAD remotes/origin/$branch --exit-code dynatrace/
+                            git branch --set-upstream-to=origin/$branch $branch
+                            git diff @ @{upstream} --exit-code dynatrace/
                             if [ $? -eq 0 ]; then
                                 echo "No changes detected against remote PR branch. Do nothing"
                             else
