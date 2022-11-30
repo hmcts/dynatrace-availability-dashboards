@@ -125,7 +125,7 @@ def handle_synthetic_monitors_yaml(generated_yaml):
 def handle_management_zones(management_zones_list):
     management_zones_dict = {}
 
-    for item in set(management_zones_list):
+    for item in sorted(set(management_zones_list)):
         management_zones_dict[item] = {"name": item}
 
     management_zones_dict_new = dict(
