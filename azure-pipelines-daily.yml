@@ -122,7 +122,7 @@ stages:
                     else
                         echo "changes detected against main branch"
                         echo "deleting the remote branch $branch which should then close the PR if one exists"
-                        git push origin --delete $branch
+                        git push origin --delete $branch || true
                         git checkout -b $branch
                         git add dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
                             dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml
