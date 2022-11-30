@@ -1,11 +1,14 @@
 resource "time_sleep" "wait_for_management_zones" {
-  depends_on      = [dynatrace_management_zone.availability]
-  create_duration = "30s"
+  depends_on       = [dynatrace_management_zone.availability]
+  create_duration  = "30s"
+  destroy_duration = "30s"
+  triggers = {
+    zones = filebase64sha256("${path.module}/${local.config_path}/management_zones/management_zones_${var.env}.yaml")
+  }
 }
 
 resource "dynatrace_slo" "availability" {
   // SLOs cannot be created before management zones, which can take some time to create
-  depends_on = [time_sleep.wait_for_management_zones]
   for_each = {
     for management_zone in dynatrace_management_zone.availability :
     management_zone.name => management_zone
