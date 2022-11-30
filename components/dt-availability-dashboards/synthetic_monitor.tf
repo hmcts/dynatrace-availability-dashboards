@@ -8,6 +8,7 @@ resource "dynatrace_http_monitor" "availability" {
   frequency = 1
   locations = each.value.locations
   lifecycle {
+    # Ignoring changes on tags due to dynatrace populating them outside of the code.
     ignore_changes = [tags]
   }
   anomaly_detection {
