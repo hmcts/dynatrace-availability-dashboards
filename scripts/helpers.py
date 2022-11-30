@@ -76,7 +76,7 @@ def filter_ingress(data, environment):
             and item["metadata"]["annotations"]["kubernetes.io/ingress.class"]
             == "traefik-no-proxy"
         )
-        or (environment == "sbox")
+        or (environment == "sbox" and "labs" not in item["metadata"]["namespace"])
     ]
     return data_filtered
 
