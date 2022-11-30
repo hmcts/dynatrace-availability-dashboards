@@ -105,6 +105,7 @@ stages:
                 inputs:
                   targetType: 'inline'
                   script: |
+                    set -x
                     git fetch --all
                     branch=yaml_autogenerate_${{ deployment.environment }}
                     echo $(github-api-token) | gh auth login --with-token
@@ -112,15 +113,17 @@ stages:
                     git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
                     git config --global user.name hmcts-dependency-updater
 
-                    rm -rf /tmp/dynatrace
-                    cp -rf dynatrace /tmp/dynatrace
-                    git add -A
-                    git stash
-                    git checkout -b $branch origin/main
-                    pre_commit=$(git rev-parse HEAD)
+                    tmpdir="$(mktemp --directory)"
+                    cp -rf dynatrace $tmpdir/dynatrace
+                    git checkout --progress --force refs/remotes/origin/main
+                    git reset --hard origin/main
+                    git clean -fdx
+                    pre_commit=$(git rev-parse remotes/origin/main)
                     rm -rf dynatrace
-                    mv /tmp/dynatrace dynatrace
-                    git add dynatrace/\*
+                    mv $tmpdir/dynatrace dynatrace
+                    git add \
+                        dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
+                        dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml
                     git commit -m "Regenerate YAML definitions for dynatrace"
 
                     # Only force push to remote if changes detected
@@ -128,10 +131,11 @@ stages:
                     if [ $? -eq 0 ]; then
                         echo "No changes detected against main branch"
                     else
-                        pr_commit=$(git rev-parse remotes/origin/$branch)
+                        git rev-parse remotes/origin/$branch
                         if [ $? -eq 0 ]; then
                             echo "PR branch already exists on remote. Will compare against it"
-                            git diff $pr_commit --exit-code > /dev/null
+                            # Ensure unstaged files are removed from diff
+                            git diff HEAD remotes/origin/$branch --exit-code > /dev/null
                             if [ $? -eq 0 ]; then
                                 echo "No changes detected against remote PR branch. Do nothing"
                             else

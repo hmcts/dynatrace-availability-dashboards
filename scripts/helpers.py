@@ -132,7 +132,7 @@ def handle_management_zones(management_zones_list):
         {"management_zones": list(management_zones_dict.values())}
     )
     management_zones_new_yaml = yaml.dump(
-        management_zones_dict_new, sort_keys=False, Dumper=Dumper
+        management_zones_dict_new, sort_keys=True, Dumper=Dumper
     )
     object_count = len(list(management_zones_dict.values()))
     return "---\n" + management_zones_new_yaml, object_count
