@@ -88,7 +88,7 @@ stages:
                     az aks get-credentials \
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
-                    } ||
+                    } || {
                     aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
                     aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
                     printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
