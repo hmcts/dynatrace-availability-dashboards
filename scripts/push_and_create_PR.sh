@@ -14,9 +14,11 @@ git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.nor
 git config --global user.name hmcts-dependency-updater
 
 # Temporary store file changes to checkout to local main branch
-mkdir /tmp/dynatrace/
-cp dynatrace/management_zones/management_zones_$environment.yaml /tmp/dynatrace/
-cp dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml /tmp/dynatrace/
+
+# to do mpdir=$(mktemp -d) - move files into this dir instead of /tmp, then removing dir after job completion
+tmpdir=$(mktemp -d)
+cp dynatrace/management_zones/management_zones_$environment.yaml $tmpdir/
+cp dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml $tmpdir/
 
 git fetch --all
 git add .
@@ -24,8 +26,8 @@ git stash
 git checkout main
 
 # Add changes back to working dir
-mv /tmp/dynatrace/management_zones_$environment.yaml dynatrace/management_zones/
-mv /tmp/dynatrace/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
+mv $tmpdir/management_zones_$environment.yaml dynatrace/management_zones/
+mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
 
 # Determine if there are changes against main branch
 if [ -z "$(git diff origin/main -- \
@@ -56,3 +58,6 @@ else
             --head $branch
     fi
 fi
+
+# Clean up temp files
+rm -rf $tmpdir

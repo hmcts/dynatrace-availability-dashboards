@@ -78,39 +78,11 @@ stages:
                 inputs:
                   azureSubscription: ${{ deployment.service_connection }}
                   scriptType: 'bash'
-                  scriptLocation: 'inlineScript'
-                  inlineScript: |
-                    az account set --subscription ${{ deployment.aks.subscription }}
-                    aks_resource_group=${{ deployment.aks.resource_group }}
-                    aks_name=${{ deployment.aks.name }}
-
-                    {
-                    printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
-                    az aks get-credentials \
-                      --resource-group $aks_resource_group \
-                      --name $aks_name --admin
-                    } || {
-                    aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
-                    aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
-                    printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
-                    az aks get-credentials \
-                      --resource-group $aks_resource_group \
-                      --name $aks_name --admin
-                    }
-
-                    printf "\nInstall python requirements\n\n"
-                    cat scripts/requirements.txt
-                    printf "\n\n"
-                    python3 -m pip install --quiet -r scripts/requirements.txt
-                    printf "\n\n"
-
-                    python3 scripts/generate_synthetic_monitors.py \
-                      --environment ${{ deployment.environment }} \
-                      --department ${{ deployment.department }} \
-                      --context $aks_name-admin
+                  scriptPath: 'scripts/autogenerate_yaml_runner.sh'
+                  arguments: '${{ deployment.aks.subscription }} ${{ deployment.aks.resource_group }} ${{ deployment.aks.name }} ${{ deployment.environment }} ${{ deployment.department }}'
 
               - task: Bash@3
                 displayName: Push changes and create PR
                 inputs:
-                  filePath: 'scripts/push_and_create_PR.sh'
+                  filePath: 'scripts/push_and_create_pr.sh'
                   arguments: '${{ deployment.environment }} $(github-api-token)'
