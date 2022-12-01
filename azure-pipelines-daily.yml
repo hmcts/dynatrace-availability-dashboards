@@ -1,5 +1,5 @@
 ---
-triggers: none
+trigger: none
 pr: none
 schedules:
 # Run job at 7PM daily, get ingresses before cluster auto-shutdown
