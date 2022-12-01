@@ -112,4 +112,5 @@ stages:
               - task: Bash@3
                 displayName: Push changes and create PR
                 inputs:
-                  filePath: 'scripts/push_and_create_PR.sh ${{ deployment.environment }} $(github-api-token)'
+                  filePath: 'scripts/push_and_create_PR.sh'
+                  arguments: '${{ deployment.environment }} $(github-api-token)'
