@@ -6,7 +6,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.3.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.3.6 |
 | <a name="requirement_dynatrace"></a> [dynatrace](#requirement\_dynatrace) | 1.14.1 |
 
 ## Providers
