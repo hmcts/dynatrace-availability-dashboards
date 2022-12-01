@@ -121,7 +121,7 @@ stages:
                     git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
                     git config --global user.name hmcts-dependency-updater
 
-                    # Temporary store file changes to checkout to local main branch  
+                    # Temporary store file changes to checkout to local main branch
                     mkdir /tmp/dynatrace/
                     cp dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml /tmp/dynatrace/
                     cp dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml /tmp/dynatrace/
@@ -130,7 +130,7 @@ stages:
                     git add .
                     git stash
                     git checkout main
-                    
+
                     # Add changes back to working dir
                     mv /tmp/dynatrace/management_zones_${{ deployment.environment }}.yaml dynatrace/management_zones/
                     mv /tmp/dynatrace/synthetic_monitors_${{ deployment.environment }}.yaml dynatrace/synthetic_monitors/
