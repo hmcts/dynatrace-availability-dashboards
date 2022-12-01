@@ -24,7 +24,7 @@
 | [dynatrace_http_monitor.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.14.1/docs/resources/http_monitor) | resource |
 | [dynatrace_management_zone.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.14.1/docs/resources/management_zone) | resource |
 | [dynatrace_slo.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.14.1/docs/resources/slo) | resource |
-| [time_sleep.wait_for_management_zones](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
+| [time_sleep.management_zones](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
 
 ## Inputs
 

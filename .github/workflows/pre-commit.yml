@@ -1,0 +1,25 @@
+---
+name: pre-commit
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-python@v4
+      with:
+        python-version: 3.x
+    - uses: actions/setup-go@v3
+      with:
+        go-version: '^1.13.1'
+    - run: go install github.com/terraform-docs/terraform-docs@v0.16.0
+    - uses: pre-commit/action@v3.0.0
+    - uses: pre-commit-ci/lite-action@v1.0.0
+      if: always()
