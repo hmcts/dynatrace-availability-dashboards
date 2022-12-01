@@ -112,9 +112,4 @@ stages:
               - task: Bash@3
                 displayName: Push changes and create PR
                 inputs:
-                  targetType: 'inline'
-                  script: |
-                    ls -al
-                    pwd
-                    ls script/push_and_create_PR.sh
-                  failOnStderr: false
+                  filePath: 'scripts/push_and_create_PR.sh ${{ deployment.environment }} $(github-api-token)'
