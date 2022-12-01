@@ -112,5 +112,5 @@ stages:
               - task: Bash@3
                 displayName: Push changes and create PR
                 inputs:
-                  filePath: '$(System.DefaultWorkingDirectory)/scripts/push_and_create_PR.sh ${{ deployment.environment }} $(github-api-token)'
+                  filePath: 'echo $(pwd) && ls -al && $(System.DefaultWorkingDirectory)/scripts/push_and_create_PR.sh ${{ deployment.environment }} $(github-api-token)'
                   failOnStderr: false
