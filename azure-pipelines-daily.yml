@@ -80,8 +80,6 @@ stages:
                   scriptType: 'bash'
                   scriptLocation: 'inlineScript'
                   inlineScript: |
-                    ls -al
-                    pwd
                     az account set --subscription ${{ deployment.aks.subscription }}
                     aks_resource_group=${{ deployment.aks.resource_group }}
                     aks_name=${{ deployment.aks.name }}
@@ -111,8 +109,12 @@ stages:
                       --department ${{ deployment.department }} \
                       --context $aks_name-admin
 
-#              - task: Bash@3
-#                displayName: Push changes and create PR
-#                inputs:
-#                  filePath: 'scripts/push_and_create_PR.sh ${{ deployment.environment }} $(github-api-token)'
-#                  failOnStderr: false
+              - task: Bash@3
+                displayName: Push changes and create PR
+                inputs:
+                  targetType: 'inline'
+                  script: |
+                    ls -al
+                    pwd
+                    ls script/push_and_create_PR.sh
+                failOnStderr: false
