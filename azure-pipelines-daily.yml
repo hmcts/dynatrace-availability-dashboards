@@ -1,5 +1,12 @@
 ---
-trigger: none
+schedules:
+# Run job at 7PM daily, get ingresses before cluster auto-shutdown
+- cron: "0 19 * * *"
+  always: true
+  displayName: Fetch cluster ingress updates
+  branches:
+    include:
+    - main
 
 resources:
   repositories:
