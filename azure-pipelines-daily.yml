@@ -82,12 +82,12 @@ stages:
                     aks_resource_group=${{ deployment.aks.resource_group }}
                     aks_name=${{ deployment.aks.name }}
 
-                    { # try 00 cluster
+                    {
                     printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
                     az aks get-credentials \
                       --resource-group $aks_resource_group \
                       --name $aks_name --admin
-                    } || { # try 01 cluster
+                    } ||
                     aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
                     aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
                     printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
@@ -112,7 +112,7 @@ stages:
                 inputs:
                   targetType: 'inline'
                   script: |
-                    set -x #TODO
+                    set -x
                     git fetch --all
                     branch=yaml_autogenerate_${{ deployment.environment }}
                     echo $(github-api-token) | gh auth login --with-token
@@ -120,8 +120,7 @@ stages:
                     git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
                     git config --global user.name hmcts-dependency-updater
 
-                    # Only force push to remote if changes detected
-                    #
+                    # Temporary store file changes to checkout to local main branch  
                     mkdir /tmp/dynatrace/
                     cp dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml /tmp/dynatrace/
                     cp dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml /tmp/dynatrace/
@@ -130,34 +129,27 @@ stages:
                     git add .
                     git stash
                     git checkout main
-
+                    
+                    # Add changes back to working dir
                     mv /tmp/dynatrace/management_zones_${{ deployment.environment }}.yaml dynatrace/management_zones/
                     mv /tmp/dynatrace/synthetic_monitors_${{ deployment.environment }}.yaml dynatrace/synthetic_monitors/
 
-                    git status
-
-
+                    # Determine if there are changes against main branch
                     if [ -z "$(git diff origin/main -- \
                              dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
                              dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml)" ]; then
-                        echo "no changes against main branch"
+                        echo "No code changes against main detected."
                     else
                         # Determine if remote branch already exists
-                        if [[ $(git ls-remote --exit-code --heads origin $branch) ]]; then
-                            echo "remote branch $branch already exists on remote."
-                            remote_branch_exists=true
-                        else
-                            echo "remote branch $branch does not exist on remote."
-                            remote_branch_exists=false
-                        fi
+                        [[ $(git ls-remote --exit-code --heads origin test_nonexisting_branch_prqq) ]] && remote_branch_exists=true || remote_branch_exists=false
                         # Determine if there are changes against PR branch
                         if [ $remote_branch_exists ] && [ -z "$(git diff $branch -- \
                                  dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
                                  dynatrace/synthetic_monitors/synthetic_monitors_${{ deployment.environment }}.yaml)" ]; then
-                            echo "no changes against $branch branch"
+                            echo "No changes against $branch branch."
                         else
-                            echo "changes detected against main branch"
-                            echo "deleting the remote branch $branch which should then close the PR if one exists"
+                            echo "Changes detected against main branch:"
+                            echo "Deleting the remote branch $branch to close any existing PRs."
                             git push origin --delete $branch || true
                             git checkout -b $branch
                             git add dynatrace/management_zones/management_zones_${{ deployment.environment }}.yaml \
@@ -166,7 +158,7 @@ stages:
                             git push --set-upstream origin $branch
                             gh pr create \
                               --title "${{ deployment.environment }} - Update YAML definitions" \
-                              --body "Sample body" \
+                              --body "Automated updates from daily job running on ${{ deployment.environment }} cluster." \
                               --base main \
                               --head $branch
                         fi
