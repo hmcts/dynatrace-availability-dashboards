@@ -79,14 +79,6 @@ management_zones_yaml_path = (
     f"{dt_config_dir}/management_zones/management_zones_{environment.lower()}.yaml"
 )
 
-is_ado = os.getenv("SYSTEM_DEFINITIONID")
-
-
-# def log_message(message):
-#     logger.info(message)
-#     if is_ado:
-#         logger.info(f"##vso[task.logissue type=warning;]{message}")
-
 
 def main():
     logger.info(f"Environment is {environment}")
@@ -108,9 +100,9 @@ def main():
     with open(monitors_yaml_path, "w") as f:
         try:
             f.write(monitors_final_yaml)
-            # log_message(
-            #     f"{environment} - Number of synthetic monitors generated: {monitors_count}"
-            # )
+            logger.info(
+                f"{environment} - Number of synthetic monitors generated: {monitors_count}"
+            )
         except Exception as e:
             logger.exception(e)
 
