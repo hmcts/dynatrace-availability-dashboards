@@ -5,7 +5,6 @@ fi
 
 environment=$1
 gh_token=$2
-set -x
 git fetch --all
 branch=yaml_autogenerate_$environment
 echo $gh_token | gh auth login --with-token
