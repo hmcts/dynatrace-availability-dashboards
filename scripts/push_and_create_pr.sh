@@ -44,7 +44,7 @@ else
         echo "No changes against $branch branch."
     else
         echo "Changes detected against main branch:"
-        echo "##vso[task.logissue type=warning]Changes detected against main branch, creating a PR."
+        echo "##vso[task.logissue type=warning]$environment - changes detected against main branch, creating a PR."
         echo "Deleting the remote branch $branch to close any existing PRs."
         git push origin --delete $branch || true
         git checkout -b $branch
