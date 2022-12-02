@@ -123,9 +123,9 @@ def main():
     with open(management_zones_yaml_path, "w") as f:
         try:
             f.write(management_zones_final_yaml)
-            # log_message(
-            #     f"{environment} - Number of management_zones generated: {management_zones_count}"
-            # )
+            logger.info(
+                f"{environment} - Number of management_zones generated: {management_zones_count}"
+            )
         except Exception as e:
             logger.exception(e)
 
