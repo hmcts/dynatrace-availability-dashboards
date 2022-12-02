@@ -36,7 +36,7 @@ if [ -z "$(git diff origin/main -- \
     echo "No code changes against main detected."
 else
     # Determine if there are changes against PR branch if it exists
-    [[ $(git ls-remote --exit-code --heads origin yaml_autogesnerate_sbox) ]] && remote_branch_exists=true || remote_branch_exists=false
+    [[ $(git ls-remote --exit-code --heads origin $branch) ]] && remote_branch_exists=true || remote_branch_exists=false
     if [ "$remote_branch_exists" = true ] && [ -z "$(git diff origin/$branch -- \
                 dynatrace/management_zones/management_zones_$environment.yaml \
                 dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
