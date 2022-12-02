@@ -82,17 +82,16 @@ management_zones_yaml_path = (
 is_ado = os.getenv("SYSTEM_DEFINITIONID")
 
 
-def log_message(message):
-    logger.info(message)
-    if is_ado:
-        logger.info(f"##vso[task.logissue type=warning;]{message}")
+# def log_message(message):
+#     logger.info(message)
+#     if is_ado:
+#         logger.info(f"##vso[task.logissue type=warning;]{message}")
 
 
 def main():
     logger.info(f"Environment is {environment}")
     logger.info(f"Trying to retrieve ingress objects from {context}...")
     kubectl_data = get_kubectl_ingress(stdin, context)
-    log_message(f"{environment} - using context {context}")
     kubectl_data_filtered = filter_ingress(kubectl_data, environment)
     # Handle synthetic monitors
     logger.info("Handling synthetic monitors...")
@@ -109,9 +108,9 @@ def main():
     with open(monitors_yaml_path, "w") as f:
         try:
             f.write(monitors_final_yaml)
-            log_message(
-                f"{environment} - Number of synthetic monitors generated: {monitors_count}"
-            )
+            # log_message(
+            #     f"{environment} - Number of synthetic monitors generated: {monitors_count}"
+            # )
         except Exception as e:
             logger.exception(e)
 
@@ -124,9 +123,9 @@ def main():
     with open(management_zones_yaml_path, "w") as f:
         try:
             f.write(management_zones_final_yaml)
-            log_message(
-                f"{environment} - Number of management_zones generated: {management_zones_count}"
-            )
+            # log_message(
+            #     f"{environment} - Number of management_zones generated: {management_zones_count}"
+            # )
         except Exception as e:
             logger.exception(e)
 
