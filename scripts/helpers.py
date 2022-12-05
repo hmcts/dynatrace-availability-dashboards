@@ -68,8 +68,9 @@ def filter_ingress(data, environment):
         for item in data
         if (
             "annotations" in item["metadata"]
-            and "dtdashboardenabled" in item["metadata"]["annotations"]
-            and item["metadata"]["annotations"]["dtdashboardenabled"] == "true"
+            and "dynatraceIngressMonitorsEnabled" in item["metadata"]["annotations"]
+            and item["metadata"]["annotations"]["dynatraceIngressMonitorsEnabled"]
+            == "true"
         )
         if (
             "ingressClassName" in item["spec"]
