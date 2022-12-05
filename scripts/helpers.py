@@ -67,6 +67,11 @@ def filter_ingress(data, environment):
         }
         for item in data
         if (
+            "labels" in item["metadata"]
+            and "dynatrace.dashboards.enabled" in item["metadata"]["labels"]
+            and item["metadata"]["labels"]["dynatrace.dashboards.enabled"]
+        )
+        if (
             "ingressClassName" in item["spec"]
             and item["spec"]["ingressClassName"] == "traefik-no-proxy"
         )
