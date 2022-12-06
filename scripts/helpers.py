@@ -68,9 +68,7 @@ def filter_ingress(data, environment):
         for item in data
         if (
             "annotations" in item["metadata"]
-            and "dynatraceIngressMonitorsEnabled" in item["metadata"]["annotations"]
-            and item["metadata"]["annotations"]["dynatraceIngressMonitorsEnabled"]
-            == "true"
+            and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
         )
         if (
             "ingressClassName" in item["spec"]
