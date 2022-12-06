@@ -67,11 +67,17 @@ def filter_ingress(data, environment):
         }
         for item in data
         if (
-            "ingressClassName" in item["spec"]
+            "annotations" in item["metadata"]
+            and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
+        )
+        if (
+            environment == "demo"
+            and "ingressClassName" in item["spec"]
             and item["spec"]["ingressClassName"] == "traefik-no-proxy"
         )
         or (
-            "annotations" in item["metadata"]
+            environment == "demo"
+            and "annotations" in item["metadata"]
             and "kubernetes.io/ingress.class" in item["metadata"]["annotations"]
             and item["metadata"]["annotations"]["kubernetes.io/ingress.class"]
             == "traefik-no-proxy"
