@@ -1,4 +1,3 @@
-import os
 import sys
 import json
 import logging
@@ -115,10 +114,14 @@ def filter_ingress(data, environment):
 
 
 def format_dt_monitors_yaml(department, data_filtered, environment):
+    department = department.upper()
+    environment = environment.upper()
     return [
         {
             "name": item["name"],
-            "management_zone_name": f'{department.upper()}-{item["namespace"].upper()}-{environment.upper()}',
+            "management_zone_name": (
+                f'{department}-{item["namespace"].upper()}-{environment}'
+            ),
             "enabled": True,
             "locations": ["SYNTHETIC_LOCATION-CC3E4D2657A13D18"],
             "requests": [
