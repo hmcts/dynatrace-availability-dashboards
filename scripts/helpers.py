@@ -17,10 +17,23 @@ class Dumper(yaml.Dumper):
 def get_kubectl_ingress(stdin, context_name):
     """
     This function will return a list of kubernetes ingress objects.
-    If stdin is True, the function will read the JSON data from stdin.
-    If stdin is False, the function will read the JSON data from the kubernetes client.
-    If stdin is None, the function will read the JSON data from the kubernetes client.
-    The function will return a list of kubernetes ingress objects.
+    Depending on the input, either from stdin or from the kubernetes client.
+    Function will read the JSON data and return a list of kubernetes ingress objects.
+
+    Parameters:
+        stdin (bool):
+            If True, the function will read the JSON data from stdin.
+            If False, the function will read the JSON data from the kubernetes client.
+            If None, the function will read the JSON data from the kubernetes client.
+
+        context_name (str): The name of the context to be used when reading the JSON
+        data from the kubernetes client.
+
+    Returns:
+        A list of kubernetes ingress objects.
+
+    Raises:
+        Exception if any errors occur.
     """
     try:
         if stdin:
