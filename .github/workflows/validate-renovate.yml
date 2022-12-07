@@ -19,6 +19,6 @@ jobs:
         uses: addnab/docker-run-action@v3
         with:
           image: renovate/renovate:slim
-          options: --workdir="/repo" --rm --volume $(pwd):/repo -e LOG_LEVEL=debug
+          options: --workdir="/usr/src/app/repo" --rm --volume $(pwd):/usr/src/app/repo -e LOG_LEVEL=debug
           run: |
             renovate-config-validator
