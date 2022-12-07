@@ -4,6 +4,14 @@
         "docker:disable",
         ":disableRateLimiting"
     ],
+    "packageRules": [
+        {
+            "matchPaths": [
+                "^.pre-commit-config.yaml$"
+            ],
+            "groupName": "pre-commit dependency updates"
+        }
+    ],
     "regexManagers": [
         {
             "fileMatch": [
