@@ -19,7 +19,7 @@ jobs:
           docker run
           --volume $(pwd):/repo:Z
           --workdir="/repo"
+          --env LOG_LEVEL=debug
           --rm
-          -e LOG_LEVEL=debug
-          -it renovate/renovate:slim
+          renovate/renovate:slim
           renovate-config-validator
