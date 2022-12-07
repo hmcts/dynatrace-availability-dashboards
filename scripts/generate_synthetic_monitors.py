@@ -1,14 +1,11 @@
 import os
 import sys
-import json
 import logging
 from datetime import datetime
 import argparse
 from helpers import (
-    Dumper,
     get_kubectl_ingress,
     filter_ingress,
-    read_yaml,
     format_dt_monitors_yaml,
     handle_synthetic_monitors_yaml,
     handle_management_zones,
@@ -81,6 +78,15 @@ management_zones_yaml_path = (
 
 
 def main():
+    """
+    This function is the main function of the script.
+    It does the following:
+    1. Retrieves ingress objects from the cluster
+    2. Filters the ingress objects based on the environment
+    3. Generates the yaml for the synthetic monitors
+    4. Generates the yaml for the management zones
+    5. Writes the yaml to the respective files
+    """
     logger.info(f"Environment is {environment}")
     logger.info(f"Trying to retrieve ingress objects from {context}...")
     kubectl_data = get_kubectl_ingress(stdin, context)
@@ -102,7 +108,8 @@ def main():
         try:
             f.write(monitors_final_yaml)
             logger.info(
-                f"{environment} - Number of synthetic monitors generated: {monitors_count}"
+                f"{environment}"
+                f" - Number of synthetic monitors generated: {monitors_count}"
             )
         except Exception as e:
             logger.exception(e)
@@ -117,7 +124,8 @@ def main():
         try:
             f.write(management_zones_final_yaml)
             logger.info(
-                f"{environment} - Number of management_zones generated: {management_zones_count}"
+                f"{environment}"
+                f"- Number of management_zones generated: {management_zones_count}"
             )
         except Exception as e:
             logger.exception(e)

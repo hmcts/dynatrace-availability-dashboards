@@ -46,6 +46,8 @@ parameters:
           secret_name: 'dynatrace-platops-api-key'
 
 variables:
+  - name: globalTfCommandOptions
+    value: -parallelism=1
   - name: timeoutInMinutes
     value: 60
   - name: agentPool
@@ -98,3 +100,6 @@ stages:
                   product: ${{ variables.product }}
                   terraformEnvironmentVariables:
                     TF_VAR_dynatrace_platops_api_key: $(dynatrace-platops-api-key)
+                  planCommandOptions: ${{ variables.globalTfCommandOptions }}
+                  applyCommandOptions: ${{ variables.globalTfCommandOptions }}
+                  destroyCommandOptions: ${{ variables.globalTfCommandOptions }}
