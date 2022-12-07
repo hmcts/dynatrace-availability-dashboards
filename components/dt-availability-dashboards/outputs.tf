@@ -3,6 +3,6 @@ output "dashboard_url" {
   value       = local.dashboard_url
 }
 output "ado_dashboard_url" {
-  description = "ADO Warning - Dynatrace Dashboard URL"
-  value       = "##vso[task.logissue type=warning] ${var.env} - Dashboard URL: ${local.dashboard_url}"
+  description = "Used to display created dashboard URLs as vso[task.logissue type=warning]"
+  value       = "##vso[task.logissue type=warning] ${var.env} - dashboard url: ${local.dashboard_url}"
 }

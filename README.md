@@ -41,6 +41,6 @@
 
 | Name | Description |
 |------|-------------|
-| <a name="output_ado_dashboard_url"></a> [ado\_dashboard\_url](#output\_ado\_dashboard\_url) | ADO Warning - Dynatrace Dashboard URL |
+| <a name="output_ado_dashboard_url"></a> [ado\_dashboard\_url](#output\_ado\_dashboard\_url) | Used to display created dashboard URLs as vso[task.logissue type=warning] |
 | <a name="output_dashboard_url"></a> [dashboard\_url](#output\_dashboard\_url) | Dynatrace Dashboard URL |
 <!-- END_TF_DOCS -->
