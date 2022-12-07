@@ -64,6 +64,7 @@ stages:
   - stage: Precheck
     jobs:
       - job:
+        displayName: Precheck
         pool:
           vmImage: ${{ variables.agentPool }}
         timeoutInMinutes: ${{ variables.timeoutInMinutes }}
@@ -79,6 +80,7 @@ stages:
         dependsOn: ${{ deployment.dependsOn }}
         jobs:
           - job: TerraformPlanApply
+            displayName: ${{ deployment.environment }} - terraform ${{ parameters.overrideAction }}
             pool:
               vmImage: ${{ variables.agentPool }}
             timeoutInMinutes: ${{ variables.timeoutInMinutes }}
