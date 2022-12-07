@@ -1,0 +1,24 @@
+---
+name: validate renovate config
+
+on:
+  pull_request:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  renovate_validate:
+    name: Validate renovate config
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repo
+        uses: actions/checkout@v2
+      - name: Run the build process with Docker
+        uses: addnab/docker-run-action@v3
+        with:
+          image: renovate/renovate:slim
+          options: --workdir="/repo" --rm --volume $(pwd):/repo -e LOG_LEVEL=debug
+          run: |
+            renovate-config-validator
