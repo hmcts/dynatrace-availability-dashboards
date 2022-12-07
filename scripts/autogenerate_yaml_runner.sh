@@ -26,5 +26,5 @@ printf "\n\n"
 
 python3 scripts/generate_synthetic_monitors.py \
     --environment $environment \
-    --department $5 \
+    --department $department \
     --context $aks_name-admin
