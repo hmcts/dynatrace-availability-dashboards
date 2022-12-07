@@ -14,7 +14,7 @@
             ],
             "depNameTemplate": "antonbabenko/pre-commit-terraform",
             "datasourceTemplate": "github-releases",
-            "versioningTemplate": "regex:^v(?<version>.+?)$",
+            "versioningTemplate": "^v(?<version>.+?)$",
             "extractVersionTemplate": "^v(?<version>.+?)$"
         }
     ]
