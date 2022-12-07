@@ -2,13 +2,13 @@
 trigger: none
 pr: none
 schedules:
-# Run job at 7AM daily
-- cron: "0 7 * * *"
-  always: true
-  displayName: Fetch cluster ingress updates
-  branches:
-    include:
-    - main
+  # Run job at 7AM daily
+  - cron: "0 7 * * *"
+    always: true
+    displayName: Fetch cluster ingress updates
+    branches:
+      include:
+        - main
 
 resources:
   repositories:

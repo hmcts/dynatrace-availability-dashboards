@@ -3,4 +3,4 @@ extends: default
 rules:
   line-length: disable
   truthy: disable
-  indentation: disable
+  indentation: enable
