@@ -1,5 +1,5 @@
 ---
-name: Run python unit tests
+name: Run unit tests
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - main
 
 jobs:
-  main:
+  python:
     strategy:
       matrix:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
