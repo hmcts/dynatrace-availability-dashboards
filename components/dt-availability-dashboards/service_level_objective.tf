@@ -6,7 +6,6 @@ resource "time_sleep" "management_zones" {
     management_zone.name => management_zone
   }
   create_duration  = "5s"
-  destroy_duration = "5s"
   triggers = {
     name = each.value.name
   }
