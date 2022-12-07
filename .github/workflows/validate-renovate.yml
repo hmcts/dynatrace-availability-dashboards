@@ -9,12 +9,12 @@ on:
       - main
 
 jobs:
-  renovate_validate:
-    name: Validate renovate config
+  main:
+    name: renovate-config-validator
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: renovate-config-validator
+      - name: Run renovate-config-validator
         run: >
           docker run
           --volume $(pwd):/repo:Z
