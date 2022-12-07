@@ -23,7 +23,7 @@ resource "dynatrace_slo" "availability" {
   metric_expression = "builtin:synthetic.http.availability.location.total:splitBy()"
   evaluation        = "AGGREGATE"
   filter            = "type(HTTP_CHECK), mzName(${each.value.triggers.name})"
-  target            = 95
-  warning           = 97.5
-  timeframe         = "-1d"
+  target            = 98
+  warning           = 99
+  timeframe         = "-1w"
 }
