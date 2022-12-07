@@ -10,11 +10,10 @@
                 "^.pre-commit-config.yaml$"
             ],
             "matchStrings": [
-                "https:\\/\\/github.com\\/antonbabenko\\/pre-commit-terraform\\n(.*?)rev: (?<currentValue>.*?)\\n"
+                "https:\\/\\/github.com\\/antonbabenko\\/pre-commit-terraform\\n(.*?)rev: v(?<currentValue>.*?)\\n"
             ],
             "depNameTemplate": "antonbabenko/pre-commit-terraform",
             "datasourceTemplate": "github-releases",
-            "versioningTemplate": "^v(?<version>.+?)$",
             "extractVersionTemplate": "^v(?<version>.+?)$"
         }
     ]
