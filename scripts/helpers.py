@@ -95,7 +95,7 @@ def filter_ingress(data, environment):
             "annotations" in item["metadata"]
             and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
         )
-        if (
+        or (
             environment == "demo"
             and "ingressClassName" in item["spec"]
             and item["spec"]["ingressClassName"] == "traefik-no-proxy"
