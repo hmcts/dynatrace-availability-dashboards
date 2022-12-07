@@ -18,7 +18,7 @@
                 "github-releases",
                 "github-tags"
             ],
-            "updateTypes": [
+            "matchUpdateTypes": [
                 "pin",
                 "digest",
                 "patch",
