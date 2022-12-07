@@ -1,5 +1,5 @@
 ---
-name: validate renovate config
+name: Run renovate-config-validator
 
 on:
   pull_request:

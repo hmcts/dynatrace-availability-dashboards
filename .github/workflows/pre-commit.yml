@@ -1,5 +1,5 @@
 ---
-name: pre-commit
+name: Run all pre-commit hooks
 
 on:
   pull_request:
