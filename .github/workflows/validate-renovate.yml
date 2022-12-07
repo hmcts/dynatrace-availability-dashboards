@@ -13,12 +13,13 @@ jobs:
     name: Validate renovate config
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the repo
-        uses: actions/checkout@v2
-      - name: Run the build process with Docker
-        uses: addnab/docker-run-action@v3
-        with:
-          image: renovate/renovate:slim
-          options: --workdir="/usr/src/app/repo" --rm --volume $(pwd):/usr/src/app/repo -e LOG_LEVEL=debug
-          run: |
-            renovate-config-validator
+      - uses: actions/checkout@v3
+      - name: renovate-config-validator
+        run: >
+          docker run
+          --volume $(pwd):/repo:Z
+          --workdir="/repo"
+          --rm
+          -e LOG_LEVEL=debug
+          -it renovate/renovate:slim
+          renovate-config-validator
