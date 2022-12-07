@@ -10,7 +10,8 @@ department=$5
 printf "\n\nTrying cluster $aks_name $aks_resource_group\n"
 az aks get-credentials \
     --resource-group $aks_resource_group \
-    --name $aks_name --admin
+    --name $aks_name --admin &&
+    $(kubectl get ingress --all-namespaces=true --context $aks_name-admin -o go-template='{{ $length := len .items }} {{ if eq $length 0 }}false{{ end }}')
 } || {
 aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
 aks_name=$(echo $aks_name|sed 's/-00-/-01-/g')
