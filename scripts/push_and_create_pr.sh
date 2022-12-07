@@ -1,3 +1,5 @@
+#! /usr/bin/env bash
+
 if [ -z "$SYSTEM_DEFINITIONID" ]; then
     echo "This script is only to be run from ADO agents."
     exit 0
