@@ -28,7 +28,7 @@ git checkout main
 
 # Add changes back to working dir
 mv $tmpdir/management_zones_$environment.yaml dynatrace/management_zones/
-mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
+mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/[[ $(git ls-remote --exit-code --heads origin $branch) ]] && remote_branch_exists=true || remote_branch_exists=false
 
 # Determine if there are changes against main branch
 if [ -z "$(git diff origin/main -- \
@@ -42,6 +42,8 @@ else
                 dynatrace/management_zones/management_zones_$environment.yaml \
                 dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
         echo "No changes against $branch branch."
+        # If remote branch exists, close it as changes are now outdated compared to master
+        [[ $(git ls-remote --exit-code --heads origin $branch) ]] && git push origin --delete $branch || echo "There is no open PR's against $environment."
     else
         echo "Changes detected against $branch branch:"
         echo "##vso[task.logissue type=warning]$environment - changes detected against main branch, creating a PR."
