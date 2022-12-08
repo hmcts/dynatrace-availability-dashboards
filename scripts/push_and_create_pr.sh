@@ -28,7 +28,7 @@ git checkout main
 
 # Add changes back to working dir
 mv $tmpdir/management_zones_$environment.yaml dynatrace/management_zones/
-mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/[[ $(git ls-remote --exit-code --heads origin $branch) ]] && remote_branch_exists=true || remote_branch_exists=false
+mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
 
 # Determine if there are changes against main branch
 if [ -z "$(git diff origin/main -- \
