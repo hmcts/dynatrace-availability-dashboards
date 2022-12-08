@@ -104,15 +104,18 @@ def main():
         generated_management_zones,
     ) = handle_synthetic_monitors_yaml(generated_yaml_monitors)
 
-    with open(monitors_yaml_path, "w") as f:
-        try:
-            f.write(monitors_final_yaml)
-            logger.info(
-                f"{environment}"
-                f" - Number of synthetic monitors generated: {monitors_count}"
-            )
-        except Exception as e:
-            logger.exception(e)
+    if monitors_count > 0:
+        with open(monitors_yaml_path, "w") as f:
+            try:
+                f.write(monitors_final_yaml)
+                logger.info(
+                    f"{environment}"
+                    f" - Number of synthetic monitors generated: {monitors_count}"
+                )
+            except Exception as e:
+                logger.exception(e)
+    else:
+        logger.error(f"{environment} - returned 0 monitors")
 
     # Handle management zones
     logger.info("Handling management_zones...")
@@ -120,15 +123,21 @@ def main():
         generated_management_zones
     )
 
-    with open(management_zones_yaml_path, "w") as f:
-        try:
-            f.write(management_zones_final_yaml)
-            logger.info(
-                f"{environment}"
-                f"- Number of management_zones generated: {management_zones_count}"
-            )
-        except Exception as e:
-            logger.exception(e)
+    if management_zones_count > 0:
+        with open(management_zones_yaml_path, "w") as f:
+            try:
+                f.write(management_zones_final_yaml)
+                logger.info(
+                    f"{environment}"
+                    f"- Number of management_zones generated: {management_zones_count}"
+                )
+            except Exception as e:
+                logger.exception(e)
+    else:
+        logger.error(f"{environment} - returned 0 management_zones")
+
+    if monitors_count == 0 or management_zones_count == 0:
+        raise Exception("Cluster returned zero objects")
 
 
 if __name__ == "__main__":
