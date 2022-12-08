@@ -21,7 +21,6 @@ fi
 
 environment=$1
 gh_token=$2
-set -x
 git fetch --all
 branch=yaml_autogenerate_$environment
 echo $gh_token | gh auth login --with-token
@@ -56,7 +55,7 @@ else
     # Determine if remote branch already exists
     [[ $(git ls-remote --exit-code --heads origin/$branch) ]] && remote_branch_exists=true || remote_branch_exists=false
     # Determine if there are changes against PR branch
-    if [ $remote_branch_exists ] && [ -z "$(git diff $branch -- \
+    if [ $remote_branch_exists = "true" ] && [ -z "$(git diff $branch -- \
                 dynatrace/management_zones/management_zones_$environment.yaml \
                 dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
         echo "No changes against $branch branch."
