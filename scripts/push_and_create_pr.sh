@@ -61,7 +61,7 @@ else
                 dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
         echo "No changes against $branch branch."
         # Check if PR is closed
-        if [ "$(gh pr view --json closed | yq .closed)" = "true" ]; then
+        if [ "$(gh pr view $branch --json closed | yq .closed)" = "true" ]; then
             create_pr $branch $environment
         fi
     else
