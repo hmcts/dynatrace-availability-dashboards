@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+set -x
 
 az account set --subscription $1
 aks_resource_group=$2
@@ -12,7 +13,7 @@ az aks get-credentials \
     --resource-group $aks_resource_group \
     --name $aks_name --admin
 # Return false and fallback to cluster 01 if cluster returns 0 ingress objects
-$(kubectl get ingress --all-namespaces=true --context \ $aks_name-admin -o \
+$(kubectl get ingress --context "$aks_name-admin" --all-namespaces=true -o \
     go-template='{{ $length := len .items }} {{ if eq $length 0 }}false{{ end }}')
 } || {
 aks_resource_group=$(echo $aks_resource_group|sed 's/-00-/-01-/g')
@@ -33,3 +34,5 @@ python3 scripts/generate_synthetic_monitors.py \
     --environment $environment \
     --department $department \
     --context $aks_name-admin
+
+git status

@@ -33,6 +33,7 @@ parameters:
           subscription: DCD-CFTAPPS-SBOX
           resource_group: cft-sbox-00-rg
           name: cft-sbox-00-aks
+
       - deployment: demo_dt_availability_dashboards_yaml
         environment: demo
         component: dt-availability-dashboards-yaml
@@ -42,6 +43,46 @@ parameters:
           subscription: DCD-CFTAPPS-DEMO
           resource_group: cft-demo-00-rg
           name: cft-demo-00-aks
+
+      - deployment: ithc_dt_availability_dashboards_yaml
+        environment: ithc
+        component: dt-availability-dashboards-yaml
+        service_connection: dcd-cftapps-ithc
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-ITHC
+          resource_group: cft-ithc-00-rg
+          name: cft-ithc-00-aks
+
+      - deployment: ptlsbox_dt_availability_dashboards_yaml
+        environment: ptlsbox
+        component: dt-availability-dashboards-yaml
+        service_connection: DTS-CFTSBOX-INTSVC
+        department: cft
+        aks:
+          subscription: DTS-CFTSBOX-INTSVC
+          resource_group: cft-ptlsbox-00-rg
+          name: cft-ptlsbox-00-aks
+
+      - deployment: aat_dt_availability_dashboards_yaml
+        environment: aat
+        component: dt-availability-dashboards-yaml
+        service_connection: DCD-CFTAPPS-STG
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-STG
+          resource_group: cft-aat-00-rg
+          name: cft-aat-00-aks
+
+      - deployment: perftest_dt_availability_dashboards_yaml
+        environment: perftest
+        component: dt-availability-dashboards-yaml
+        service_connection: DCD-CFTAPPS-TEST
+        department: cft
+        aks:
+          subscription: DCD-CFTAPPS-TEST
+          resource_group: cft-perftest-00-rg
+          name: cft-perftest-00-aks
 
 variables:
   - name: timeoutInMinutes

@@ -1,3 +1,6 @@
+#! /usr/bin/env bash
+set -x
+
 create_pr(){
     branch=$1
     environment=$2
@@ -43,6 +46,9 @@ git checkout main
 # Add changes back to working dir
 mv $tmpdir/management_zones_$environment.yaml dynatrace/management_zones/
 mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
+
+git add dynatrace/management_zones/management_zones_$environment.yaml \
+    dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml
 
 # Determine if there are changes against main branch
 if [ -z "$(git diff origin/main -- \
