@@ -84,6 +84,13 @@ def filter_ingress(data, environment):
     - environment: the environment to filter for
     """
 
+    # Filter out PR ingress names
+    data = [
+        item
+        for item in data
+        if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
+    ]
+
     data_filtered = [
         {
             "name": item["metadata"]["name"],
@@ -92,8 +99,7 @@ def filter_ingress(data, environment):
         }
         for item in data
         # Define custom filters below
-        if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
-        or (
+        if (
             "annotations" in item["metadata"]
             and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
         )
