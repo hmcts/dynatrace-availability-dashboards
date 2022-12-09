@@ -1,0 +1,7 @@
+---
+management_zones:
+  - name: CFT-ARTIFACTORY-PTLSBOX
+  - name: CFT-BACKSTAGE-PTLSBOX
+  - name: CFT-JENKINS-PTLSBOX
+  - name: CFT-MONITORING-PTLSBOX
+  - name: CFT-PACT-BROKER-PTLSBOX
