@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 set -x
+
 az account set --subscription $1
 aks_resource_group=$2
 aks_name=$3

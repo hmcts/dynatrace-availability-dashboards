@@ -1,3 +1,6 @@
+#! /usr/bin/env bash
+set -x
+
 create_pr(){
     branch=$1
     environment=$2
