@@ -128,6 +128,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: bar-web-int-nodejs
+    management_zone_name: CFT-BAR-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bar-int.demo.platform.hmcts.net/health
+        description: bar-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: bar-web-nodejs
     management_zone_name: CFT-BAR-DEMO
     enabled: true
@@ -416,6 +432,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ccd-int-ccd-admin-web
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccd-admin-ccd-int.demo.platform.hmcts.net/health
+        description: ccd-admin-ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-int-ccd-api-gw
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://gateway-ccd-int.demo.platform.hmcts.net/health
+        description: gateway-ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ccd-test-stubs-service-java
     management_zone_name: CFT-CCD-DEMO
     enabled: true
@@ -648,22 +696,6 @@ synthetic_monitors:
     requests:
       - url: http://em-hrs-api-demo.service.core-compute-demo.internal/health
         description: em-hrs-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: em-npa-java
-    management_zone_name: CFT-EM-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://em-npa-demo.service.core-compute-demo.internal/health
-        description: em-npa-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
