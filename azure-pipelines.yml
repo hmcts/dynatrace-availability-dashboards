@@ -55,45 +55,45 @@ parameters:
           name: 'infra-vault-nonprod'
           secret_name: 'dynatrace-platops-api-key'
 
-            #      - deployment: 'ptlsbox_dynatrace_availability_dashboards'
-            #        environment: 'ptlsbox'
-            #        component: 'dt-availability-dashboards'
-            #        service_connection: 'dts-sharedservices-ptl-sbox'
-            #        dependsOn: 'Precheck'
-            #        keyvault:
-            #          service_connection: 'DCD-CFT-Sandbox'
-            #          name: 'infra-vault-nonprod'
-            #          secret_name: 'dynatrace-platops-api-key'
+      - deployment: 'ptlsbox_dynatrace_availability_dashboards'
+        environment: 'ptlsbox'
+        component: 'dt-availability-dashboards'
+        service_connection: 'dts-sharedservicesptl-sbox'
+        dependsOn: 'Precheck'
+        keyvault:
+          service_connection: 'DCD-CFT-Sandbox'
+          name: 'infra-vault-nonprod'
+          secret_name: 'dynatrace-platops-api-key'
 
-            #      - deployment: 'ptl_dynatrace_availability_dashboards'
-            #        environment: 'ptl'
-            #        component: 'dt-availability-dashboards'
-            #        service_connection: 'dts-sharedservices-ptl'
-            #        dependsOn: 'Precheck'
-            #        keyvault:
-            #          service_connection: 'DCD-CFT-Sandbox'
-            #          name: 'infra-vault-nonprod'
-            #          secret_name: 'dynatrace-platops-api-key'
+      - deployment: 'ptl_dynatrace_availability_dashboards'
+        environment: 'ptl'
+        component: 'dt-availability-dashboards'
+        service_connection: 'dts-sharedservicesptl'
+        dependsOn: 'Precheck'
+        keyvault:
+          service_connection: 'DCD-CFT-Sandbox'
+          name: 'infra-vault-nonprod'
+          secret_name: 'dynatrace-platops-api-key'
 
-            #      - deployment: 'aat_dynatrace_availability_dashboards'
-            #        environment: 'aat'
-            #        component: 'dt-availability-dashboards'
-            #        service_connection: 'dts-sharedservices-aat'
-            #        dependsOn: 'Precheck'
-            #        keyvault:
-            #          service_connection: 'DCD-CFT-Sandbox'
-            #          name: 'infra-vault-nonprod'
-            #          secret_name: 'dynatrace-platops-api-key'
+      - deployment: 'aat_dynatrace_availability_dashboards'
+        environment: 'aat'
+        component: 'dt-availability-dashboards'
+        service_connection: 'dts-sharedservices-stg'
+        dependsOn: 'Precheck'
+        keyvault:
+          service_connection: 'DCD-CFT-Sandbox'
+          name: 'infra-vault-nonprod'
+          secret_name: 'dynatrace-platops-api-key'
 
-            #      - deployment: 'perftest_dynatrace_availability_dashboards'
-            #        environment: 'perftest'
-            #        component: 'dt-availability-dashboards'
-            #        service_connection: 'dts-sharedservices-perftest'
-            #        dependsOn: 'Precheck'
-            #        keyvault:
-            #          service_connection: 'DCD-CFT-Sandbox'
-            #          name: 'infra-vault-nonprod'
-            #          secret_name: 'dynatrace-platops-api-key'
+      - deployment: 'perftest_dynatrace_availability_dashboards'
+        environment: 'perftest'
+        component: 'dt-availability-dashboards'
+        service_connection: 'dts-sharedservices-test'
+        dependsOn: 'Precheck'
+        keyvault:
+          service_connection: 'DCD-CFT-Sandbox'
+          name: 'infra-vault-nonprod'
+          secret_name: 'dynatrace-platops-api-key'
 
 variables:
   - name: globalTfCommandOptions
