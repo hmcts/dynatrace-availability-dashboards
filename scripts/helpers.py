@@ -117,7 +117,6 @@ def filter_ingress(data, environment):
         )
         or (environment == "sbox" and "labs" not in item["metadata"]["namespace"])
         or (environment == "ptlsbox" and "labs" not in item["metadata"]["namespace"])
-        or (environment == "ptl" and "labs" not in item["metadata"]["namespace"])
         # End of custom filters
     ]
     return data_filtered
