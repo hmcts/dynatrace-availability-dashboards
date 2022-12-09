@@ -47,6 +47,9 @@ git checkout main
 mv $tmpdir/management_zones_$environment.yaml dynatrace/management_zones/
 mv $tmpdir/synthetic_monitors_$environment.yaml dynatrace/synthetic_monitors/
 
+git add dynatrace/management_zones/management_zones_$environment.yaml \
+    dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml
+
 # Determine if there are changes against main branch
 if [ -z "$(git diff origin/main -- \
             dynatrace/management_zones/management_zones_$environment.yaml \
