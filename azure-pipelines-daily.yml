@@ -84,15 +84,15 @@ parameters:
             #          resource_group: cft-aat-00-rg
             #          name: cft-aat-00-aks
 
-      - deployment: perftest_dt_availability_dashboards_yaml
-        environment: perftest
-        component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-perftest
-        department: cft
-        aks:
-          subscription: DCD-CFTAPPS-PERFTEST
-          resource_group: cft-perftest-00-rg
-          name: cft-perftest-00-aks
+            #      - deployment: perftest_dt_availability_dashboards_yaml
+            #        environment: perftest
+            #        component: dt-availability-dashboards-yaml
+            #        service_connection: dcd-cftapps-perftest
+            #        department: cft
+            #        aks:
+            #          subscription: DCD-CFTAPPS-PERFTEST
+            #          resource_group: cft-perftest-00-rg
+            #          name: cft-perftest-00-aks
 
 variables:
   - name: timeoutInMinutes

@@ -85,15 +85,15 @@ parameters:
             #          name: 'infra-vault-nonprod'
             #          secret_name: 'dynatrace-platops-api-key'
 
-      - deployment: 'perftest_dynatrace_availability_dashboards'
-        environment: 'perftest'
-        component: 'dt-availability-dashboards'
-        service_connection: 'dts-sharedservices-perftest'
-        dependsOn: 'Precheck'
-        keyvault:
-          service_connection: 'DCD-CFT-Sandbox'
-          name: 'infra-vault-nonprod'
-          secret_name: 'dynatrace-platops-api-key'
+            #      - deployment: 'perftest_dynatrace_availability_dashboards'
+            #        environment: 'perftest'
+            #        component: 'dt-availability-dashboards'
+            #        service_connection: 'dts-sharedservices-perftest'
+            #        dependsOn: 'Precheck'
+            #        keyvault:
+            #          service_connection: 'DCD-CFT-Sandbox'
+            #          name: 'infra-vault-nonprod'
+            #          secret_name: 'dynatrace-platops-api-key'
 
 variables:
   - name: globalTfCommandOptions
