@@ -33,6 +33,7 @@ parameters:
           subscription: DCD-CFTAPPS-SBOX
           resource_group: cft-sbox-00-rg
           name: cft-sbox-00-aks
+
       - deployment: demo_dt_availability_dashboards_yaml
         environment: demo
         component: dt-availability-dashboards-yaml
@@ -42,15 +43,7 @@ parameters:
           subscription: DCD-CFTAPPS-DEMO
           resource_group: cft-demo-00-rg
           name: cft-demo-00-aks
-      - deployment: preview_dt_availability_dashboards_yaml
-        environment: preview
-        component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-preview
-        department: cft
-        aks:
-          subscription: DCD-CFTAPPS-PREVIEW
-          resource_group: cft-preview-00-rg
-          name: cft-preview-00-aks
+
       - deployment: ithc_dt_availability_dashboards_yaml
         environment: ithc
         component: dt-availability-dashboards-yaml
@@ -60,6 +53,7 @@ parameters:
           subscription: DCD-CFTAPPS-ITHC
           resource_group: cft-ithc-00-rg
           name: cft-ithc-00-aks
+
       - deployment: ptlsbox_dt_availability_dashboards_yaml
         environment: ptlsbox
         component: dt-availability-dashboards-yaml
@@ -69,6 +63,7 @@ parameters:
           subscription: DCD-CFTAPPS-PTLSBOX
           resource_group: cft-ptlsbox-00-rg
           name: cft-ptlsbox-00-aks
+
       - deployment: ptl_dt_availability_dashboards_yaml
         environment: ptl
         component: dt-availability-dashboards-yaml
@@ -78,6 +73,7 @@ parameters:
           subscription: DCD-CFTAPPS-PTL
           resource_group: cft-ptl-00-rg
           name: cft-ptl-00-aks
+
       - deployment: aat_dt_availability_dashboards_yaml
         environment: aat
         component: dt-availability-dashboards-yaml
@@ -87,6 +83,7 @@ parameters:
           subscription: DCD-CFTAPPS-AAT
           resource_group: cft-aat-00-rg
           name: cft-aat-00-aks
+
       - deployment: perftest_dt_availability_dashboards_yaml
         environment: perftest
         component: dt-availability-dashboards-yaml

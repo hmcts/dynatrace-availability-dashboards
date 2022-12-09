@@ -45,16 +45,6 @@ parameters:
           name: 'infra-vault-nonprod'
           secret_name: 'dynatrace-platops-api-key'
 
-      - deployment: 'preview_dynatrace_availability_dashboards'
-        environment: 'preview'
-        component: 'dt-availability-dashboards'
-        service_connection: 'dts-sharedservices-preview'
-        dependsOn: 'Precheck'
-        keyvault:
-          service_connection: 'DCD-CFT-Sandbox'
-          name: 'infra-vault-nonprod'
-          secret_name: 'dynatrace-platops-api-key'
-
       - deployment: 'ithc_dynatrace_availability_dashboards'
         environment: 'ithc'
         component: 'dt-availability-dashboards'
