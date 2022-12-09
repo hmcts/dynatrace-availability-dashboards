@@ -1,3 +1,4 @@
+import re
 import sys
 import json
 import logging
@@ -82,6 +83,13 @@ def filter_ingress(data, environment):
     - data: the data from the Kubernetes API
     - environment: the environment to filter for
     """
+
+    # Filter out PR ingress names
+    data = [
+        item
+        for item in data
+        if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
+    ]
 
     data_filtered = [
         {
