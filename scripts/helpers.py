@@ -85,7 +85,7 @@ def filter_ingress(data, environment):
     """
 
     # Filter out PR ingress names
-    data = [
+    data_filtered_global = [
         item
         for item in data
         if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
@@ -97,7 +97,7 @@ def filter_ingress(data, environment):
             "namespace": item["metadata"]["namespace"],
             "host": item["spec"]["rules"][0]["host"],
         }
-        for item in data
+        for item in data_filtered_global
         # Define custom filters below
         if (
             "annotations" in item["metadata"]
