@@ -1,5 +1,21 @@
 ---
 synthetic_monitors:
+  - name: crumble-recipe-backend-pr-620-java
+    management_zone_name: CFT-CNP-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://crumble-recipe-backend-pr-620.service.core-compute-sandbox.internal/health
+        description: crumble-recipe-backend-pr-620.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: plum-frontend-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true
@@ -152,6 +168,118 @@ synthetic_monitors:
     requests:
       - url: http://idam-web-public.sandbox.platform.hmcts.net/health
         description: idam-web-public.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: labs-jefex7-java
+    management_zone_name: CFT-LABS-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://labs-jefex7-sandbox.service.core-compute-sandbox.internal/health
+        description: labs-jefex7-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: labs-msl8r-java
+    management_zone_name: CFT-LABS-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://labs-msl8r-sandbox.service.core-compute-sandbox.internal/health
+        description: labs-msl8r-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: labs-rajivkapoor1-java
+    management_zone_name: CFT-LABS-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://labs-rajivkapoor1-sandbox.service.core-compute-sandbox.internal/health
+        description: labs-rajivkapoor1-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: kube-prometheus-stack-alertmanager
+    management_zone_name: CFT-MONITORING-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://alertmanager-01.sandbox.platform.hmcts.net/health
+        description: alertmanager-01.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: kube-prometheus-stack-prometheus
+    management_zone_name: CFT-MONITORING-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://prometheus-01.sandbox.platform.hmcts.net/health
+        description: prometheus-01.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: draft-store-service-java
+    management_zone_name: CFT-RPE-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://draft-store-service-sandbox.service.core-compute-sandbox.internal/health
+        description: draft-store-service-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: rpe-service-auth-provider-java
+    management_zone_name: CFT-RPE-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-service-auth-provider-sandbox.service.core-compute-sandbox.internal/health
+        description: rpe-service-auth-provider-sandbox.service.core-compute-sandbox.internal
         method: GET
         configuration:
           accept_any_certificate: true

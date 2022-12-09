@@ -3,3 +3,6 @@ management_zones:
   - name: CFT-CNP-SBOX
   - name: CFT-DOCMOSIS-SBOX
   - name: CFT-IDAM-SBOX
+  - name: CFT-LABS-SBOX
+  - name: CFT-MONITORING-SBOX
+  - name: CFT-RPE-SBOX
