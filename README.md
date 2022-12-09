@@ -1,5 +1,27 @@
-# dynatrace-availability-dashboards
+# Dynatrace Availability Dashboards
 
+
+## Purpose
+
+The purpose of this repository is to automate the creation of Synthetic Monitors, Management Zones, SLOS and Dashboards within Dynatrace, by querying Ingress objects in each environment on the CFT Kubernetes clusters
+
+## What's inside?
+
+* **Terraform**<br>
+  [Components](components/dt-availability-dashboards) defined in Terraform to build associated infrastructure
+* **Python and Bash [scripts](scripts)</br>**
+  These scripts are used to:
+    * Autogenerate yaml files per-environment based on Ingress objects withiin clusters, to update Terraform configuration files
+    * Create Pull Requests if there are changes to Ingress objects within clusters
+* **Azure pipelines**
+    * [Daily](azure-pipelines-daily.yml) - Runs each morning at 7AM to fetch latest changes
+    * [Deployment](azure-pipelines.yml) - Deploy infrastructure changes and update dahsboards
+* **Github Actions**<br>
+  We use Github Actions to run:
+    * [Pre-Commit](.github/workflows/pre-commit.yml) checks
+    * [Unit Tests](.github/workflows/unit-tests.yml)
+* **Renovate**<br>
+  [Renovate](.github/renovate.json) is configured to keep our dependencies up-to-date and keep a running dashboard
 
 ### Terraform docs
 <!-- BEGIN_TF_DOCS -->
