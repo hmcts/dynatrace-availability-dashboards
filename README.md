@@ -3,12 +3,12 @@
 
 ## Purpose
 
-The purpose of this repository is to automate the creation of Synthetic Monitors, Management Zones, SLOS and Dashboards within Dynatrace, by querying Ingress objects in each environment on the CFT Kubernetes clusters.
+The purpose of this repository is to automate the creation of Synthetic Monitors, Management Zones, SLOS and Dashboards within Dynatrace, by querying Ingress objects in each environment on the CFT Kubernetes clusters
 
 ## What's inside?
 
 * **Terraform**<br>
-  [Components](components/dt-availability-dashboards) defined in Terraform to build associated infrastructure.
+  [Components](components/dt-availability-dashboards) defined in Terraform to build associated infrastructure
 * **Python and Bash [scripts](scripts)</br>**
   These scripts are used to:
     * Autogenerate yaml files per-environment based on Ingress objects withiin clusters, to update Terraform configuration files
@@ -17,7 +17,7 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
     * [Daily](azure-pipelines-daily.yml) - Runs each morning at 7AM to fetch latest changes
     * [Deployment](azure-pipelines.yml) - Deploy infrastructure changes and update dahsboards
 * **Github Actions**<br>
-  We use Github Actions to run: 
+  We use Github Actions to run:
     * [Pre-Commit](.github/workflows/pre-commit.yml) checks
     * [Unit Tests](.github/workflows/unit-tests.yml)
 * **Renovate**<br>
