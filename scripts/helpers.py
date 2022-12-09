@@ -1,3 +1,4 @@
+import re
 import sys
 import json
 import logging
@@ -91,7 +92,8 @@ def filter_ingress(data, environment):
         }
         for item in data
         # Define custom filters below
-        if (
+        if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
+        or (
             "annotations" in item["metadata"]
             and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
         )
