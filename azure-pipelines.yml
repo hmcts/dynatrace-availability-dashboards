@@ -55,15 +55,15 @@ parameters:
           name: 'infra-vault-nonprod'
           secret_name: 'dynatrace-platops-api-key'
 
-      - deployment: 'ptlsbox_dynatrace_availability_dashboards'
-        environment: 'ptlsbox'
-        component: 'dt-availability-dashboards'
-        service_connection: 'dts-sharedservices-ptlsbox'
-        dependsOn: 'Precheck'
-        keyvault:
-          service_connection: 'DCD-CFT-Sandbox'
-          name: 'infra-vault-nonprod'
-          secret_name: 'dynatrace-platops-api-key'
+            #      - deployment: 'ptlsbox_dynatrace_availability_dashboards'
+            #        environment: 'ptlsbox'
+            #        component: 'dt-availability-dashboards'
+            #        service_connection: 'dts-sharedservices-ptl-sbox'
+            #        dependsOn: 'Precheck'
+            #        keyvault:
+            #          service_connection: 'DCD-CFT-Sandbox'
+            #          name: 'infra-vault-nonprod'
+            #          secret_name: 'dynatrace-platops-api-key'
 
       - deployment: 'ptl_dynatrace_availability_dashboards'
         environment: 'ptl'

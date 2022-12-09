@@ -54,15 +54,15 @@ parameters:
           resource_group: cft-ithc-00-rg
           name: cft-ithc-00-aks
 
-      - deployment: ptlsbox_dt_availability_dashboards_yaml
-        environment: ptlsbox
-        component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-ptlsbox
-        department: cft
-        aks:
-          subscription: DCD-CFTAPPS-PTLSBOX
-          resource_group: cft-ptlsbox-00-rg
-          name: cft-ptlsbox-00-aks
+            #      - deployment: ptlsbox_dt_availability_dashboards_yaml
+            #        environment: ptlsbox
+            #        component: dt-availability-dashboards-yaml
+            #        service_connection: dcd-cftapps-ptlsbox
+            #        department: cft
+            #        aks:
+            #          subscription: DCD-CFTAPPS-PTLSBOX
+            #          resource_group: cft-ptlsbox-00-rg
+            #          name: cft-ptlsbox-00-aks
 
       - deployment: ptl_dt_availability_dashboards_yaml
         environment: ptl
