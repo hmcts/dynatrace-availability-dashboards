@@ -1,4 +1,5 @@
 #! /usr/bin/env bash
+set -x
 az account set --subscription $1
 aks_resource_group=$2
 aks_name=$3
@@ -32,3 +33,5 @@ python3 scripts/generate_synthetic_monitors.py \
     --environment $environment \
     --department $department \
     --context $aks_name-admin
+
+git status
