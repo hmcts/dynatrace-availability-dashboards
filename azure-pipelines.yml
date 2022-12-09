@@ -66,7 +66,7 @@ parameters:
           secret_name: dynatrace-platops-api-key
 
       - deployment: aat_dynatrace_availability_dashboards
-        environment: aat
+        environment: stg
         component: dt-availability-dashboards
         service_connection: dts-sharedservices-stg
         dependsOn: Precheck
@@ -76,7 +76,7 @@ parameters:
           secret_name: dynatrace-platops-api-key
 
       - deployment: perftest_dynatrace_availability_dashboards
-        environment: perftest
+        environment: test
         component: dt-availability-dashboards
         service_connection: dts-sharedservices-test
         dependsOn: Precheck
