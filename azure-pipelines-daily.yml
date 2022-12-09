@@ -74,15 +74,15 @@ parameters:
             #          resource_group: cft-ptl-00-rg
             #          name: cft-ptl-00-aks
 
-      - deployment: aat_dt_availability_dashboards_yaml
-        environment: aat
-        component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-aat
-        department: cft
-        aks:
-          subscription: DCD-CFTAPPS-AAT
-          resource_group: cft-aat-00-rg
-          name: cft-aat-00-aks
+            #      - deployment: aat_dt_availability_dashboards_yaml
+            #        environment: aat
+            #        component: dt-availability-dashboards-yaml
+            #        service_connection: dcd-cftapps-aat
+            #        department: cft
+            #        aks:
+            #          subscription: DCD-CFTAPPS-AAT
+            #          resource_group: cft-aat-00-rg
+            #          name: cft-aat-00-aks
 
       - deployment: perftest_dt_availability_dashboards_yaml
         environment: perftest
