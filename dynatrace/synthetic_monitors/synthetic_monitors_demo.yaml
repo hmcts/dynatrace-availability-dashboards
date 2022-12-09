@@ -32,6 +32,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: oauth2-proxy
+    management_zone_name: CFT-ADMIN-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://cft-oauth-proxy-01.demo.platform.hmcts.net/health
+        description: cft-oauth-proxy-01.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: adoption-cos-api-java
+    management_zone_name: CFT-ADOPTION-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://adoption-cos-api-demo.service.core-compute-demo.internal/health
+        description: adoption-cos-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: adoption-web-nodejs
     management_zone_name: CFT-ADOPTION-DEMO
     enabled: true
@@ -464,6 +496,70 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ccd-int-ccd-case-activity-api
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccd-case-activity-api-ccd-int.demo.platform.hmcts.net/health
+        description: ccd-case-activity-api-ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-int-ccd-case-print-service
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://return-case-doc-ccd.ccd-int.demo.platform.hmcts.net/health
+        description: return-case-doc-ccd.ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-int-dm-store
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://dm-store-ccd-int.demo.platform.hmcts.net/health
+        description: dm-store-ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-int-em-annotation
+    management_zone_name: CFT-CCD-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://em-anno-ccd-int.demo.platform.hmcts.net/health
+        description: em-anno-ccd-int.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ccd-test-stubs-service-java
     management_zone_name: CFT-CCD-DEMO
     enabled: true
@@ -528,6 +624,86 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-general-applications-java
+    management_zone_name: CFT-CIVIL-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-general-applications-demo.service.core-compute-demo.internal/health
+        description: civil-general-applications-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-gateway-java
+    management_zone_name: CFT-CIVIL-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-gateway-demo.service.core-compute-demo.internal/health
+        description: civil-sdt-gateway-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-service-java
+    management_zone_name: CFT-CIVIL-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-service-demo.service.core-compute-demo.internal/health
+        description: civil-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-frontend-nodejs
+    management_zone_name: CFT-CNP-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://plum.demo.platform.hmcts.net/health
+        description: plum.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-recipe-backend-java
+    management_zone_name: CFT-CNP-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://plum-recipe-backend.service.core-compute-demo.internal/health
+        description: plum-recipe-backend.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: case-payment-orders-api-int-java
     management_zone_name: CFT-CPO-DEMO
     enabled: true
@@ -560,6 +736,70 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: dg-docassembly-java
+    management_zone_name: CFT-DG-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://dg-docassembly-demo.service.core-compute-demo.internal/health
+        description: dg-docassembly-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cfs-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cfs-demo.service.core-compute-demo.internal/health
+        description: div-cfs-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cms-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cms-demo.service.core-compute-demo.internal/health
+        description: div-cms-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cos-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cos-demo.service.core-compute-demo.internal/health
+        description: div-cos-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: div-da-nodejs
     management_zone_name: CFT-DIVORCE-DEMO
     enabled: true
@@ -576,6 +816,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: div-dgs-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-dgs-demo.service.core-compute-demo.internal/health
+        description: div-dgs-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: div-dn-nodejs
     management_zone_name: CFT-DIVORCE-DEMO
     enabled: true
@@ -584,6 +840,38 @@ synthetic_monitors:
     requests:
       - url: http://decree-nisi-aks.demo.platform.hmcts.net/health
         description: decree-nisi-aks.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-emca-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-emca-demo.service.core-compute-demo.internal/health
+        description: div-emca-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-fps-java
+    management_zone_name: CFT-DIVORCE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-fps-demo.service.core-compute-demo.internal/health
+        description: div-fps-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -656,6 +944,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: docmosis-base
+    management_zone_name: CFT-DOCMOSIS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://docmosis.demo.platform.hmcts.net/health
+        description: docmosis.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: em-anno-java
     management_zone_name: CFT-EM-DEMO
     enabled: true
@@ -712,6 +1016,54 @@ synthetic_monitors:
     requests:
       - url: http://em-stitching-demo.service.core-compute-demo.internal/health
         description: em-stitching-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-cos-java
+    management_zone_name: CFT-ET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-cos-demo.service.core-compute-demo.internal/health
+        description: et-cos-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-msg-handler-java
+    management_zone_name: CFT-ET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-msg-handler-demo.service.core-compute-demo.internal/health
+        description: et-msg-handler-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-sya-api-java
+    management_zone_name: CFT-ET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-sya-api-demo.service.core-compute-demo.internal/health
+        description: et-sya-api-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1072,6 +1424,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: fees-register-api-java
+    management_zone_name: CFT-FEES-PAY-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fees-register-api-demo.service.core-compute-demo.internal/health
+        description: fees-register-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: fees-register-frontend-int-nodejs
     management_zone_name: CFT-FEES-PAY-DEMO
     enabled: true
@@ -1104,6 +1472,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: finrem-cos-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-cos-demo.service.core-compute-demo.internal/health
+        description: finrem-cos-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: finrem-dgcs-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-dgcs-demo.service.core-compute-demo.internal/health
+        description: finrem-dgcs-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: finrem-emca-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-emca-demo.service.core-compute-demo.internal/health
+        description: finrem-emca-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: finrem-ns-java
     management_zone_name: CFT-FINANCIAL-REMEDY-DEMO
     enabled: true
@@ -1112,6 +1528,54 @@ synthetic_monitors:
     requests:
       - url: http://finrem-ns-demo.service.core-compute-demo.internal/health
         description: finrem-ns-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-bulk-scan-api-java
+    management_zone_name: CFT-FIS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-bulk-scan-api-demo.service.core-compute-demo.internal/health
+        description: fis-bulk-scan-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-hmc-api-java
+    management_zone_name: CFT-FIS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-hmc-api-demo.service.core-compute-demo.internal/health
+        description: fis-hmc-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: hmc-cft-hearing-service-int-java
+    management_zone_name: CFT-HMC-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hmc-cft-hearing-service-int-demo.service.core-compute-demo.internal/health
+        description: hmc-cft-hearing-service-int-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1136,6 +1600,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: hmc-hmi-inbound-adapter-int-java
+    management_zone_name: CFT-HMC-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hmc-hmi-inbound-adapter-int-demo.service.core-compute-demo.internal/health
+        description: hmc-hmi-inbound-adapter-int-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: hmc-hmi-inbound-adapter-java
     management_zone_name: CFT-HMC-DEMO
     enabled: true
@@ -1144,6 +1624,22 @@ synthetic_monitors:
     requests:
       - url: http://hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal/health
         description: hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: hmc-hmi-outbound-adapter-int-java
+    management_zone_name: CFT-HMC-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hmc-hmi-outbound-adapter-int-demo.service.core-compute-demo.internal/health
+        description: hmc-hmi-outbound-adapter-int-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1328,6 +1824,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: idam-api
+    management_zone_name: CFT-IDAM-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-api.demo.platform.hmcts.net/health
+        description: idam-api.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: idam-hmcts-access-nodejs
     management_zone_name: CFT-IDAM-DEMO
     enabled: true
@@ -1336,6 +1848,22 @@ synthetic_monitors:
     requests:
       - url: http://hmcts-access.demo.platform.hmcts.net/health
         description: hmcts-access.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-testing-support-api
+    management_zone_name: CFT-IDAM-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-testing-support-api.demo.platform.hmcts.net/health
+        description: idam-testing-support-api.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1536,6 +2064,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: kube-prometheus-stack-alertmanager
+    management_zone_name: CFT-MONITORING-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://alertmanager-01.demo.platform.hmcts.net/health
+        description: alertmanager-01.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: kube-prometheus-stack-prometheus
+    management_zone_name: CFT-MONITORING-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://prometheus-01.demo.platform.hmcts.net/health
+        description: prometheus-01.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: nfdiv-case-api-java
     management_zone_name: CFT-NFDIV-DEMO
     enabled: true
@@ -1680,6 +2240,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: probate-back-office-java
+    management_zone_name: CFT-PROBATE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-back-office-demo.service.core-compute-demo.internal/health
+        description: probate-back-office-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-business-service-java
+    management_zone_name: CFT-PROBATE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-business-service-demo.service.core-compute-demo.internal/health
+        description: probate-business-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: probate-frontend-nodejs
     management_zone_name: CFT-PROBATE-DEMO
     enabled: true
@@ -1688,6 +2280,38 @@ synthetic_monitors:
     requests:
       - url: http://probate.demo.platform.hmcts.net/health
         description: probate.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-orchestrator-service-java
+    management_zone_name: CFT-PROBATE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-orchestrator-service-demo.service.core-compute-demo.internal/health
+        description: probate-orchestrator-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-submit-service-java
+    management_zone_name: CFT-PROBATE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-submit-service-demo.service.core-compute-demo.internal/health
+        description: probate-submit-service-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1936,6 +2560,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: draft-store-service-java
+    management_zone_name: CFT-RPE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://draft-store-service-demo.service.core-compute-demo.internal/health
+        description: draft-store-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: pdf-service-java
     management_zone_name: CFT-RPE-DEMO
     enabled: true
@@ -1952,6 +2592,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: rpe-pdf-service
+    management_zone_name: CFT-RPE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://cmc-pdf-service-demo.service.core-compute-demo.internal/health
+        description: cmc-pdf-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: rpe-send-letter-service-java
     management_zone_name: CFT-RPE-DEMO
     enabled: true
@@ -1960,6 +2616,22 @@ synthetic_monitors:
     requests:
       - url: http://rpe-send-letter-service-demo.service.core-compute-demo.internal/health
         description: rpe-send-letter-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: rpe-service-auth-provider-java
+    management_zone_name: CFT-RPE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-service-auth-provider-demo.service.core-compute-demo.internal/health
+        description: rpe-service-auth-provider-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2000,6 +2672,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: sptribs-case-api-java
+    management_zone_name: CFT-SPTRIBS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sptribs-case-api-demo.service.core-compute-demo.internal/health
+        description: sptribs-case-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-dss-backend-java
+    management_zone_name: CFT-SPTRIBS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sptribs-dss-backend-demo.service.core-compute-demo.internal/health
+        description: sptribs-dss-backend-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-frontend-nodejs
+    management_zone_name: CFT-SPTRIBS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sptribs-frontend.demo.platform.hmcts.net/health
+        description: sptribs-frontend.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: sscs-bulk-scan-java
     management_zone_name: CFT-SSCS-DEMO
     enabled: true
@@ -2024,6 +2744,22 @@ synthetic_monitors:
     requests:
       - url: http://sscs-ccd-callback-orchestrator-demo.service.core-compute-demo.internal/health
         description: sscs-ccd-callback-orchestrator-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-cor-frontend-nodejs
+    management_zone_name: CFT-SSCS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sscs-cor.demo.platform.hmcts.net/health
+        description: sscs-cor.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
