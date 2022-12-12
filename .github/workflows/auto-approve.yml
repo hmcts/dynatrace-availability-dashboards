@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.label == 'auto-approve' && github.actor == 'hmcts-platform-operations'}}
+    if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) && github.actor == 'hmcts-platform-operations'}}
     runs-on: ubuntu-latest
     steps:
       - run: gh pr review --repo ${{ github.repository }} $PR_NUMBER --approve
