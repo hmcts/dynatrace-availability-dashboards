@@ -16,7 +16,7 @@ create_pr(){
         --base main \
         --head $branch
     if !([[ "$environment" == "ptl" || "$environment" == "prod" ]]); then
-        gh pr merge --auto --delete-branch --squash $1
+        gh pr merge --auto --delete-branch --squash $branch
     fi
 }
 
