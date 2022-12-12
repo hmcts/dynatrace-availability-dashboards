@@ -1,0 +1,12 @@
+name: Comment when opened
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  comment:
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr review --repo hmcts/dynatrace-availability-dashboards 145 --approve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
