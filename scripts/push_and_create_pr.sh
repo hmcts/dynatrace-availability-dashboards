@@ -15,6 +15,9 @@ create_pr(){
         --body "Automated updates from daily job running on $environment cluster." \
         --base main \
         --head $branch
+    if !([[ "$2" == "ptl" || "$2" == "prod" ]]); then
+        gh pr merge --auto --delete-branch --squash $1
+    fi
 }
 
 if [ -z "$SYSTEM_DEFINITIONID" ]; then
