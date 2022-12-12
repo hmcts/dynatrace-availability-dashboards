@@ -25,6 +25,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
+          # Immediately exit if any command has a non-zero exit status
+          set -e
+
+          # Return true if PR has auto-approve label present.
+          # Return false (exit with error) when not present.
+          $(gh pr view --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} \
+            --json labels | jq -c '[.[][] | select(.name == "auto-approve")] | length == 1')
+
+          # Only auto-approve when "auto-approve" label is set on PR in above check.
           gh pr review --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} --approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
