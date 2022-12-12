@@ -1,0 +1,14 @@
+---
+name: Auto-approve automated nonprod pull requests
+on:
+  pull_request:
+    types: [labeled]
+
+jobs:
+  build:
+    if: ${{ github.event.label.name == 'auto-approve' && github.actor == 'hmcts-platform-operations'}}
+    runs-on: ubuntu-latest
+    steps:
+      - run: gh pr review --repo ${{ github.repository }} ${{ github.event.issue.number }} --approve
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
