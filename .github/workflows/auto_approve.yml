@@ -7,6 +7,6 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr review --repo hmcts/dynatrace-availability-dashboards 145 --approve
+      - run: gh pr review --repo hmcts/dynatrace-availability-dashboards 144 --approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
