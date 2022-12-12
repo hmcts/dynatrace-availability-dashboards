@@ -6,10 +6,10 @@ on:
 
 jobs:
   build:
-    if: ${{ github.event.label.name == 'auto-approve' && github.actor == 'hmcts-platform-operations'}}
+    # if: ${{ github.event.label.name == 'auto-approve' && github.actor == 'hmcts-platform-operations'}}
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr review --repo ${{ github.repository }} $PR_NUMBER --approve
+      - run: echo $PR_NUMBER
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.number }}
+          PR_NUMBER: ${{ github.event.number }
