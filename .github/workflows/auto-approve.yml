@@ -8,7 +8,7 @@ on:
         required: true
         type: string
       environment:
-        description: 'Non-prod nvironment key'
+        description: 'Non-prod environment key'
         required: true
         type: choice
         options:
