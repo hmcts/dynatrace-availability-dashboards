@@ -1,15 +1,30 @@
 ---
 name: Auto-approve automated nonprod pull requests
 on:
-  pull_request:
-    types: [labeled]
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: 'Pull request number to auto-approve'
+        required: true
+        type: string
+      environment:
+        description: 'Non-prod nvironment key'
+        required: true
+        type: choice
+        options:
+          - sbox
+          - demo
+          - ptlsbox
+          - stg
+          - test
 
 jobs:
   build:
     if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) && github.actor == 'hmcts-platform-operations'}}
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr review --repo ${{ github.repository }} $PR_NUMBER --approve
+      - run: |
+          echo ${{ github.event.inputs.environment }}
+          gh pr review --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} --approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ github.event.number }}
