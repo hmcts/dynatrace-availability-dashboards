@@ -20,12 +20,7 @@ on:
 
 jobs:
   build:
-<<<<<<< HEAD
-    if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) && github.actor == 'hmcts-platform-operations'}}
-=======
-    #if: ${{ contains( github.event.pull_request.labels.*.name, 'auto-approve') && github.actor == 'hmcts-platform-operations'}}
-    if: ${{ contains( github.event.pull_request.labels.*.name, 'auto-approve') }}
->>>>>>> 4805e73 (Test conditional for github labels)
+    if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) && github.triggering_actor == 'hmcts-platform-operations'}}
     runs-on: ubuntu-latest
     steps:
       - run: |
