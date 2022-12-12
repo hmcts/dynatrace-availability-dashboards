@@ -21,11 +21,10 @@ on:
 
 jobs:
   build:
-    #if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) }}
+    if: ${{ github.triggering_actor == 'hmcts-platform-operations' }}
     runs-on: ubuntu-latest
     steps:
       - run: |
-          echo ${{ github.event.inputs.environment }}
           gh pr review --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} --approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
