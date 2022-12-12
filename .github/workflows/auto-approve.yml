@@ -17,6 +17,7 @@ on:
           - ptlsbox
           - stg
           - test
+          - ithc
 
 jobs:
   build:
