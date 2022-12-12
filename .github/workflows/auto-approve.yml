@@ -9,6 +9,6 @@ jobs:
     if: ${{ github.event.label.name == 'auto-approve' && github.actor == 'hmcts-platform-operations'}}
     runs-on: ubuntu-latest
     steps:
-      - run: gh pr review --repo hmcts/dynatrace-availability-dashboards ${{ github.event.issue.number }} --approve
+      - run: gh pr review --repo ${{ github.repository }} ${{ github.event.issue.number }} --approve
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
