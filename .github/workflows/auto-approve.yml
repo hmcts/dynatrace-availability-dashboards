@@ -21,7 +21,7 @@ on:
 
 jobs:
   build:
-    if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) && github.triggering_actor == 'hmcts-platform-operations'}}
+    if: ${{ (contains(github.event.pull_request.labels.*.name, 'auto-approve')) }}
     runs-on: ubuntu-latest
     steps:
       - run: |
