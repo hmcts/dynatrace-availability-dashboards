@@ -384,22 +384,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: ccd-case-print-service-nodejs
-    management_zone_name: CFT-CCD-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://return-case-doc-ccd.demo.platform.hmcts.net/health
-        description: return-case-doc-ccd.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: ccd-data-store-api-java
     management_zone_name: CFT-CCD-DEMO
     enabled: true
@@ -696,6 +680,22 @@ synthetic_monitors:
     requests:
       - url: http://em-hrs-api-demo.service.core-compute-demo.internal/health
         description: em-hrs-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: em-npa-java
+    management_zone_name: CFT-EM-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://em-npa-demo.service.core-compute-demo.internal/health
+        description: em-npa-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1104,22 +1104,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: finrem-ns-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-ns-demo.service.core-compute-demo.internal/health
-        description: finrem-ns-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: hmc-cft-hearing-service-java
     management_zone_name: CFT-HMC-DEMO
     enabled: true
@@ -1480,54 +1464,6 @@ synthetic_monitors:
     requests:
       - url: http://lau-idam-backend-demo.service.core-compute-demo.internal/health
         description: lau-idam-backend-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: cmc-citizen-frontend-nodejs
-    management_zone_name: CFT-MONEY-CLAIMS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://moneyclaims.demo.platform.hmcts.net/health
-        description: moneyclaims.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: cmc-claim-store-java
-    management_zone_name: CFT-MONEY-CLAIMS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://cmc-claim-store-demo.service.core-compute-demo.internal/health
-        description: cmc-claim-store-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: cmc-legal-frontend-nodejs
-    management_zone_name: CFT-MONEY-CLAIMS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://moneyclaims-legal.demo.platform.hmcts.net/health
-        description: moneyclaims-legal.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1968,38 +1904,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: rpts-api-java
-    management_zone_name: CFT-RPTS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpts-api-demo.service.core-compute-demo.internal/health
-        description: rpts-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: rpts-frontend-nodejs
-    management_zone_name: CFT-RPTS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpts.demo.platform.hmcts.net/health
-        description: rpts.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sscs-bulk-scan-java
     management_zone_name: CFT-SSCS-DEMO
     enabled: true
@@ -2024,6 +1928,22 @@ synthetic_monitors:
     requests:
       - url: http://sscs-ccd-callback-orchestrator-demo.service.core-compute-demo.internal/health
         description: sscs-ccd-callback-orchestrator-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-cor-frontend-nodejs
+    management_zone_name: CFT-SSCS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sscs-cor.demo.platform.hmcts.net/health
+        description: sscs-cor.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
