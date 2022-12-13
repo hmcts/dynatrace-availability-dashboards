@@ -14,12 +14,12 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
     * Autogenerate yaml files per-environment based on Ingress objects withiin clusters, to update Terraform configuration files
     * Create Pull Requests if there are changes to Ingress objects within clusters
 * **Azure pipelines**
-    * [Daily](azure-pipelines-daily.yml) - Runs each morning at 7AM to fetch latest changes
-    * [Deployment](azure-pipelines.yml) - Deploy infrastructure changes and update dahsboards
+    * [Daily](azure-pipelines-daily.yaml) - Runs each morning at 7AM to fetch latest changes
+    * [Deployment](azure-pipelines.yaml) - Deploy infrastructure changes and update dahsboards
 * **Github Actions**<br>
   We use Github Actions to run:
-    * [Pre-Commit](.github/workflows/pre-commit.yml) checks
-    * [Unit Tests](.github/workflows/unit-tests.yml)
+    * [Pre-Commit](.github/workflows/pre-commit.yaml) checks
+    * [Unit Tests](.github/workflows/unit-tests.yaml)
 * **Renovate**<br>
   [Renovate](.github/renovate.json) is configured to keep our dependencies up-to-date and keep a running dashboard
 
