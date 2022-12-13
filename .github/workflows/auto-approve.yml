@@ -24,16 +24,18 @@ jobs:
     if: ${{ github.triggering_actor == 'hmcts-platform-operations' }}
     runs-on: ubuntu-latest
     steps:
-      - run: |
+      - name: 'Auto-Approve Pull Request'
+        env:
+          AUTO_APPROVE_LABEL: 'auto-approve'
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
           # Immediately exit if any command has a non-zero exit status
           set -e
 
-          # Return true if PR has auto-approve label present.
+          # Return true if PR has correct label present.
           # Return false (exit with error) when not present.
           $(gh pr view --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} \
-            --json labels | jq -c '[.[][] | select(.name == "auto-approve")] | length == 1')
+            --json labels | jq -c "[.[][] | select(.name == $AUTO_APPROVE_LABEL)] | length == 1")
 
-          # Only auto-approve when "auto-approve" label is set on PR in above check.
+          # Only auto-approve when correct label is set on PR in above check.
           gh pr review --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} --approve
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

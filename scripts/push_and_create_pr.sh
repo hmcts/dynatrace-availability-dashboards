@@ -1,5 +1,6 @@
 #! /usr/bin/env bash
 set -x
+AUTO_APPROVE_LABEL="auto-approve"
 
 create_pr(){
     branch=$1
@@ -14,7 +15,7 @@ create_pr(){
         pr_number=$(gh pr create \
             --title "$environment - Update YAML definitions" \
             --body "Automated updates from daily job running on $environment cluster."  \
-            --label auto-approve \
+            --label $AUTO_APPROVE_LABEL \
             --base main \
             --head $branch \
             | cut -d "/"  -f 7)
@@ -49,8 +50,6 @@ git config --global user.email 77396727+hmcts-platform-operations@users.noreply.
 git config --global user.name hmcts-platform-operations
 
 # Temporary store file changes to checkout to local main branch
-
-# to do mpdir=$(mktemp -d) - move files into this dir instead of /tmp, then removing dir after job completion
 tmpdir=$(mktemp -d)
 cp dynatrace/management_zones/management_zones_$environment.yaml $tmpdir/
 cp dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml $tmpdir/
@@ -73,7 +72,7 @@ if [ -z "$(git diff origin/main -- \
             dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
     echo "No code changes against main detected."
     # If remote branch exists, close it as changes are now outdated compared to master
-    [[ $(git ls-remote --exit-code --heads origin $branch) ]] && git push origin --delete $branch || echo "There is no open PR's against $environment."
+    [[ $(git ls-remote --exit-code --heads origin $branch) ]] && git push origin --delete $branch || echo "There is no longer changes in $environment."
 else
     # Determine if remote branch already exists
     [[ $(git ls-remote --exit-code --heads origin $branch) ]] && remote_branch_exists=true || remote_branch_exists=false
