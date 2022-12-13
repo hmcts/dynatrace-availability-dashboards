@@ -15,8 +15,8 @@ on:
           - sbox
           - demo
           - ptlsbox
-          - stg
-          - test
+          - aat
+          - perftest
           - ithc
 
 jobs:
