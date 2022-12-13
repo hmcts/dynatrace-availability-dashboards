@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "gitIgnoredAuthors": [
-        "104018155+hmcts-dependency-updater[bot]@users.noreply.github.com"
+        "77396727+hmcts-platform-operations@users.noreply.github.com"
     ],
     "extends": [
         "config:base",

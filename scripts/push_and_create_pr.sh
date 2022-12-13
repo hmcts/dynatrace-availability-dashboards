@@ -45,8 +45,8 @@ git fetch --all
 branch=yaml_autogenerate_$environment
 echo $gh_token | gh auth login --with-token
 
-git config --global user.email 104018155+hmcts-dependency-updater[bot]@users.noreply.github.com
-git config --global user.name hmcts-dependency-updater
+git config --global user.email 77396727+hmcts-platform-operations@users.noreply.github.com
+git config --global user.name hmcts-platform-operations
 
 # Temporary store file changes to checkout to local main branch
 
