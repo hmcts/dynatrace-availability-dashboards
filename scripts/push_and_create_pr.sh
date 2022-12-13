@@ -15,7 +15,7 @@ create_pr(){
         pr_number=$(gh pr create \
             --title "$environment - Update YAML definitions" \
             --body "Automated updates from daily job running on $environment cluster."  \
-            --label $auto-approve \
+            --label $auto_approve_label \
             --base main \
             --head $branch \
             | cut -d "/"  -f 7)
