@@ -1,6 +1,6 @@
 #! /usr/bin/env bash
 set -x
-auto_approve_label="auto-approve"
+AUTO_APPROVE_LABEL="auto-approve"
 
 create_pr(){
     branch=$1
@@ -15,7 +15,7 @@ create_pr(){
         pr_number=$(gh pr create \
             --title "$environment - Update YAML definitions" \
             --body "Automated updates from daily job running on $environment cluster."  \
-            --label $auto_approve_label \
+            --label $AUTO_APPROVE_LABEL \
             --base main \
             --head $branch \
             | cut -d "/"  -f 7)
