@@ -71,7 +71,7 @@ if [ -z "$(git diff origin/main -- \
             dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml)" ]; then
     echo "No code changes against main detected."
     # If remote branch exists, close it as changes are now outdated compared to master
-    [[ $(git ls-remote --exit-code --heads origin $branch) ]] && git push origin --delete $branch || echo "There is no open PR's against $environment."
+    [[ $(git ls-remote --exit-code --heads origin $branch) ]] && git push origin --delete $branch || echo "There is no longer changes in $environment."
 else
     # Determine if remote branch already exists
     [[ $(git ls-remote --exit-code --heads origin $branch) ]] && remote_branch_exists=true || remote_branch_exists=false
