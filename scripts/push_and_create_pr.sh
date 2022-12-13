@@ -49,8 +49,6 @@ git config --global user.email 77396727+hmcts-platform-operations@users.noreply.
 git config --global user.name hmcts-platform-operations
 
 # Temporary store file changes to checkout to local main branch
-
-# to do mpdir=$(mktemp -d) - move files into this dir instead of /tmp, then removing dir after job completion
 tmpdir=$(mktemp -d)
 cp dynatrace/management_zones/management_zones_$environment.yaml $tmpdir/
 cp dynatrace/synthetic_monitors/synthetic_monitors_$environment.yaml $tmpdir/
