@@ -35,7 +35,9 @@ jobs:
           # Return true if PR has correct label present.
           # Return false (exit with error) when not present.
           $(gh pr view --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} \
-            --json labels | jq -c "[.[][] | select(.name == $AUTO_APPROVE_LABEL)] | length == 1")
+            --json labels | jq \
+            --arg AUTO_APPROVE_LABEL "$AUTO_APPROVE_LABEL" \
+            -c '[.[][] | select(.name == $AUTO_APPROVE_LABEL)] | length == 1')
 
           # Only auto-approve when correct label is set on PR in above check.
           gh pr review --repo ${{ github.repository }} ${{ github.event.inputs.pr_number }} --approve
