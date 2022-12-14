@@ -352,22 +352,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: case-payment-orders-api-java
-    management_zone_name: CFT-CPO-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://cpo-case-payment-orders-api-perftest.service.core-compute-perftest.internal/health
-        description: cpo-case-payment-orders-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: dm-store-cdam-java
     management_zone_name: CFT-DM-STORE-PERFTEST
     enabled: true
@@ -376,6 +360,22 @@ synthetic_monitors:
     requests:
       - url: http://dm-store-cdam-perftest.service.core-compute-perftest.internal/health
         description: dm-store-cdam-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: dm-store-java
+    management_zone_name: CFT-DM-STORE-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://dm-store-perftest.service.core-compute-perftest.internal/health
+        description: dm-store-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
