@@ -25,7 +25,7 @@ create_pr(){
         set -e
         gh workflow --repo \
             hmcts/dynatrace-availability-dashboards \
-            run auto-approve.yml \
+            run auto-approve.yaml \
             -f environment="$environment" \
             -f pr_number="$pr_number"
         set +e
