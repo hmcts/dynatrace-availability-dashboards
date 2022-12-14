@@ -13,7 +13,6 @@ management_zones:
   - name: CFT-EM-ITHC
   - name: CFT-FACT-ITHC
   - name: CFT-FEES-PAY-ITHC
-  - name: CFT-FINANCIAL-REMEDY-ITHC
   - name: CFT-HMC-ITHC
   - name: CFT-IA-ITHC
   - name: CFT-LAU-ITHC
