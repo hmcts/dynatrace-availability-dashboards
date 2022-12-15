@@ -1,9 +1,7 @@
 #! /usr/bin/env bash
 set -x
 
-if [ $BUILD_REASON == "Manual" ]; then
-    APPROVE_LABEL="manual-approve"
-else
+if [ $BUILD_REASON == "Schedule" ]; then
     APPROVE_LABEL="auto-approve"
 fi
 
@@ -25,7 +23,7 @@ create_pr(){
             --head $branch \
             | cut -d "/"  -f 7)
 
-        if [ $APPROVE_LABEL == "auto-approve" ]; then
+        if [[ $APPROVE_LABEL == "auto-approve" ]]; then
             gh pr merge --auto --delete-branch --squash $branch
             # Fail if command from job returns non-zero exit code
             set -e
