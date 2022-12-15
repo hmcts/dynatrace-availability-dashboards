@@ -1,6 +1,11 @@
 #! /usr/bin/env bash
 set -x
-AUTO_APPROVE_LABEL="auto-approve"
+
+if [ $BUILD_REASON == "Manual" ]; then
+    APPROVE_LABEL="manual-approve"
+else
+    APPROVE_LABEL="auto-approve"
+fi
 
 create_pr(){
     branch=$1
@@ -15,20 +20,22 @@ create_pr(){
         pr_number=$(gh pr create \
             --title "$environment - Update YAML definitions" \
             --body "Automated updates from daily job running on $environment cluster."  \
-            --label $AUTO_APPROVE_LABEL \
+            --label $APPROVE_LABEL \
             --base main \
             --head $branch \
             | cut -d "/"  -f 7)
 
-        gh pr merge --auto --delete-branch --squash $branch
-        # Fail if command from job returns non-zero exit code
-        set -e
-        gh workflow --repo \
-            hmcts/dynatrace-availability-dashboards \
-            run auto-approve.yaml \
-            -f environment="$environment" \
-            -f pr_number="$pr_number"
-        set +e
+        if [ $APPROVE_LABEL == "auto-approve" ]; then
+            gh pr merge --auto --delete-branch --squash $branch
+            # Fail if command from job returns non-zero exit code
+            set -e
+            gh workflow --repo \
+                hmcts/dynatrace-availability-dashboards \
+                run auto-approve.yaml \
+                -f environment="$environment" \
+                -f pr_number="$pr_number"
+            set +e
+        fi
     else
         gh pr create \
             --title "$environment - Update YAML definitions" \
