@@ -19,7 +19,7 @@ sample_app = {
     "labels": {"aadpodidbinding": "cnp"},
     "annotations": {"helm.fluxcd.io/antecedent": "samplevalue"},
     "spec": {
-        "ingressClassName": "traefik-private",
+        "ingressClassName": "traefik-no-proxy",
         "rules": [
             {
                 "host": "cnp-sample-app.internal",
