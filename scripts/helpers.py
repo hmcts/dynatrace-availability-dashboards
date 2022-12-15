@@ -84,11 +84,16 @@ def filter_ingress(data, environment):
     - environment: the environment to filter for
     """
 
-    # Filter out PR ingress names
     data_filtered_global = [
         item
         for item in data
+        # Filter out PR ingress names
         if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
+        # Filter out all ingress endpoints without "helm.fluxcd.io/antecedent" set.
+        and (
+            "annotations" in item["metadata"]
+            and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
+        )
     ]
 
     data_filtered = [
@@ -100,10 +105,6 @@ def filter_ingress(data, environment):
         for item in data_filtered_global
         # Define custom filters below
         if (
-            "annotations" in item["metadata"]
-            and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
-        )
-        or (
             environment == "demo"
             and "ingressClassName" in item["spec"]
             and item["spec"]["ingressClassName"] == "traefik-no-proxy"
