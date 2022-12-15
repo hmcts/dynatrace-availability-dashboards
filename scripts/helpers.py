@@ -124,6 +124,7 @@ def filter_ingress(data, environment):
 
 
 def format_dt_monitors_yaml(department, data_filtered, environment):
+    print(json.dumps(data_filtered))
     department = department.upper()
     environment = environment.upper()
     return [
