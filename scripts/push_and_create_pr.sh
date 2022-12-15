@@ -17,8 +17,8 @@ create_pr(){
 
     # Prepare Github CLI PR Args
     pr_args=(
-        --title \"$environment - Update YAML definitions\"
-        --body \"Automated updates from daily job running on $environment cluster.\"
+        --title "$environment - Update YAML definitions"
+        --body "Automated updates from daily job running on $environment cluster."
         --base main
         --head $branch
     )
@@ -27,7 +27,7 @@ create_pr(){
     fi
 
     if !([[ "$environment" == "ptl" || "$environment" == "prod" ]]); then
-        pr_number=$(gh pr create ${pr_args[@]} | cut -d "/"  -f 7)
+        pr_number=$(gh pr create "${pr_args[@]}" | cut -d "/"  -f 7)
 
         if [[ $APPROVE_LABEL == "auto-approve" ]]; then
             gh pr merge --auto --delete-branch --squash $branch
