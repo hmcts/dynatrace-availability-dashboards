@@ -21,10 +21,10 @@ create_pr(){
         --body "Automated updates from daily job running on $environment cluster."
         --base main
         --head $branch
+        if [[ $APPROVE_LABEL == "auto-approve" ]]; then
+            --label $APPROVE_LABEL
+        fi
     )
-    if [[ $APPROVE_LABEL == "auto-approve" ]]; then
-        args+=(--label $APPROVE_LABEL)
-    fi
 
     if !([[ "$environment" == "ptl" || "$environment" == "prod" ]]); then
         pr_number=$(gh pr create "${pr_args[@]}" | cut -d "/"  -f 7)
