@@ -23,7 +23,7 @@ create_pr(){
         --head $branch
     )
     if [[ $APPROVE_LABEL == "auto-approve" ]]; then
-        args+=(--label $APPROVE_LABEL)
+        pr_args+=(--label $APPROVE_LABEL)
     fi
 
     if !([[ "$environment" == "ptl" || "$environment" == "prod" ]]); then
