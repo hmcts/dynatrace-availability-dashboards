@@ -1,7 +1,7 @@
 #! /usr/bin/env bash
 set -x
 
-if [ $BUILD_REASON == "Manual" ]; then
+if [ $BUILD_REASON == "Schedule" ]; then
     APPROVE_LABEL="auto-approve"
 fi
 
