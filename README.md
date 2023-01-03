@@ -30,7 +30,7 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.3.6 |
-| <a name="requirement_dynatrace"></a> [dynatrace](#requirement\_dynatrace) | 1.15.0 |
+| <a name="requirement_dynatrace"></a> [dynatrace](#requirement\_dynatrace) | 1.16.0 |
 
 ## Providers
 
