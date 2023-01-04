@@ -17,7 +17,7 @@ sample_app = {
     "name": "cnp-sample-app",
     "namespace": "cnp",
     "labels": {"aadpodidbinding": "cnp"},
-    "annotations": {"helm.fluxcd.io/antecedent": "samplevalue"},
+    "annotations": {"meta.helm.sh/release-namespace": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
         "rules": [
@@ -56,6 +56,7 @@ class TestHelperResources(unittest.TestCase):
     def test_filter_ingress(self):
         """Assert that ingress data is filtered for YAML generation"""
         filtered_data = filter_ingress(kube_data["items"], "demo")
+        print(filtered_data)
         expected_data = [
             {
                 "name": sample_app["name"],
