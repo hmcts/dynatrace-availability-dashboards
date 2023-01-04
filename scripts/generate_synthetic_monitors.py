@@ -92,6 +92,7 @@ def main():
     kubectl_data = get_kubectl_ingress(stdin, context)
     logger.info(f"{environment} - using context {context}")
     kubectl_data_filtered = filter_ingress(kubectl_data, environment)
+    logger.info(f"Printing filtered ingress data {kubectl_data_filtered}")
     # Handle synthetic monitors
     logger.info("Handling synthetic monitors...")
     generated_yaml_monitors = format_dt_monitors_yaml(
