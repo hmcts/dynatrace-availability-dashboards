@@ -87,15 +87,15 @@ def filter_ingress(data, environment):
         item
         for item in data
         # Filter out PR ingress names
-        if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
-        # Filter out all ingress endpoints without "helm.fluxcd.io/antecedent" set.
-        and (
+        # if not (re.search("-pr-[0-9]{1,5}-", item["metadata"]["name"]))
+        # # Filter out all ingress endpoints without "helm.fluxcd.io/antecedent" set.
+        if not (
             "annotations" in item["metadata"]
             and "helm.fluxcd.io/antecedent" in item["metadata"]["annotations"]
         )
     ]
-    logger.info(f"Raw data {data_filtered_global}")
 
+    logger.info(f"DATA:: {data_filtered_global}")
     data_filtered = [
         {
             "name": item["metadata"]["name"],
