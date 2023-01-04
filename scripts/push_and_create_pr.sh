@@ -97,12 +97,12 @@ else
         echo "No changes against $branch branch."
         # Check if PR is closed
         if [ "$(gh pr view $branch --json closed | yq .closed)" = "true" ]; then
-            # create_pr $branch $environment
+            create_pr $branch $environment
         fi
     else
         echo "Changes detected against $branch branch:"
         echo "Deleting the remote branch $branch to close any existing PRs."
-        # create_pr $branch $environment
+        create_pr $branch $environment
     fi
 fi
 
