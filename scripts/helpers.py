@@ -83,7 +83,7 @@ def filter_ingress(data, environment):
     - data: the data from the Kubernetes API
     - environment: the environment to filter for
     """
-
+    logger.info(f"Raw data {data}")
     data_filtered_global = [
         item
         for item in data
