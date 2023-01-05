@@ -16,8 +16,8 @@ from helpers import (
 sample_app = {
     "name": "cnp-sample-app",
     "namespace": "cnp",
-    "labels": {"aadpodidbinding": "cnp"},
-    "annotations": {"helm.fluxcd.io/antecedent": "samplevalue"},
+    "labels": {"aadpodidbinding": "cnp", "helm.toolkit.fluxcd.io/name": "sampleapp"},
+    "annotations": {"meta.helm.sh/release-name": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
         "rules": [
@@ -37,7 +37,7 @@ kube_data = {
             "kind": "Ingress",
             "metadata": {
                 "annotations": sample_app["annotations"],
-                "labels": ["sample_app.labels"],
+                "labels": sample_app["labels"],
                 "name": sample_app["name"],
                 "namespace": sample_app["namespace"],
             },
@@ -50,7 +50,7 @@ kube_data = {
 class TestHelperResources(unittest.TestCase):
     @patch("sys.stdin", io.StringIO(json.dumps(kube_data)))
     def test_get_kubectl_ingress_stdin(self):
-        """Assert kubectl ingress funciton returning a list"""
+        """Assert kubectl ingress function returning a list"""
         self.assertEqual(get_kubectl_ingress(True, None), kube_data["items"])
 
     def test_filter_ingress(self):
