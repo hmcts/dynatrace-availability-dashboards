@@ -17,7 +17,7 @@ sample_app = {
     "name": "cnp-sample-app",
     "namespace": "cnp",
     "labels": {"aadpodidbinding": "cnp"},
-    "annotations": {"helm.fluxcd.io/antecedent": "samplevalue"},
+    "annotations": {"meta.helm.sh/release-name": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
         "rules": [
