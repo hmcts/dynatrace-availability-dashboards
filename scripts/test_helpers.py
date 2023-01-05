@@ -16,7 +16,7 @@ from helpers import (
 sample_app = {
     "name": "cnp-sample-app",
     "namespace": "cnp",
-    "labels": {"aadpodidbinding": "cnp"},
+    "labels": {"aadpodidbinding": "cnp", "helm.toolkit.fluxcd.io/name": "sampleapp"},
     "annotations": {"meta.helm.sh/release-name": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
