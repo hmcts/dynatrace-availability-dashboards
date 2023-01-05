@@ -37,7 +37,7 @@ kube_data = {
             "kind": "Ingress",
             "metadata": {
                 "annotations": sample_app["annotations"],
-                "labels": ["sample_app.labels"],
+                "labels": sample_app["labels"],
                 "name": sample_app["name"],
                 "namespace": sample_app["namespace"],
             },

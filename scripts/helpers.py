@@ -95,7 +95,6 @@ def filter_ingress(data, environment):
             and "helm.toolkit.fluxcd.io/name" in item["metadata"]["labels"]
         )
     ]
-
     data_filtered = [
         {
             "name": item["metadata"]["name"],
