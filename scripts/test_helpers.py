@@ -50,7 +50,7 @@ kube_data = {
 class TestHelperResources(unittest.TestCase):
     @patch("sys.stdin", io.StringIO(json.dumps(kube_data)))
     def test_get_kubectl_ingress_stdin(self):
-        """Assert kubectl ingress funciton returning a list"""
+        """Assert kubectl ingress function returning a list"""
         self.assertEqual(get_kubectl_ingress(True, None), kube_data["items"])
 
     def test_filter_ingress(self):
