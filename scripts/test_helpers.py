@@ -56,7 +56,6 @@ class TestHelperResources(unittest.TestCase):
     def test_filter_ingress(self):
         """Assert that ingress data is filtered for YAML generation"""
         filtered_data = filter_ingress(kube_data["items"], "demo")
-        print(filtered_data)
         expected_data = [
             {
                 "name": sample_app["name"],
