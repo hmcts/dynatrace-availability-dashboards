@@ -400,6 +400,86 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-citizen-ui-nodejs
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-citizen-ui.aat.platform.hmcts.net/health
+        description: civil-citizen-ui.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-general-applications-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-general-applications-aat.service.core-compute-aat.internal/health
+        description: civil-general-applications-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-service-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-service-aat.service.core-compute-aat.internal/health
+        description: civil-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-frontend-nodejs
+    management_zone_name: CFT-CNP-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://plum.aat.platform.hmcts.net/health
+        description: plum.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-recipe-backend-java
+    management_zone_name: CFT-CNP-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://plum-recipe-backend.service.core-compute-aat.internal/health
+        description: plum-recipe-backend.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: case-payment-orders-api-java
     management_zone_name: CFT-CPO-AAT
     enabled: true
@@ -416,6 +496,102 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: dg-docassembly-java
+    management_zone_name: CFT-DG-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://dg-docassembly-aat.service.core-compute-aat.internal/health
+        description: dg-docassembly-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cfs-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cfs-aat.service.core-compute-aat.internal/health
+        description: div-cfs-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cms-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cms-aat.service.core-compute-aat.internal/health
+        description: div-cms-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-cos-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-cos-aat.service.core-compute-aat.internal/health
+        description: div-cos-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-da-nodejs
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://decree-absolute-aks.aat.platform.hmcts.net/health
+        description: decree-absolute-aks.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-dgs-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-dgs-aat.service.core-compute-aat.internal/health
+        description: div-dgs-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: div-dn-nodejs
     management_zone_name: CFT-DIVORCE-AAT
     enabled: true
@@ -424,6 +600,70 @@ synthetic_monitors:
     requests:
       - url: http://decree-nisi-aks.aat.platform.hmcts.net/health
         description: decree-nisi-aks.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-emca-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-emca-aat.service.core-compute-aat.internal/health
+        description: div-emca-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-fps-java
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://div-fps-aat.service.core-compute-aat.internal/health
+        description: div-fps-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-pfe-nodejs
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://petitioner-frontend-aks.aat.platform.hmcts.net/health
+        description: petitioner-frontend-aks.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: div-rfe-nodejs
+    management_zone_name: CFT-DIVORCE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://respond-divorce-aks.aat.platform.hmcts.net/health
+        description: respond-divorce-aks.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -456,6 +696,22 @@ synthetic_monitors:
     requests:
       - url: http://dm-store-aat.service.core-compute-aat.internal/health
         description: dm-store-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: docmosis-base
+    management_zone_name: CFT-DOCMOSIS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://docmosis.aat.platform.hmcts.net/health
+        description: docmosis.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -512,6 +768,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: em-icp-nodejs
+    management_zone_name: CFT-EM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://em-icp.aat.platform.hmcts.net/health
+        description: em-icp.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: em-npa-java
     management_zone_name: CFT-EM-AAT
     enabled: true
@@ -520,6 +792,22 @@ synthetic_monitors:
     requests:
       - url: http://em-npa-aat.service.core-compute-aat.internal/health
         description: em-npa-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: em-ped-api-java
+    management_zone_name: CFT-EM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://em-ped-api-aat.service.core-compute-aat.internal/health
+        description: em-ped-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -552,6 +840,70 @@ synthetic_monitors:
     requests:
       - url: http://em-stitching-aat.service.core-compute-aat.internal/health
         description: em-stitching-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-cos-java
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-cos-aat.service.core-compute-aat.internal/health
+        description: et-cos-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-msg-handler-java
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-msg-handler-aat.service.core-compute-aat.internal/health
+        description: et-msg-handler-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-sya-api-java
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-sya-api-aat.service.core-compute-aat.internal/health
+        description: et-sya-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-sya-nodejs
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-sya.aat.platform.hmcts.net/health
+        description: et-sya.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -656,6 +1008,198 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ccpay-bubble-frontend-nodejs
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://paybubble.aat.platform.hmcts.net/health
+        description: paybubble.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-bulkscanning-api-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccpay-bulkscanning-api-aat.service.core-compute-aat.internal/health
+        description: ccpay-bulkscanning-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-cpo-update-service-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccpay-cpo-update-service-aat.service.core-compute-aat.internal/health
+        description: ccpay-cpo-update-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-notifications-service-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccpay-notifications-service-aat.service.core-compute-aat.internal/health
+        description: ccpay-notifications-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-payment-api-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://payment-api-aat.service.core-compute-aat.internal/health
+        description: payment-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-paymentoutcome-web-nodejs
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://paymentoutcome-web.aat.platform.hmcts.net/health
+        description: paymentoutcome-web.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccpay-refunds-api-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccpay-refunds-api-aat.service.core-compute-aat.internal/health
+        description: ccpay-refunds-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fees-register-api-java
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fees-register-api-aat.service.core-compute-aat.internal/health
+        description: fees-register-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fees-register-frontend-nodejs
+    management_zone_name: CFT-FEES-PAY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fees-register.aat.platform.hmcts.net/health
+        description: fees-register.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: finrem-cos-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-cos-aat.service.core-compute-aat.internal/health
+        description: finrem-cos-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: finrem-dgcs-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-dgcs-aat.service.core-compute-aat.internal/health
+        description: finrem-dgcs-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: finrem-emca-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-emca-aat.service.core-compute-aat.internal/health
+        description: finrem-emca-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: finrem-ns-java
     management_zone_name: CFT-FINANCIAL-REMEDY-AAT
     enabled: true
@@ -664,6 +1208,38 @@ synthetic_monitors:
     requests:
       - url: http://finrem-ns-aat.service.core-compute-aat.internal/health
         description: finrem-ns-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-bulk-scan-api-java
+    management_zone_name: CFT-FIS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-bulk-scan-api-aat.service.core-compute-aat.internal/health
+        description: fis-bulk-scan-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-hmc-api-java
+    management_zone_name: CFT-FIS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-hmc-api-aat.service.core-compute-aat.internal/health
+        description: fis-hmc-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -880,6 +1456,102 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: idam-api
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-api.aat.platform.hmcts.net/health
+        description: idam-api.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-hmcts-access-nodejs
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hmcts-access.aat.platform.hmcts.net/health
+        description: hmcts-access.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-testing-support-api
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-testing-support-api.aat.platform.hmcts.net/health
+        description: idam-testing-support-api.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-user-dashboard-nodejs
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-user-dashboard.aat.platform.hmcts.net/health
+        description: idam-user-dashboard.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-web-admin
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-web-admin.aat.platform.hmcts.net/health
+        description: idam-web-admin.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-web-public
+    management_zone_name: CFT-IDAM-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-web-public.aat.platform.hmcts.net/health
+        description: idam-web-public.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: lau-case-backend-java
     management_zone_name: CFT-LAU-AAT
     enabled: true
@@ -928,14 +1600,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: cmc-citizen-frontend-nodejs
+  - name: cmc-legal-frontend-nodejs
     management_zone_name: CFT-MONEY-CLAIMS-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.aat.platform.hmcts.net/health
-        description: moneyclaims.aat.platform.hmcts.net
+      - url: http://moneyclaims-legal.aat.platform.hmcts.net/health
+        description: moneyclaims-legal.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -944,14 +1616,62 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: cmc-claim-store-java
-    management_zone_name: CFT-MONEY-CLAIMS-AAT
+  - name: kube-prometheus-stack-alertmanager
+    management_zone_name: CFT-MONITORING-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://cmc-claim-store-aat.service.core-compute-aat.internal/health
-        description: cmc-claim-store-aat.service.core-compute-aat.internal
+      - url: http://alertmanager-00.aat.platform.hmcts.net/health
+        description: alertmanager-00.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: kube-prometheus-stack-prometheus
+    management_zone_name: CFT-MONITORING-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://prometheus-00.aat.platform.hmcts.net/health
+        description: prometheus-00.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: neuvector-restapi-ingress
+    management_zone_name: CFT-NEUVECTOR-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://neuvector00.service.core-compute-aat.internal/health
+        description: neuvector00.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: neuvector-webui-ingress
+    management_zone_name: CFT-NEUVECTOR-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://neuvector00.service.core-compute-aat.internal/health
+        description: neuvector00.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1072,6 +1792,86 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: probate-back-office-java
+    management_zone_name: CFT-PROBATE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-back-office-aat.service.core-compute-aat.internal/health
+        description: probate-back-office-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-business-service-java
+    management_zone_name: CFT-PROBATE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-business-service-aat.service.core-compute-aat.internal/health
+        description: probate-business-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-frontend-nodejs
+    management_zone_name: CFT-PROBATE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate.aat.platform.hmcts.net/health
+        description: probate.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-orchestrator-service-java
+    management_zone_name: CFT-PROBATE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-orchestrator-service-aat.service.core-compute-aat.internal/health
+        description: probate-orchestrator-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: probate-submit-service-java
+    management_zone_name: CFT-PROBATE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://probate-submit-service-aat.service.core-compute-aat.internal/health
+        description: probate-submit-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: rd-caseworker-ref-api-java
     management_zone_name: CFT-RD-AAT
     enabled: true
@@ -1184,22 +1984,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: rd-user-profile-api-triage-java
-    management_zone_name: CFT-RD-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rd-user-profile-api-triage-aat.service.core-compute-aat.internal/health
-        description: rd-user-profile-api-triage-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: reform-scan-blob-router-java
     management_zone_name: CFT-REFORM-SCAN-AAT
     enabled: true
@@ -1224,6 +2008,22 @@ synthetic_monitors:
     requests:
       - url: http://reform-scan-notification-service-aat.service.core-compute-aat.internal/health
         description: reform-scan-notification-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: draft-store-service-java
+    management_zone_name: CFT-RPE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://draft-store-service-aat.service.core-compute-aat.internal/health
+        description: draft-store-service-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1264,6 +2064,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: rpe-service-auth-provider-java
+    management_zone_name: CFT-RPE-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-service-auth-provider-aat.service.core-compute-aat.internal/health
+        description: rpe-service-auth-provider-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: rpts-api-java
     management_zone_name: CFT-RPTS-AAT
     enabled: true
@@ -1288,6 +2104,38 @@ synthetic_monitors:
     requests:
       - url: http://rpts.aat.platform.hmcts.net/health
         description: rpts.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-case-api-java
+    management_zone_name: CFT-SPTRIBS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sptribs-case-api-aat.service.core-compute-aat.internal/health
+        description: sptribs-case-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-dss-backend-java
+    management_zone_name: CFT-SPTRIBS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sptribs-dss-backend-aat.service.core-compute-aat.internal/health
+        description: sptribs-dss-backend-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
