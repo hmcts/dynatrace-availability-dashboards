@@ -14,6 +14,7 @@ management_zones:
   - name: CFT-DIVORCE-AAT
   - name: CFT-DM-STORE-AAT
   - name: CFT-DOCMOSIS-AAT
+  - name: CFT-DTSSE-AAT
   - name: CFT-EM-AAT
   - name: CFT-ET-AAT
   - name: CFT-ETHOS-AAT
