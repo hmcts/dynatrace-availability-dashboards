@@ -752,6 +752,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: em-stitching-java
+    management_zone_name: CFT-EM-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://em-stitching-perftest.service.core-compute-perftest.internal/health
+        description: em-stitching-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-cos-java
     management_zone_name: CFT-ET-PERFTEST
     enabled: true
