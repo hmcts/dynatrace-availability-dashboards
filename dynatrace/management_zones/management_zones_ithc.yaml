@@ -19,6 +19,7 @@ management_zones:
   - name: CFT-FAMILY-PUBLIC-LAW-ITHC
   - name: CFT-FEES-PAY-ITHC
   - name: CFT-FINANCIAL-REMEDY-ITHC
+  - name: CFT-FIS-ITHC
   - name: CFT-HMC-ITHC
   - name: CFT-IA-ITHC
   - name: CFT-IDAM-ITHC
