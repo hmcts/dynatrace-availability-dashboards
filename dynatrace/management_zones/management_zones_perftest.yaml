@@ -21,6 +21,7 @@ management_zones:
   - name: CFT-FAMILY-PUBLIC-LAW-PERFTEST
   - name: CFT-FEES-PAY-PERFTEST
   - name: CFT-FINANCIAL-REMEDY-PERFTEST
+  - name: CFT-FIS-PERFTEST
   - name: CFT-HMC-PERFTEST
   - name: CFT-IA-PERFTEST
   - name: CFT-IDAM-PERFTEST
