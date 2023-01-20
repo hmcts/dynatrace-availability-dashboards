@@ -1136,6 +1136,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: fis-bulk-scan-api-java
+    management_zone_name: CFT-FIS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-bulk-scan-api-perftest.service.core-compute-perftest.internal/health
+        description: fis-bulk-scan-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-ds-web-nodejs
+    management_zone_name: CFT-FIS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-ds-web.perftest.platform.hmcts.net/health
+        description: fis-ds-web.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-hmc-api-java
+    management_zone_name: CFT-FIS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-hmc-api-perftest.service.core-compute-perftest.internal/health
+        description: fis-hmc-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: hmc-hmi-inbound-adapter-java
     management_zone_name: CFT-HMC-PERFTEST
     enabled: true
