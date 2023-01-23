@@ -106,7 +106,8 @@ def filter_ingress(data, environment):
         if (
             environment == "demo"
             and "ingressClassName" in item["spec"]
-            and item["spec"]["ingressClassName"] in ["traefik-no-proxy", "traefik-private"]
+            and item["spec"]["ingressClassName"] 
+            in ["traefik-no-proxy", "traefik-private"]
         )
         or (
             environment == "demo"
