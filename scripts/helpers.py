@@ -106,14 +106,15 @@ def filter_ingress(data, environment):
         if (
             environment == "demo"
             and "ingressClassName" in item["spec"]
-            and item["spec"]["ingressClassName"] == "traefik-no-proxy"
+            and item["spec"]["ingressClassName"]
+            in ["traefik-no-proxy", "traefik-private"]
         )
         or (
             environment == "demo"
             and "annotations" in item["metadata"]
             and "kubernetes.io/ingress.class" in item["metadata"]["annotations"]
             and item["metadata"]["annotations"]["kubernetes.io/ingress.class"]
-            == "traefik-no-proxy"
+            in ["traefik-no-proxy", "traefik-private"]
         )
         or (environment == "sbox" and "labs" not in item["metadata"]["namespace"])
         or (environment == "ptlsbox" and "labs" not in item["metadata"]["namespace"])
