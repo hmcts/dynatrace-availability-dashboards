@@ -1632,22 +1632,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: prl-citizen-frontend-nodejs
-    management_zone_name: CFT-PRIVATE-LAW-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://privatelaw.ithc.platform.hmcts.net/health
-        description: privatelaw.ithc.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: prl-cos-java
     management_zone_name: CFT-PRIVATE-LAW-ITHC
     enabled: true
