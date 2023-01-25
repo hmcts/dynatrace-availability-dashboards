@@ -27,9 +27,27 @@ resource "dynatrace_http_monitor" "availability" {
     tag {
       # hardcoded tags created by dynatrace instance.
       context = "CONTEXTLESS"
-      key     = "SVCOFF1"
       source  = "RULE_BASED"
+      key     = "SVCOFF1"
       value   = "SVCOFF0001322"
+    }
+    tag {
+      key     = "COMPONENT"
+      value   = "dt-availability-dashboards"
+      context = "CONTEXTLESS"
+      source  = "USER"
+    }
+    tag {
+      key     = "OWNER"
+      value   = "PlatOps"
+      context = "CONTEXTLESS"
+      source  = "USER"
+    }
+    tag {
+      key     = "ENVIRONMENT"
+      value   = var.environment
+      context = "CONTEXTLESS"
+      source  = "USER"
     }
   }
   dynamic "tags" {
