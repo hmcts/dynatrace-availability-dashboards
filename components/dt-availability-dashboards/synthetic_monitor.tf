@@ -7,10 +7,10 @@ resource "dynatrace_http_monitor" "availability" {
   name      = "${each.value.management_zone_name}-${each.value.name}"
   frequency = 15
   locations = each.value.locations
-  lifecycle {
-    # Ignoring changes on tags due to dynatrace populating them outside of the code.
-    ignore_changes = [tags]
-  }
+  # lifecycle {
+  # Ignoring changes on tags due to dynatrace populating them outside of the code.
+  # ignore_changes = [tags]
+  # }
   anomaly_detection {
     loading_time_thresholds {
       enabled = true
@@ -27,9 +27,27 @@ resource "dynatrace_http_monitor" "availability" {
     tag {
       # hardcoded tags created by dynatrace instance.
       context = "CONTEXTLESS"
-      key     = "SVCOFF1"
       source  = "RULE_BASED"
+      key     = "SVCOFF1"
       value   = "SVCOFF0001322"
+    }
+    tag {
+      key     = "COMPONENT"
+      value   = "dt-availability-dashboards"
+      context = "CONTEXTLESS"
+      source  = "USER"
+    }
+    tag {
+      key     = "OWNER"
+      value   = "PlatOps"
+      context = "CONTEXTLESS"
+      source  = "USER"
+    }
+    tag {
+      key     = "ENVIRONMENT"
+      value   = var.env
+      context = "CONTEXTLESS"
+      source  = "USER"
     }
   }
   dynamic "tags" {
