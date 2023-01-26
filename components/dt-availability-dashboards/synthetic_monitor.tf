@@ -7,10 +7,10 @@ resource "dynatrace_http_monitor" "availability" {
   name      = "${each.value.management_zone_name}-${each.value.name}"
   frequency = 15
   locations = each.value.locations
-  # lifecycle {
-  # Ignoring changes on tags due to dynatrace populating them outside of the code.
-  # ignore_changes = [tags]
-  # }
+  lifecycle {
+    # Ignoring changes on tags due to dynatrace populating them outside of the code.
+    ignore_changes = [tags]
+  }
   anomaly_detection {
     loading_time_thresholds {
       enabled = true
