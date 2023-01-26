@@ -1664,22 +1664,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: cmc-legal-frontend-nodejs
-    management_zone_name: CFT-MONEY-CLAIMS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://moneyclaims-legal.aat.platform.hmcts.net/health
-        description: moneyclaims-legal.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: kube-prometheus-stack-alertmanager
     management_zone_name: CFT-MONITORING-AAT
     enabled: true
