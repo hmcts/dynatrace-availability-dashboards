@@ -93,7 +93,7 @@ parameters:
         keyvault:
           service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
-          secret_name: dynatrace-platops-api-key
+          secret_name: dynatrace-platops-api-key-mw
 
 variables:
   - name: globalTfCommandOptions
