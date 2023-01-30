@@ -85,7 +85,7 @@ parameters:
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
-      - deployment: dynatrace_auto_shutdown_maintenance_window
+      - deployment: dynatrace_maintenance_windows
         environment: stg
         component: dt-maintenance-window
         service_connection: dts-sharedservices-stg

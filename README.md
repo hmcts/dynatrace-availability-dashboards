@@ -66,3 +66,13 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | <a name="output_ado_dashboard_url"></a> [ado\_dashboard\_url](#output\_ado\_dashboard\_url) | Used to display created dashboard URLs as vso[task.logissue type=warning] |
 | <a name="output_dashboard_url"></a> [dashboard\_url](#output\_dashboard\_url) | Dynatrace Dashboard URL |
 <!-- END_TF_DOCS -->
+
+## Blackouts (Maintenance Windows)
+
+There are two types of Maintenance Windows being handled by this repository:
+  - Automated
+    - Created [here](components/dt-maintenance-window/auto_maintenance_window.tf) and used to turn off our HTTP monitors and alerting for the nonprod environments that are shut down during the evenings, and restarted in the morning.
+  - Manual
+    - Created [here](components/dt-maintenance-window/temp_maintenance_window.tf) and should be enabled in a case where we have a planned suspected outage for one or more environments, i.e a cluster switchover. To achieve this:
+      - Set the [resource](components/dt-maintenance-window/temp_maintenance_window.tf) to `enabled: true`
+      - Update the variables defined [here](components/dt-maintenance-window/variables.tf) in [this](environments/stg/stg.tfvars) file. This allows you to define the environment, start, and end time of the planned outage.
