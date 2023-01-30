@@ -18,12 +18,10 @@ resource "dynatrace_maintenance" "planned_blackout" {
   schedule {
     type = "ONE-OFF"
     once_recurrence {
-      time_window {
-        # Change this in variables.tf
-        end_time   = var.once_end_time
-        start_time = var.once_start_time
-        time_zone  = "UTC"
-      }
+      # Change this in variables.tf
+      end_time   = var.once_end_time
+      start_time = var.once_start_time
+      time_zone  = "UTC"
     }
   }
 }
