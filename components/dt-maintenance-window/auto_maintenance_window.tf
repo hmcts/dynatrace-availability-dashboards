@@ -1,4 +1,4 @@
-resource "dynatrace_maintenance" "auto-shutdown_blackout" {
+resource "dynatrace_maintenance" "auto_shutdown_blackout" {
   enabled = true
   filters {
     filter {
