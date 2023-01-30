@@ -2,7 +2,7 @@ resource "dynatrace_maintenance" "Auto-Shutdown_Blackout" {
   enabled = true
   filters {
     filter {
-      entity_tags = [ "ENVIRONMENT:sbox", "ENVIRONMENT:ptlsbox", "ENVIRONMENT:perftest", "ENVIRONMENT:ithc", "ENVIRONMENT:demo" ]
+      entity_tags = ["ENVIRONMENT:sbox", "ENVIRONMENT:ptlsbox", "ENVIRONMENT:perftest", "ENVIRONMENT:ithc", "ENVIRONMENT:demo"]
       entity_type = "HTTP_CHECK"
     }
   }
