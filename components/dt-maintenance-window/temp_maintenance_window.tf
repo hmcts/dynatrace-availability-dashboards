@@ -16,7 +16,7 @@ resource "dynatrace_maintenance" "planned_blackout" {
     suppression       = "DONT_DETECT_PROBLEMS"
   }
   schedule {
-    type = "ONE-OFF"
+    type = "ONCE"
     once_recurrence {
       # Change this in variables.tf
       end_time   = var.once_end_time
