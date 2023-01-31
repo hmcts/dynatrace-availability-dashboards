@@ -17,12 +17,12 @@ resource "dynatrace_maintenance" "auto_shutdown_blackout" {
     type = "DAILY"
     daily_recurrence {
       recurrence_range {
-        end_date   = "2025-01-01"
-        start_date = "2023-01-25"
+        end_date   = var.auto_window_start_date
+        start_date = var.auto_window_end_date
       }
       time_window {
-        end_time   = "08:30:00"
-        start_time = "20:00:00"
+        end_time   = var.auto_window_end_time
+        start_time = var.auto_window_start_time
         time_zone  = "UTC"
       }
     }

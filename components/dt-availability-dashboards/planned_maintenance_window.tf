@@ -2,7 +2,7 @@ resource "dynatrace_maintenance" "planned_blackout" {
   enabled = var.planned_maintenance
   filters {
     filter {
-      entity_tags = var.blackout_environments
+      entity_tags = ["ENVIRONMENT:${var.env}"]
       entity_type = "HTTP_CHECK"
     }
   }
@@ -18,8 +18,8 @@ resource "dynatrace_maintenance" "planned_blackout" {
     type = "ONCE"
     once_recurrence {
       # Change this in {env}.tfvars
-      end_time   = var.once_end_time
-      start_time = var.once_start_time
+      end_time   = var.planned_window_end_time
+      start_time = var.planned_window_start_time
       time_zone  = "UTC"
     }
   }
