@@ -17,8 +17,8 @@ resource "dynatrace_maintenance" "auto_shutdown_blackout" {
     type = "DAILY"
     daily_recurrence {
       recurrence_range {
-        end_date   = var.auto_window_start_date
-        start_date = var.auto_window_end_date
+        end_date   = var.auto_window_end_date
+        start_date = var.auto_window_start_date
       }
       time_window {
         end_time   = var.auto_window_end_time
