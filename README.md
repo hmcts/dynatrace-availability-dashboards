@@ -63,6 +63,7 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | <a name="input_dt_env_url"></a> [dt\_env\_url](#input\_dt\_env\_url) | Dynatrace environment URL | `string` | n/a | yes |
 | <a name="input_dynatrace_platops_api_key"></a> [dynatrace\_platops\_api\_key](#input\_dynatrace\_platops\_api\_key) | Dynatrace API access key | `string` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | Name of the environment to build in | `string` | n/a | yes |
+| <a name="input_planned_maintenance"></a> [planned\_maintenance](#input\_planned\_maintenance) | This is a toggle to enable or disable a planned maintenance window for an environment | `bool` | `false` | no |
 | <a name="input_planned_window_end_time"></a> [planned\_window\_end\_time](#input\_planned\_window\_end\_time) | End time of the planned maintenance window | `string` | `"2023-01-30T20:00:00"` | no |
 | <a name="input_planned_window_start_time"></a> [planned\_window\_start\_time](#input\_planned\_window\_start\_time) | Start time of the planned maintenance window | `string` | `"2023-01-30T19:00:00"` | no |
 | <a name="input_product"></a> [product](#input\_product) | product variable required by cnp terraform template. Not in use by terraform | `string` | `null` | no |

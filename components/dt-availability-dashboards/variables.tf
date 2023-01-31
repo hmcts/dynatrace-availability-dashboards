@@ -16,6 +16,10 @@ variable "dt_env_url" {
   type        = string
   description = "Dynatrace environment URL"
 }
+variable "planned_maintenance" {
+  default     = false
+  description = "This is a toggle to enable or disable a planned maintenance window for an environment"
+}
 variable "dynatrace_platops_api_key" {
   type        = string
   description = "Dynatrace API access key"
