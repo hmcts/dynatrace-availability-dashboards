@@ -1,4 +1,9 @@
 resource "dynatrace_maintenance" "auto_shutdown_blackout" {
+  /*
+   maintenance mode enabled for given environment to acommodate the
+   out of hours AKS cluster shutdown's.
+   See :https://github.com/hmcts/aks-auto-shutdown
+  */
   enabled = true
   filters {
     filter {
@@ -17,12 +22,12 @@ resource "dynatrace_maintenance" "auto_shutdown_blackout" {
     type = "DAILY"
     daily_recurrence {
       recurrence_range {
-        end_date   = var.auto_window_end_date
         start_date = var.auto_window_start_date
+        end_date   = var.auto_window_end_date
       }
       time_window {
-        end_time   = var.auto_window_end_time
         start_time = var.auto_window_start_time
+        end_time   = var.auto_window_end_time
         time_zone  = "UTC"
       }
     }

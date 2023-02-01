@@ -1,4 +1,9 @@
 resource "dynatrace_maintenance" "planned_blackout" {
+  /*
+   Planned maintenance mode to be used on ad-hoc basis per environment
+   in case of cluster upgrades etc. Use this to suppress alerts across
+   all synthetic monitors for given environment.
+  */
   enabled = var.planned_maintenance
   filters {
     filter {
@@ -18,8 +23,8 @@ resource "dynatrace_maintenance" "planned_blackout" {
     type = "ONCE"
     once_recurrence {
       # Change this in {env}.tfvars
-      end_time   = var.planned_window_end_time
       start_time = var.planned_window_start_time
+      end_time   = var.planned_window_end_time
       time_zone  = "UTC"
     }
   }
