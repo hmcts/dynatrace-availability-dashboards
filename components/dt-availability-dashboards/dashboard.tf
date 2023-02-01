@@ -16,7 +16,10 @@ resource "dynatrace_dashboard" "availability" {
     iterator = slo
     for_each = dynatrace_slo.availability
     content {
-      name       = "Service-level objective - ${slo.value.name}"
+      name = "Service-level objective - ${slo.value.name}"
+      unknowns = jsonencode({
+        isAutoRefreshDisabled = false
+      })
       tile_type  = "SLO"
       name_size  = "small"
       configured = true
