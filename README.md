@@ -45,6 +45,8 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 |------|------|
 | [dynatrace_dashboard.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/dashboard) | resource |
 | [dynatrace_http_monitor.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/http_monitor) | resource |
+| [dynatrace_maintenance.auto_shutdown_blackout](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/maintenance) | resource |
+| [dynatrace_maintenance.planned_blackout](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/maintenance) | resource |
 | [dynatrace_management_zone.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/management_zone) | resource |
 | [dynatrace_slo.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.17.0/docs/resources/slo) | resource |
 | [time_sleep.management_zones](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/sleep) | resource |
@@ -53,10 +55,17 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_auto_window_end_date"></a> [auto\_window\_end\_date](#input\_auto\_window\_end\_date) | This is the date that the cluster-shutdown maintenance window (stopped alerting) should end | `string` | `"2030-01-01"` | no |
+| <a name="input_auto_window_end_time"></a> [auto\_window\_end\_time](#input\_auto\_window\_end\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should end | `string` | `"08:30:00"` | no |
+| <a name="input_auto_window_start_date"></a> [auto\_window\_start\_date](#input\_auto\_window\_start\_date) | This is the date that the cluster-shutdown maintenance window (stopped alerting) should begin | `string` | `"2023-01-31"` | no |
+| <a name="input_auto_window_start_time"></a> [auto\_window\_start\_time](#input\_auto\_window\_start\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should begin | `string` | `"20:00:00"` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | builtFrom variable required by cnp terraform template. Not in use by terraform | `string` | `null` | no |
 | <a name="input_dt_env_url"></a> [dt\_env\_url](#input\_dt\_env\_url) | Dynatrace environment URL | `string` | n/a | yes |
 | <a name="input_dynatrace_platops_api_key"></a> [dynatrace\_platops\_api\_key](#input\_dynatrace\_platops\_api\_key) | Dynatrace API access key | `string` | n/a | yes |
 | <a name="input_env"></a> [env](#input\_env) | Name of the environment to build in | `string` | n/a | yes |
+| <a name="input_planned_maintenance"></a> [planned\_maintenance](#input\_planned\_maintenance) | This is a toggle to enable or disable a planned maintenance window for an environment | `bool` | `false` | no |
+| <a name="input_planned_window_end_time"></a> [planned\_window\_end\_time](#input\_planned\_window\_end\_time) | End time of the planned maintenance window | `string` | `"2023-01-30T20:00:00"` | no |
+| <a name="input_planned_window_start_time"></a> [planned\_window\_start\_time](#input\_planned\_window\_start\_time) | Start time of the planned maintenance window | `string` | `"2023-01-30T19:00:00"` | no |
 | <a name="input_product"></a> [product](#input\_product) | product variable required by cnp terraform template. Not in use by terraform | `string` | `null` | no |
 
 ## Outputs
@@ -71,8 +80,8 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 
 There are two types of Maintenance Windows being handled by this repository:
   - Automated
-    - Created [here](components/dt-maintenance-window/auto_maintenance_window.tf) and used to turn off our HTTP monitors and alerting for the nonprod environments that are shut down during the evenings, and restarted in the morning.
+    - Created [here](components/dt-availability-dashboards/auto_maintenance_window.tf) and used to turn off our HTTP monitors and alerting for the nonprod environments that are shut down during the evenings, and restarted in the morning. To change the settings for a specific environment, edit the {env}.tfvars file.
   - Manual
-    - Created [here](components/dt-maintenance-window/temp_maintenance_window.tf) and should be enabled in a case where we have a planned suspected outage for one or more environments, i.e a cluster switchover. To achieve this:
-      - Set the [resource](components/dt-maintenance-window/temp_maintenance_window.tf#L3) to `enabled: true`
-      - Update the variables defined [here](components/dt-maintenance-window/variables.tf) in [this](environments/stg/stg.tfvars) file. This allows you to define the environment, start, and end time of the planned outage.
+    - Created [here](components/dt-availability-dashboards/planned_maintenance_window.tf) and should be enabled in a case where we have a planned suspected outage for one or more environments, i.e a cluster switchover. To achieve this:
+      - Set the enabled flag to true in a given {env}.tfvars file, for example in [demo](environments/demo/demo.tfvars#4)
+      - Update the variables defined a given {env}.tfvars [file](environments/stg/stg.tfvars) file. This allows you to define the start, and end time of the planned outage within that environment.

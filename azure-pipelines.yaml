@@ -85,16 +85,6 @@ parameters:
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
-      - deployment: dynatrace_maintenance_windows
-        environment: stg
-        component: dt-maintenance-window
-        service_connection: dts-sharedservices-stg
-        dependsOn: Precheck
-        keyvault:
-          service_connection: DCD-CFT-Sandbox
-          name: infra-vault-nonprod
-          secret_name: dynatrace-platops-api-key
-
 variables:
   - name: globalTfCommandOptions
     value: -parallelism=1
