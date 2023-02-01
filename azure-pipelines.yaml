@@ -31,7 +31,7 @@ parameters:
         service_connection: dts-sharedservices-sbox
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -41,7 +41,7 @@ parameters:
         service_connection: dts-sharedservices-demo
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -51,7 +51,7 @@ parameters:
         service_connection: dts-sharedservices-ithc
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -61,7 +61,7 @@ parameters:
         service_connection: dts-sharedservicesptl-sbox
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -71,7 +71,7 @@ parameters:
         service_connection: dts-sharedservices-stg
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -81,7 +81,7 @@ parameters:
         service_connection: dts-sharedservices-test
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
+          service_connection: ${{ variables.kvConnectedServiceName }}
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -115,7 +115,7 @@ stages:
             parameters:
               keyvaultName: 'infra-vault-nonprod'
               keyvaultSecret: 'azure-devops-token'
-              serviceConnection: 'DCD-CFT-Sandbox'
+              serviceConnection: ${{ variables.kvConnectedServiceName }}
               overrideAction: ${{ parameters.overrideAction }}
 
   - ${{ each deployment in parameters.environment_components }}:
