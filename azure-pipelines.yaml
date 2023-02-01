@@ -98,6 +98,8 @@ variables:
     value: dt-availability-dashboards
   - name: terraformInitSubscription
     value: 04d27a32-7a07-48b3-95b8-3c8691e1a263
+  - name: kvConnectedServiceName
+    value: DCD-CFT-Sandbox
   - template: vars/input-variables.yaml@cnp-azuredevops-libraries
 
 stages:
@@ -138,6 +140,7 @@ stages:
                   overrideAction: ${{ parameters.overrideAction }}
                   environment: ${{ deployment.environment }}
                   component: ${{ deployment.component }}
+                  kvConnectedServiceName: ${{ variables.kvConnectedServiceName }}
                   serviceConnection: ${{ deployment.service_connection }}
                   terraformInitSubscription: ${{ variables.terraformInitSubscription }}
                   product: ${{ variables.product }}
