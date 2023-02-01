@@ -21,6 +21,9 @@ parameters:
       - plan
       - apply
       - destroy
+  - name: kvConnectedServiceName
+    type: string
+    default: DCD-CFT-Sandbox
 
   - name: environment_components
     type: object
@@ -31,7 +34,6 @@ parameters:
         service_connection: dts-sharedservices-sbox
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -41,7 +43,6 @@ parameters:
         service_connection: dts-sharedservices-demo
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -51,7 +52,6 @@ parameters:
         service_connection: dts-sharedservices-ithc
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -61,7 +61,6 @@ parameters:
         service_connection: dts-sharedservicesptl-sbox
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -71,7 +70,6 @@ parameters:
         service_connection: dts-sharedservices-stg
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -81,7 +79,6 @@ parameters:
         service_connection: dts-sharedservices-test
         dependsOn: Precheck
         keyvault:
-          service_connection: DCD-CFT-Sandbox
           name: infra-vault-nonprod
           secret_name: dynatrace-platops-api-key
 
@@ -113,7 +110,7 @@ stages:
             parameters:
               keyvaultName: 'infra-vault-nonprod'
               keyvaultSecret: 'azure-devops-token'
-              serviceConnection: 'DCD-CFT-Sandbox'
+              serviceConnection: ${{ parameters.kvConnectedServiceName }}
               overrideAction: ${{ parameters.overrideAction }}
 
   - ${{ each deployment in parameters.environment_components }}:
@@ -129,7 +126,7 @@ stages:
               - task: AzureKeyVault@2
                 displayName: 'Pre-job: Retrieve keyvault secret for Dynatrace API Key'
                 inputs:
-                  azureSubscription: ${{ deployment.keyvault.service_connection }}
+                  azureSubscription: ${{ parameters.kvConnectedServiceName }}
                   KeyVaultName: ${{ deployment.keyvault.name }}
                   SecretsFilter: ${{ deployment.keyvault.secret_name }}
                   RunAsPreJob: true
@@ -138,6 +135,7 @@ stages:
                   overrideAction: ${{ parameters.overrideAction }}
                   environment: ${{ deployment.environment }}
                   component: ${{ deployment.component }}
+                  kvConnectedServiceName: ${{ parameters.kvConnectedServiceName }}
                   serviceConnection: ${{ deployment.service_connection }}
                   terraformInitSubscription: ${{ variables.terraformInitSubscription }}
                   product: ${{ variables.product }}
