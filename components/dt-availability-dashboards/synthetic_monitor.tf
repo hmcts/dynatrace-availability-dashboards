@@ -18,9 +18,6 @@ resource "dynatrace_http_monitor" "availability" {
     outage_handling {
       global_outage = false
       local_outage  = false
-      global_outage_policy {
-        consecutive_runs = 1
-      }
     }
   }
   tags {
