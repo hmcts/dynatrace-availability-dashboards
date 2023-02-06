@@ -774,8 +774,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.demo.platform.hmcts.net/health
-        description: et-sya.demo.platform.hmcts.net
+      - url: http://et-sya.ithc.platform.hmcts.net/health
+        description: et-sya.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
