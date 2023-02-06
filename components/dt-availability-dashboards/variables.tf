@@ -44,6 +44,16 @@ variable "auto_window_end_time" {
   default     = "08:30:00"
   description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should end"
 }
+variable "weekend_window_start_time" {
+  type        = string
+  default     = "00:00:00"
+  description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should begin during the weekend"
+}
+variable "weekend_window_end_time" {
+  type        = string
+  default     = "23:59:59"
+  description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should end during the weekend"
+}
 variable "auto_window_start_date" {
   type        = string
   default     = "2023-01-31"
