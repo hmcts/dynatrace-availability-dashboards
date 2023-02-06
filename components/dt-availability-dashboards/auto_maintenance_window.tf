@@ -12,7 +12,7 @@ resource "dynatrace_maintenance" "auto_shutdown_blackout" {
     }
   }
   general_properties {
-    name              = "Auto-Shutdown Blackout for ${var.env} environment."
+    name              = "Cluster Auto-Shutdown for ${var.env} environment"
     description       = "All nonprod envs besides AAT are shutdown out of hours. This maintenance window stops alerting and HTTP monitors for all HTTP monitors in ${var.env} environment. The maintenance window starts after this as the clusters take some time to build."
     type              = "PLANNED"
     disable_synthetic = true
@@ -49,7 +49,7 @@ resource "dynatrace_maintenance" "auto_shutdown_weekends" {
     }
   }
   general_properties {
-    name              = "Auto-Shutdown Blackout for ${var.env} environment over the weekends"
+    name              = "Cluster power-off in ${var.env} environment on weekends"
     description       = "All nonprod envs besides AAT are shutdown out of hours. This maintenance window stops alerting and HTTP monitors for all HTTP monitors in ${var.env} environment"
     type              = "PLANNED"
     disable_synthetic = true
