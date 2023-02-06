@@ -49,7 +49,7 @@ resource "dynatrace_maintenance" "auto_shutdown_weekends" {
     }
   }
   general_properties {
-    name              = "Cluster power-off in ${var.env} environment on ${titel(lower(each.key))}"
+    name              = "Cluster power-off in ${var.env} environment on ${title(lower(each.key))}"
     description       = "All nonprod envs besides AAT are shutdown out of hours. This maintenance window stops alerting and HTTP monitors for all HTTP monitors in ${var.env} environment"
     type              = "PLANNED"
     disable_synthetic = true
