@@ -16,6 +16,14 @@ variable "dt_env_url" {
   type        = string
   description = "Dynatrace environment URL"
 }
+variable "automated_weekday_maintenance" {
+  default     = true
+  description = "This is a toggle to enable or disable the automatic maintenance window for an environment on weekdays, defaults to true as we have cluster shutdowns."
+}
+variable "automated_weekend_maintenance" {
+  default     = true
+  description = "This is a toggle to enable or disable the automatic maintenance window for an environment on the weekend, defaults to true as we have cluster shutdowns."
+}
 variable "planned_maintenance" {
   default     = false
   description = "This is a toggle to enable or disable a planned maintenance window for an environment"

@@ -4,7 +4,7 @@ resource "dynatrace_maintenance" "auto_shutdown_blackout" {
    out of hours AKS cluster shutdown's during weekdays
    See :https://github.com/hmcts/aks-auto-shutdown
   */
-  enabled = true
+  enabled = var.automated_weekday_maintenance
   filters {
     filter {
       entity_tags = ["ENVIRONMENT:${var.env}"]
@@ -40,7 +40,7 @@ resource "dynatrace_maintenance" "auto_shutdown_weekends" {
    out of hours AKS cluster shutdown's during weekends when we power off
    See :https://github.com/hmcts/aks-auto-shutdown
   */
-  enabled  = true
+  enabled  = var.automated_weekend_maintenance
   for_each = local.weekend_days
   filters {
     filter {
