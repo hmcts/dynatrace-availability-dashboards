@@ -16,6 +16,14 @@ variable "dt_env_url" {
   type        = string
   description = "Dynatrace environment URL"
 }
+variable "automated_weekday_maintenance" {
+  default     = true
+  description = "This is a toggle to enable or disable the automatic maintenance window for an environment on weekdays, defaults to true as we have cluster shutdowns."
+}
+variable "automated_weekend_maintenance" {
+  default     = true
+  description = "This is a toggle to enable or disable the automatic maintenance window for an environment on the weekend, defaults to true as we have cluster shutdowns."
+}
 variable "planned_maintenance" {
   default     = false
   description = "This is a toggle to enable or disable a planned maintenance window for an environment"
@@ -43,6 +51,16 @@ variable "auto_window_end_time" {
   type        = string
   default     = "08:30:00"
   description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should end"
+}
+variable "weekend_window_start_time" {
+  type        = string
+  default     = "00:00:00"
+  description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should begin during the weekend"
+}
+variable "weekend_window_end_time" {
+  type        = string
+  default     = "23:59:59"
+  description = "This is the time that the cluster-shutdown maintenance window (stopped alerting) should end during the weekend"
 }
 variable "auto_window_start_date" {
   type        = string

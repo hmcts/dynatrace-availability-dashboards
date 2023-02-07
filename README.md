@@ -46,6 +46,7 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | [dynatrace_dashboard.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/dashboard) | resource |
 | [dynatrace_http_monitor.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/http_monitor) | resource |
 | [dynatrace_maintenance.auto_shutdown_blackout](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/maintenance) | resource |
+| [dynatrace_maintenance.auto_shutdown_weekends](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/maintenance) | resource |
 | [dynatrace_maintenance.planned_blackout](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/maintenance) | resource |
 | [dynatrace_management_zone.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/management_zone) | resource |
 | [dynatrace_slo.availability](https://registry.terraform.io/providers/dynatrace-oss/dynatrace/1.18.1/docs/resources/slo) | resource |
@@ -59,6 +60,8 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | <a name="input_auto_window_end_time"></a> [auto\_window\_end\_time](#input\_auto\_window\_end\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should end | `string` | `"08:30:00"` | no |
 | <a name="input_auto_window_start_date"></a> [auto\_window\_start\_date](#input\_auto\_window\_start\_date) | This is the date that the cluster-shutdown maintenance window (stopped alerting) should begin | `string` | `"2023-01-31"` | no |
 | <a name="input_auto_window_start_time"></a> [auto\_window\_start\_time](#input\_auto\_window\_start\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should begin | `string` | `"20:00:00"` | no |
+| <a name="input_automated_weekday_maintenance"></a> [automated\_weekday\_maintenance](#input\_automated\_weekday\_maintenance) | This is a toggle to enable or disable the automatic maintenance window for an environment on weekdays, defaults to true as we have cluster shutdowns. | `bool` | `true` | no |
+| <a name="input_automated_weekend_maintenance"></a> [automated\_weekend\_maintenance](#input\_automated\_weekend\_maintenance) | This is a toggle to enable or disable the automatic maintenance window for an environment on the weekend, defaults to true as we have cluster shutdowns. | `bool` | `true` | no |
 | <a name="input_builtFrom"></a> [builtFrom](#input\_builtFrom) | builtFrom variable required by cnp terraform template. Not in use by terraform | `string` | `null` | no |
 | <a name="input_dt_env_url"></a> [dt\_env\_url](#input\_dt\_env\_url) | Dynatrace environment URL | `string` | n/a | yes |
 | <a name="input_dynatrace_platops_api_key"></a> [dynatrace\_platops\_api\_key](#input\_dynatrace\_platops\_api\_key) | Dynatrace API access key | `string` | n/a | yes |
@@ -67,6 +70,8 @@ The purpose of this repository is to automate the creation of Synthetic Monitors
 | <a name="input_planned_window_end_time"></a> [planned\_window\_end\_time](#input\_planned\_window\_end\_time) | End time of the planned maintenance window | `string` | `"2023-01-30T20:00:00"` | no |
 | <a name="input_planned_window_start_time"></a> [planned\_window\_start\_time](#input\_planned\_window\_start\_time) | Start time of the planned maintenance window | `string` | `"2023-01-30T19:00:00"` | no |
 | <a name="input_product"></a> [product](#input\_product) | product variable required by cnp terraform template. Not in use by terraform | `string` | `null` | no |
+| <a name="input_weekend_window_end_time"></a> [weekend\_window\_end\_time](#input\_weekend\_window\_end\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should end during the weekend | `string` | `"23:59:59"` | no |
+| <a name="input_weekend_window_start_time"></a> [weekend\_window\_start\_time](#input\_weekend\_window\_start\_time) | This is the time that the cluster-shutdown maintenance window (stopped alerting) should begin during the weekend | `string` | `"00:00:00"` | no |
 
 ## Outputs
 
