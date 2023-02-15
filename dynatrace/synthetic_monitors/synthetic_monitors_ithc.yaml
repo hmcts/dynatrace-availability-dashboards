@@ -662,8 +662,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://em-ccdorc-ithc.service.core-compute-ithc.internal/health
-        description: em-ccdorc-ithc.service.core-compute-ithc.internal
+      - url: http://em-ccd-orchestrator-ithc.service.core-compute-ithc.internal/health
+        description: em-ccd-orchestrator-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
