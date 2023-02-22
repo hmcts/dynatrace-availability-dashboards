@@ -1168,6 +1168,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: fis-cos-api-java
+    management_zone_name: CFT-FIS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-cos-api-perftest.service.core-compute-perftest.internal/health
+        description: fis-cos-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fis-ds-update-web-nodejs
+    management_zone_name: CFT-FIS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://fis-ds-update-web.perftest.platform.hmcts.net/health
+        description: fis-ds-update-web.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: fis-ds-web-nodejs
     management_zone_name: CFT-FIS-PERFTEST
     enabled: true
