@@ -150,8 +150,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-01.sandbox.platform.hmcts.net/health
-        description: alertmanager-01.sandbox.platform.hmcts.net
+      - url: http://alertmanager-00.sandbox.platform.hmcts.net/health
+        description: alertmanager-00.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -166,8 +166,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-01.sandbox.platform.hmcts.net/health
-        description: prometheus-01.sandbox.platform.hmcts.net
+      - url: http://prometheus-00.sandbox.platform.hmcts.net/health
+        description: prometheus-00.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
