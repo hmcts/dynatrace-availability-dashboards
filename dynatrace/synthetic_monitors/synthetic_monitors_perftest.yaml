@@ -1398,7 +1398,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-api.perftest.platform.hmcts.net/health
+      - url: https://idam-api.perftest.platform.hmcts.net/health
         description: idam-api.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1414,7 +1414,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://hmcts-access.perftest.platform.hmcts.net/health
+      - url: https://hmcts-access.perftest.platform.hmcts.net/health
         description: hmcts-access.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1430,7 +1430,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-testing-support-api.perftest.platform.hmcts.net/health
+      - url: https://idam-testing-support-api.perftest.platform.hmcts.net/health
         description: idam-testing-support-api.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1446,7 +1446,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-user-dashboard.perftest.platform.hmcts.net/health
+      - url: https://idam-user-dashboard.perftest.platform.hmcts.net/health
         description: idam-user-dashboard.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1462,7 +1462,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-web-admin.perftest.platform.hmcts.net/health
+      - url: https://idam-web-admin.perftest.platform.hmcts.net/health
         description: idam-web-admin.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1478,7 +1478,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-web-public.perftest.platform.hmcts.net/health
+      - url: https://idam-web-public.perftest.platform.hmcts.net/health
         description: idam-web-public.perftest.platform.hmcts.net
         method: GET
         configuration:
