@@ -30,7 +30,10 @@ sample_app = {
 sample_idam_app = {
     "name": "idam-sample-app",
     "namespace": "idam",
-    "labels": {"aadpodidbinding": "idam", "helm.toolkit.fluxcd.io/name": "idamsampleapp"},
+    "labels": {
+        "aadpodidbinding": "idam",
+        "helm.toolkit.fluxcd.io/name": "idamsampleapp",
+    },
     "annotations": {"meta.helm.sh/release-name": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
@@ -98,6 +101,7 @@ class TestHelperResources(unittest.TestCase):
             formatted_data[0]["requests"][0]["url"],
             f'http://{filtered_data[0]["host"]}/health',
         )
+
     def test_format_dt_monitors_yaml_idam_https(self):
         filtered_data = [
             {
