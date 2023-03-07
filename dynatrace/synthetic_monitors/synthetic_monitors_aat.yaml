@@ -1526,7 +1526,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-api.aat.platform.hmcts.net/health
+      - url: http://idam-api.aat.platform.hmcts.net/health
         description: idam-api.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1542,7 +1542,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://hmcts-access.aat.platform.hmcts.net/health
+      - url: http://hmcts-access.aat.platform.hmcts.net/health
         description: hmcts-access.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1558,7 +1558,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-testing-support-api.aat.platform.hmcts.net/health
+      - url: http://idam-testing-support-api.aat.platform.hmcts.net/health
         description: idam-testing-support-api.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1574,7 +1574,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-user-dashboard.aat.platform.hmcts.net/health
+      - url: http://idam-user-dashboard.aat.platform.hmcts.net/health
         description: idam-user-dashboard.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1590,7 +1590,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-admin.aat.platform.hmcts.net/health
+      - url: http://idam-web-admin.aat.platform.hmcts.net/health
         description: idam-web-admin.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1606,7 +1606,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-public.aat.platform.hmcts.net/health
+      - url: http://idam-web-public.aat.platform.hmcts.net/health
         description: idam-web-public.aat.platform.hmcts.net
         method: GET
         configuration:
