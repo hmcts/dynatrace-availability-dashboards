@@ -106,15 +106,14 @@ def filter_ingress(data, environment):
         if (
             environment == "demo"
             and "ingressClassName" in item["spec"]
-            and item["spec"]["ingressClassName"]
-            in ["traefik-no-proxy", "traefik-private"]
+            and item["spec"]["ingressClassName"] == "traefik-no-proxy"
         )
         or (
             environment == "demo"
             and "annotations" in item["metadata"]
             and "kubernetes.io/ingress.class" in item["metadata"]["annotations"]
             and item["metadata"]["annotations"]["kubernetes.io/ingress.class"]
-            in ["traefik-no-proxy", "traefik-private"]
+            == "traefik-no-proxy"
         )
         or (environment == "sbox" and "labs" not in item["metadata"]["namespace"])
         or (environment == "ptlsbox" and "labs" not in item["metadata"]["namespace"])
@@ -136,8 +135,11 @@ def format_dt_monitors_yaml(department, data_filtered, environment):
             "enabled": True,
             "locations": ["SYNTHETIC_LOCATION-CC3E4D2657A13D18"],
             "requests": [
-                {
-                    "url": f'http://{item["host"]}/health',
+                {   
+                    if ("idam" in {item["host"]}): 
+                        "url": f'https://{item["host"]}/health',
+                    else:
+                        "url": f'http://{item["host"]}/health',
                     "description": item["host"],
                     "method": "GET",
                     "configuration": {
@@ -150,6 +152,9 @@ def format_dt_monitors_yaml(department, data_filtered, environment):
                             "value": ">400",
                             "pass_if_found": False,
                         }
+                    ],
+                    "tags": [
+                        
                     ],
                 }
             ],
