@@ -1350,7 +1350,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-api.ithc.platform.hmcts.net/health
+      - url: http://idam-api.ithc.platform.hmcts.net/health
         description: idam-api.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1366,7 +1366,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://hmcts-access.ithc.platform.hmcts.net/health
+      - url: http://hmcts-access.ithc.platform.hmcts.net/health
         description: hmcts-access.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1382,7 +1382,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-testing-support-api.ithc.platform.hmcts.net/health
+      - url: http://idam-testing-support-api.ithc.platform.hmcts.net/health
         description: idam-testing-support-api.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1398,7 +1398,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-user-dashboard.ithc.platform.hmcts.net/health
+      - url: http://idam-user-dashboard.ithc.platform.hmcts.net/health
         description: idam-user-dashboard.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1414,7 +1414,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-admin.ithc.platform.hmcts.net/health
+      - url: http://idam-web-admin.ithc.platform.hmcts.net/health
         description: idam-web-admin.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1430,7 +1430,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-public.ithc.platform.hmcts.net/health
+      - url: http://idam-web-public.ithc.platform.hmcts.net/health
         description: idam-web-public.ithc.platform.hmcts.net
         method: GET
         configuration:
