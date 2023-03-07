@@ -27,6 +27,23 @@ sample_app = {
         ],
     },
 }
+sample_idam_app = {
+    "name": "idam-sample-app",
+    "namespace": "idam",
+    "labels": {
+        "aadpodidbinding": "idam",
+        "helm.toolkit.fluxcd.io/name": "idamsampleapp",
+    },
+    "annotations": {"meta.helm.sh/release-name": "samplevalue"},
+    "spec": {
+        "ingressClassName": "traefik-no-proxy",
+        "rules": [
+            {
+                "host": "idam-sample-app.internal",
+            }
+        ],
+    },
+}
 kube_data = {
     "apiVersion": "",
     "kind": "",
@@ -83,6 +100,26 @@ class TestHelperResources(unittest.TestCase):
         self.assertEqual(
             formatted_data[0]["requests"][0]["url"],
             f'http://{filtered_data[0]["host"]}/health',
+        )
+
+    def test_format_dt_monitors_yaml_idam_https(self):
+        filtered_data = [
+            {
+                "name": sample_idam_app["name"],
+                "namespace": sample_idam_app["namespace"],
+                "host": sample_idam_app["spec"]["rules"][0]["host"],
+            }
+        ]
+        formatted_data = format_dt_monitors_yaml("cft", filtered_data, "demo")
+        self.assertIsInstance(formatted_data, list)
+        self.assertEqual(formatted_data[0]["name"], filtered_data[0]["name"])
+        self.assertEqual(
+            formatted_data[0]["management_zone_name"],
+            f'CFT-{filtered_data[0]["namespace"].upper()}-DEMO',
+        )
+        self.assertEqual(
+            formatted_data[0]["requests"][0]["url"],
+            f'https://{filtered_data[0]["host"]}/health',
         )
 
     def test_handle_synthetic_monitors_yaml(self):
