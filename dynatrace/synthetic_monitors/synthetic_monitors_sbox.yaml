@@ -54,7 +54,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-api.sandbox.platform.hmcts.net/health
+      - url: http://idam-api.sandbox.platform.hmcts.net/health
         description: idam-api.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -70,7 +70,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://hmcts-access.sandbox.platform.hmcts.net/health
+      - url: http://hmcts-access.sandbox.platform.hmcts.net/health
         description: hmcts-access.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -86,7 +86,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-testing-support-api.sandbox.platform.hmcts.net/health
+      - url: http://idam-testing-support-api.sandbox.platform.hmcts.net/health
         description: idam-testing-support-api.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -102,7 +102,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-user-dashboard.sandbox.platform.hmcts.net/health
+      - url: http://idam-user-dashboard.sandbox.platform.hmcts.net/health
         description: idam-user-dashboard.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -118,7 +118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-admin.sandbox.platform.hmcts.net/health
+      - url: http://idam-web-admin.sandbox.platform.hmcts.net/health
         description: idam-web-admin.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -134,7 +134,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-public.sandbox.platform.hmcts.net/health
+      - url: http://idam-web-public.sandbox.platform.hmcts.net/health
         description: idam-web-public.sandbox.platform.hmcts.net
         method: GET
         configuration:
