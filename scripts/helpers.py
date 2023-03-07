@@ -137,9 +137,9 @@ def format_dt_monitors_yaml(department, data_filtered, environment):
             "locations": ["SYNTHETIC_LOCATION-CC3E4D2657A13D18"],
             "requests": [
                 {
-                    if ("idam" in {item["host"]})
+                    if ("idam" in {item["host"]}):
                         "url": f'https://{item["host"]}/health',
-                    else
+                    else:
                         "url": f'http://{item["host"]}/health',
                     "description": item["host"],
                     "method": "GET",
