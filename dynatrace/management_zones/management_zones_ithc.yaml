@@ -34,6 +34,7 @@ management_zones:
   - name: CFT-RD-ITHC
   - name: CFT-RPE-ITHC
   - name: CFT-RPTS-ITHC
+  - name: CFT-SPTRIBS-ITHC
   - name: CFT-SSCS-ITHC
   - name: CFT-TS-ITHC
   - name: CFT-WA-ITHC
