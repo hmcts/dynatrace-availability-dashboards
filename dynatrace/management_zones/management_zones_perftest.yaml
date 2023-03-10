@@ -37,6 +37,7 @@ management_zones:
   - name: CFT-REFORM-SCAN-PERFTEST
   - name: CFT-RPE-PERFTEST
   - name: CFT-RPTS-PERFTEST
+  - name: CFT-SPTRIBS-PERFTEST
   - name: CFT-SSCS-PERFTEST
   - name: CFT-TS-PERFTEST
   - name: CFT-WA-PERFTEST
