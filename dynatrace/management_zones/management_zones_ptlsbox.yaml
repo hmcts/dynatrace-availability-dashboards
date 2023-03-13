@@ -2,4 +2,5 @@
 management_zones:
   - name: CFT-BACKSTAGE-PTLSBOX
   - name: CFT-JENKINS-PTLSBOX
+  - name: CFT-MONITORING-PTLSBOX
   - name: CFT-PACT-BROKER-PTLSBOX
