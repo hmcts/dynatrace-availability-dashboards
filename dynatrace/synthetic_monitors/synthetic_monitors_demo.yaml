@@ -864,22 +864,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: em-showcase-nodejs
-    management_zone_name: CFT-EM-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://em-showcase-demo.service.core-compute-demo.internal/health
-        description: em-showcase-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: em-stitching-java
     management_zone_name: CFT-EM-DEMO
     enabled: true
