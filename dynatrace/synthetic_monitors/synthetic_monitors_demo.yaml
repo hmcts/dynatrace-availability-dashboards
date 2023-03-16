@@ -48,22 +48,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: adoption-web-nodejs
-    management_zone_name: CFT-ADOPTION-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://adoption-web.demo.platform.hmcts.net/health
-        description: adoption-web.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: am-judicial-booking-service-java
     management_zone_name: CFT-AM-DEMO
     enabled: true
@@ -264,22 +248,6 @@ synthetic_monitors:
     requests:
       - url: http://camunda-optimize.demo.platform.hmcts.net/health
         description: camunda-optimize.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: camunda-ui-java
-    management_zone_name: CFT-CAMUNDA-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://camunda-bpm.demo.platform.hmcts.net/health
-        description: camunda-bpm.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
