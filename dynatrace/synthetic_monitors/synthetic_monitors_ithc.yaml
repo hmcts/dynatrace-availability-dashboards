@@ -182,7 +182,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.ithc.platform.hmcts.net/health
+      - url: https://ccd-admin-web.ithc.platform.hmcts.net/health
         description: ccd-admin-web.ithc.platform.hmcts.net
         method: GET
         configuration:
