@@ -138,7 +138,7 @@ def format_dt_monitors_yaml(department, data_filtered, environment):
             "requests": [
                 {
                     "url": (
-                        f'{"https" if ("idam" in {item["namespace"]}) else "http"}'
+                        f'{"https" if (".platform.hmcts.net" in {item["host"]}) else "http"}'
                         f'://{item["host"]}/health'
                     ),
                     "description": item["host"],
