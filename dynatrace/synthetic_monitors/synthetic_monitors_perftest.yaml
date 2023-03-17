@@ -1190,8 +1190,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-update-web.perftest.platform.hmcts.net/health
-        description: fis-ds-update-web.perftest.platform.hmcts.net
+      - url: http://dss-update-case.perftest.platform.hmcts.net/health
+        description: dss-update-case.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
