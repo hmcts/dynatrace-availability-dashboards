@@ -54,7 +54,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://adoption-web.demo.platform.hmcts.net/health
+      - url: https://adoption-web.demo.platform.hmcts.net/health
         description: adoption-web.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -150,7 +150,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar-int.demo.platform.hmcts.net/health
+      - url: https://bar-int.demo.platform.hmcts.net/health
         description: bar-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -166,7 +166,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar.demo.platform.hmcts.net/health
+      - url: https://bar.demo.platform.hmcts.net/health
         description: bar.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -262,7 +262,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-optimize.demo.platform.hmcts.net/health
+      - url: https://camunda-optimize.demo.platform.hmcts.net/health
         description: camunda-optimize.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -278,7 +278,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ac-int-gateway-ccd.demo.platform.hmcts.net/health
+      - url: https://ac-int-gateway-ccd.demo.platform.hmcts.net/health
         description: ac-int-gateway-ccd.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -326,7 +326,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.demo.platform.hmcts.net/health
+      - url: https://ccd-admin-web.demo.platform.hmcts.net/health
         description: ccd-admin-web.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -342,7 +342,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://gateway-ccd.demo.platform.hmcts.net/health
+      - url: https://gateway-ccd.demo.platform.hmcts.net/health
         description: gateway-ccd.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -470,7 +470,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.demo.platform.hmcts.net/health
+      - url: https://civil-citizen-ui.demo.platform.hmcts.net/health
         description: civil-citizen-ui.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -518,7 +518,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-public.demo.platform.hmcts.net/health
+      - url: https://plum-public.demo.platform.hmcts.net/health
         description: plum-public.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -630,7 +630,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-absolute-aks.demo.platform.hmcts.net/health
+      - url: https://decree-absolute-aks.demo.platform.hmcts.net/health
         description: decree-absolute-aks.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -662,7 +662,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-nisi-aks.demo.platform.hmcts.net/health
+      - url: https://decree-nisi-aks.demo.platform.hmcts.net/health
         description: decree-nisi-aks.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -710,7 +710,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://petitioner-frontend-aks.demo.platform.hmcts.net/health
+      - url: https://petitioner-frontend-aks.demo.platform.hmcts.net/health
         description: petitioner-frontend-aks.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -726,7 +726,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://respond-divorce-aks.demo.platform.hmcts.net/health
+      - url: https://respond-divorce-aks.demo.platform.hmcts.net/health
         description: respond-divorce-aks.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -774,7 +774,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.demo.platform.hmcts.net/health
+      - url: https://docmosis.demo.platform.hmcts.net/health
         description: docmosis.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -918,7 +918,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.demo.platform.hmcts.net/health
+      - url: https://et-sya.demo.platform.hmcts.net/health
         description: et-sya.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -998,7 +998,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble-int.demo.platform.hmcts.net/health
+      - url: https://paybubble-int.demo.platform.hmcts.net/health
         description: paybubble-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1014,7 +1014,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble.demo.platform.hmcts.net/health
+      - url: https://paybubble.demo.platform.hmcts.net/health
         description: paybubble.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1158,7 +1158,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paymentoutcome-web.demo.platform.hmcts.net/health
+      - url: https://paymentoutcome-web.demo.platform.hmcts.net/health
         description: paymentoutcome-web.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1238,7 +1238,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register-int.demo.platform.hmcts.net/health
+      - url: https://fees-register-int.demo.platform.hmcts.net/health
         description: fees-register-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1254,7 +1254,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register.demo.platform.hmcts.net/health
+      - url: https://fees-register.demo.platform.hmcts.net/health
         description: fees-register.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1478,7 +1478,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://immigration-appeal.demo.platform.hmcts.net/health
+      - url: https://immigration-appeal.demo.platform.hmcts.net/health
         description: immigration-appeal.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1766,7 +1766,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau-int.demo.platform.hmcts.net/health
+      - url: https://lau-int.demo.platform.hmcts.net/health
         description: lau-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1814,7 +1814,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.demo.platform.hmcts.net/health
+      - url: https://moneyclaims.demo.platform.hmcts.net/health
         description: moneyclaims.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1846,7 +1846,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.demo.platform.hmcts.net/health
+      - url: https://alertmanager-00.demo.platform.hmcts.net/health
         description: alertmanager-00.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1862,7 +1862,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.demo.platform.hmcts.net/health
+      - url: https://prometheus-00.demo.platform.hmcts.net/health
         description: prometheus-00.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1894,7 +1894,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://nfdiv.demo.platform.hmcts.net/health
+      - url: https://nfdiv.demo.platform.hmcts.net/health
         description: nfdiv.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1942,7 +1942,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq-int.demo.platform.hmcts.net/health
+      - url: https://pcq-int.demo.platform.hmcts.net/health
         description: pcq-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1958,7 +1958,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq.demo.platform.hmcts.net/health
+      - url: https://pcq.demo.platform.hmcts.net/health
         description: pcq.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -1974,7 +1974,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://privatelaw.demo.platform.hmcts.net/health
+      - url: https://privatelaw.demo.platform.hmcts.net/health
         description: privatelaw.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2054,7 +2054,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://probate.demo.platform.hmcts.net/health
+      - url: https://probate.demo.platform.hmcts.net/health
         description: probate.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2502,7 +2502,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://benefit-appeal.demo.platform.hmcts.net/health
+      - url: https://benefit-appeal.demo.platform.hmcts.net/health
         description: benefit-appeal.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2630,7 +2630,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://activity-tracker-api.demo.platform.hmcts.net/health
+      - url: https://activity-tracker-api.demo.platform.hmcts.net/health
         description: activity-tracker-api.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2646,7 +2646,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs-int.demo.platform.hmcts.net/health
+      - url: https://administer-orgs-int.demo.platform.hmcts.net/health
         description: administer-orgs-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2662,7 +2662,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs.demo.platform.hmcts.net/health
+      - url: https://administer-orgs.demo.platform.hmcts.net/health
         description: administer-orgs.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2678,7 +2678,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org-int.demo.platform.hmcts.net/health
+      - url: https://manage-org-int.demo.platform.hmcts.net/health
         description: manage-org-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2694,7 +2694,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org.demo.platform.hmcts.net/health
+      - url: https://manage-org.demo.platform.hmcts.net/health
         description: manage-org.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2710,7 +2710,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-ac-int.demo.platform.hmcts.net/health
+      - url: https://manage-case-ac-int.demo.platform.hmcts.net/health
         description: manage-case-ac-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2726,7 +2726,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-caa-assigned-case-view.demo.platform.hmcts.net/health
+      - url: https://manage-case-caa-assigned-case-view.demo.platform.hmcts.net/health
         description: manage-case-caa-assigned-case-view.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2742,7 +2742,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-hearings-int.demo.platform.hmcts.net/health
+      - url: https://manage-case-hearings-int.demo.platform.hmcts.net/health
         description: manage-case-hearings-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2758,7 +2758,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-int.demo.platform.hmcts.net/health
+      - url: https://manage-case-int.demo.platform.hmcts.net/health
         description: manage-case-int.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2774,7 +2774,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-int1.demo.platform.hmcts.net/health
+      - url: https://manage-case-int1.demo.platform.hmcts.net/health
         description: manage-case-int1.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2790,7 +2790,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-int2.demo.platform.hmcts.net/health
+      - url: https://manage-case-int2.demo.platform.hmcts.net/health
         description: manage-case-int2.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2806,7 +2806,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case.demo.platform.hmcts.net/health
+      - url: https://manage-case.demo.platform.hmcts.net/health
         description: manage-case.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2822,7 +2822,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-srt.demo.platform.hmcts.net/health
+      - url: https://manage-case-srt.demo.platform.hmcts.net/health
         description: manage-case-srt.demo.platform.hmcts.net
         method: GET
         configuration:
@@ -2838,7 +2838,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case-wa-int.demo.platform.hmcts.net/health
+      - url: https://manage-case-wa-int.demo.platform.hmcts.net/health
         description: manage-case-wa-int.demo.platform.hmcts.net
         method: GET
         configuration:
