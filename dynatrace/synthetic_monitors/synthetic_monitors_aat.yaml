@@ -672,22 +672,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: dm-store-cdam-java
-    management_zone_name: CFT-DM-STORE-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://dm-store-cdam-aat.service.core-compute-aat.internal/health
-        description: dm-store-cdam-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: dm-store-java
     management_zone_name: CFT-DM-STORE-AAT
     enabled: true
@@ -808,22 +792,6 @@ synthetic_monitors:
     requests:
       - url: http://em-npa-aat.service.core-compute-aat.internal/health
         description: em-npa-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: em-ped-api-java
-    management_zone_name: CFT-EM-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://em-ped-api-aat.service.core-compute-aat.internal/health
-        description: em-ped-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1270,8 +1238,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-update-web.aat.platform.hmcts.net/health
-        description: fis-ds-update-web.aat.platform.hmcts.net
+      - url: http://dss-update-case.aat.platform.hmcts.net/health
+        description: dss-update-case.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
