@@ -38,7 +38,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://adoption-web.aat.platform.hmcts.net/health
+      - url: https://adoption-web.aat.platform.hmcts.net/health
         description: adoption-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -118,7 +118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar.aat.platform.hmcts.net/health
+      - url: https://bar.aat.platform.hmcts.net/health
         description: bar.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -214,7 +214,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-optimize.aat.platform.hmcts.net/health
+      - url: https://camunda-optimize.aat.platform.hmcts.net/health
         description: camunda-optimize.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -230,7 +230,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-bpm.aat.platform.hmcts.net/health
+      - url: https://camunda-bpm.aat.platform.hmcts.net/health
         description: camunda-bpm.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -246,7 +246,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.aat.platform.hmcts.net/health
+      - url: https://ccd-admin-web.aat.platform.hmcts.net/health
         description: ccd-admin-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -262,7 +262,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://gateway-ccd.aat.platform.hmcts.net/health
+      - url: https://gateway-ccd.aat.platform.hmcts.net/health
         description: gateway-ccd.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -310,7 +310,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://return-case-doc-ccd.aat.platform.hmcts.net/health
+      - url: https://return-case-doc-ccd.aat.platform.hmcts.net/health
         description: return-case-doc-ccd.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -406,7 +406,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.aat.platform.hmcts.net/health
+      - url: https://civil-citizen-ui.aat.platform.hmcts.net/health
         description: civil-citizen-ui.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -454,7 +454,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum.aat.platform.hmcts.net/health
+      - url: https://plum.aat.platform.hmcts.net/health
         description: plum.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -566,7 +566,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-absolute-aks.aat.platform.hmcts.net/health
+      - url: https://decree-absolute-aks.aat.platform.hmcts.net/health
         description: decree-absolute-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -598,7 +598,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-nisi-aks.aat.platform.hmcts.net/health
+      - url: https://decree-nisi-aks.aat.platform.hmcts.net/health
         description: decree-nisi-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -646,7 +646,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://petitioner-frontend-aks.aat.platform.hmcts.net/health
+      - url: https://petitioner-frontend-aks.aat.platform.hmcts.net/health
         description: petitioner-frontend-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -662,7 +662,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://respond-divorce-aks.aat.platform.hmcts.net/health
+      - url: https://respond-divorce-aks.aat.platform.hmcts.net/health
         description: respond-divorce-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -694,7 +694,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.aat.platform.hmcts.net/health
+      - url: https://docmosis.aat.platform.hmcts.net/health
         description: docmosis.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -710,7 +710,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://dtsse-ardoq-adapter.aat.platform.hmcts.net/health
+      - url: https://dtsse-ardoq-adapter.aat.platform.hmcts.net/health
         description: dtsse-ardoq-adapter.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -774,7 +774,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://em-icp.aat.platform.hmcts.net/health
+      - url: https://em-icp.aat.platform.hmcts.net/health
         description: em-icp.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -886,7 +886,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.aat.platform.hmcts.net/health
+      - url: https://et-sya.aat.platform.hmcts.net/health
         description: et-sya.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -934,7 +934,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact-admin.aat.platform.hmcts.net/health
+      - url: https://fact-admin.aat.platform.hmcts.net/health
         description: fact-admin.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -966,7 +966,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact.aat.platform.hmcts.net/health
+      - url: https://fact.aat.platform.hmcts.net/health
         description: fact.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -998,7 +998,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble.aat.platform.hmcts.net/health
+      - url: https://paybubble.aat.platform.hmcts.net/health
         description: paybubble.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1078,7 +1078,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paymentoutcome-web.aat.platform.hmcts.net/health
+      - url: https://paymentoutcome-web.aat.platform.hmcts.net/health
         description: paymentoutcome-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1126,7 +1126,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register.aat.platform.hmcts.net/health
+      - url: https://fees-register.aat.platform.hmcts.net/health
         description: fees-register.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1238,7 +1238,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://dss-update-case.aat.platform.hmcts.net/health
+      - url: https://dss-update-case.aat.platform.hmcts.net/health
         description: dss-update-case.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1254,7 +1254,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-web.aat.platform.hmcts.net/health
+      - url: https://fis-ds-web.aat.platform.hmcts.net/health
         description: fis-ds-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1334,7 +1334,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://immigration-appeal.aat.platform.hmcts.net/health
+      - url: https://immigration-appeal.aat.platform.hmcts.net/health
         description: immigration-appeal.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1606,7 +1606,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau.aat.platform.hmcts.net/health
+      - url: https://lau.aat.platform.hmcts.net/health
         description: lau.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1638,7 +1638,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.aat.platform.hmcts.net/health
+      - url: https://moneyclaims.aat.platform.hmcts.net/health
         description: moneyclaims.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1670,7 +1670,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.aat.platform.hmcts.net/health
+      - url: https://alertmanager-00.aat.platform.hmcts.net/health
         description: alertmanager-00.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1686,7 +1686,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.aat.platform.hmcts.net/health
+      - url: https://prometheus-00.aat.platform.hmcts.net/health
         description: prometheus-00.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1750,7 +1750,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://nfdiv.aat.platform.hmcts.net/health
+      - url: https://nfdiv.aat.platform.hmcts.net/health
         description: nfdiv.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1782,7 +1782,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq.aat.platform.hmcts.net/health
+      - url: https://pcq.aat.platform.hmcts.net/health
         description: pcq.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1798,7 +1798,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://privatelaw.aat.platform.hmcts.net/health
+      - url: https://privatelaw.aat.platform.hmcts.net/health
         description: privatelaw.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1878,7 +1878,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://probate.aat.platform.hmcts.net/health
+      - url: https://probate.aat.platform.hmcts.net/health
         description: probate.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2150,7 +2150,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts.aat.platform.hmcts.net/health
+      - url: https://rpts.aat.platform.hmcts.net/health
         description: rpts.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2230,7 +2230,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://sscs-cor.aat.platform.hmcts.net/health
+      - url: https://sscs-cor.aat.platform.hmcts.net/health
         description: sscs-cor.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2310,7 +2310,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://benefit-appeal.aat.platform.hmcts.net/health
+      - url: https://benefit-appeal.aat.platform.hmcts.net/health
         description: benefit-appeal.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2422,7 +2422,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs.aat.platform.hmcts.net/health
+      - url: https://administer-orgs.aat.platform.hmcts.net/health
         description: administer-orgs.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2438,7 +2438,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org.aat.platform.hmcts.net/health
+      - url: https://manage-org.aat.platform.hmcts.net/health
         description: manage-org.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2454,7 +2454,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case.aat.platform.hmcts.net/health
+      - url: https://manage-case.aat.platform.hmcts.net/health
         description: manage-case.aat.platform.hmcts.net
         method: GET
         configuration:
