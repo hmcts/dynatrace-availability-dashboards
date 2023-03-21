@@ -38,7 +38,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://adoption-web.perftest.platform.hmcts.net/health
+      - url: https://adoption-web.perftest.platform.hmcts.net/health
         description: adoption-web.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -118,7 +118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar.perftest.platform.hmcts.net/health
+      - url: https://bar.perftest.platform.hmcts.net/health
         description: bar.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -214,7 +214,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-optimize.perftest.platform.hmcts.net/health
+      - url: https://camunda-optimize.perftest.platform.hmcts.net/health
         description: camunda-optimize.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -230,7 +230,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-bpm.perftest.platform.hmcts.net/health
+      - url: https://camunda-bpm.perftest.platform.hmcts.net/health
         description: camunda-bpm.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -246,7 +246,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.perftest.platform.hmcts.net/health
+      - url: https://ccd-admin-web.perftest.platform.hmcts.net/health
         description: ccd-admin-web.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -262,7 +262,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://gateway-ccd.perftest.platform.hmcts.net/health
+      - url: https://gateway-ccd.perftest.platform.hmcts.net/health
         description: gateway-ccd.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -310,7 +310,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://return-case-doc-ccd.perftest.platform.hmcts.net/health
+      - url: https://return-case-doc-ccd.perftest.platform.hmcts.net/health
         description: return-case-doc-ccd.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -390,7 +390,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.perftest.platform.hmcts.net/health
+      - url: https://civil-citizen-ui.perftest.platform.hmcts.net/health
         description: civil-citizen-ui.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -438,7 +438,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum.perftest.platform.hmcts.net/health
+      - url: https://plum.perftest.platform.hmcts.net/health
         description: plum.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -550,7 +550,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-absolute-aks.perftest.platform.hmcts.net/health
+      - url: https://decree-absolute-aks.perftest.platform.hmcts.net/health
         description: decree-absolute-aks.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -582,7 +582,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-nisi-aks.perftest.platform.hmcts.net/health
+      - url: https://decree-nisi-aks.perftest.platform.hmcts.net/health
         description: decree-nisi-aks.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -630,7 +630,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://petitioner-frontend-aks.perftest.platform.hmcts.net/health
+      - url: https://petitioner-frontend-aks.perftest.platform.hmcts.net/health
         description: petitioner-frontend-aks.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -646,24 +646,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://respond-divorce-aks.perftest.platform.hmcts.net/health
+      - url: https://respond-divorce-aks.perftest.platform.hmcts.net/health
         description: respond-divorce-aks.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: dm-store-cdam-java
-    management_zone_name: CFT-DM-STORE-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://dm-store-cdam-perftest.service.core-compute-perftest.internal/health
-        description: dm-store-cdam-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -694,7 +678,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.perftest.platform.hmcts.net/health
+      - url: https://docmosis.perftest.platform.hmcts.net/health
         description: docmosis.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -838,7 +822,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.perftest.platform.hmcts.net/health
+      - url: https://et-sya.perftest.platform.hmcts.net/health
         description: et-sya.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -886,7 +870,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact-admin.perftest.platform.hmcts.net/health
+      - url: https://fact-admin.perftest.platform.hmcts.net/health
         description: fact-admin.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -918,7 +902,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact.perftest.platform.hmcts.net/health
+      - url: https://fact.perftest.platform.hmcts.net/health
         description: fact.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -950,7 +934,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble.perftest.platform.hmcts.net/health
+      - url: https://paybubble.perftest.platform.hmcts.net/health
         description: paybubble.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1030,7 +1014,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paymentoutcome-web.perftest.platform.hmcts.net/health
+      - url: https://paymentoutcome-web.perftest.platform.hmcts.net/health
         description: paymentoutcome-web.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1078,7 +1062,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register.perftest.platform.hmcts.net/health
+      - url: https://fees-register.perftest.platform.hmcts.net/health
         description: fees-register.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1190,7 +1174,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://dss-update-case.perftest.platform.hmcts.net/health
+      - url: https://dss-update-case.perftest.platform.hmcts.net/health
         description: dss-update-case.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1206,7 +1190,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-web.perftest.platform.hmcts.net/health
+      - url: https://fis-ds-web.perftest.platform.hmcts.net/health
         description: fis-ds-web.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1526,7 +1510,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau.perftest.platform.hmcts.net/health
+      - url: https://lau.perftest.platform.hmcts.net/health
         description: lau.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1558,7 +1542,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.perftest.platform.hmcts.net/health
+      - url: https://moneyclaims.perftest.platform.hmcts.net/health
         description: moneyclaims.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1590,7 +1574,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.perftest.platform.hmcts.net/health
+      - url: https://alertmanager-00.perftest.platform.hmcts.net/health
         description: alertmanager-00.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1606,7 +1590,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.perftest.platform.hmcts.net/health
+      - url: https://prometheus-00.perftest.platform.hmcts.net/health
         description: prometheus-00.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1670,7 +1654,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://nfdiv.perftest.platform.hmcts.net/health
+      - url: https://nfdiv.perftest.platform.hmcts.net/health
         description: nfdiv.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1702,7 +1686,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq.perftest.platform.hmcts.net/health
+      - url: https://pcq.perftest.platform.hmcts.net/health
         description: pcq.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1718,7 +1702,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://privatelaw.perftest.platform.hmcts.net/health
+      - url: https://privatelaw.perftest.platform.hmcts.net/health
         description: privatelaw.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -1798,7 +1782,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://probate.perftest.platform.hmcts.net/health
+      - url: https://probate.perftest.platform.hmcts.net/health
         description: probate.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -2070,7 +2054,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts.perftest.platform.hmcts.net/health
+      - url: https://rpts.perftest.platform.hmcts.net/health
         description: rpts.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -2294,7 +2278,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs.perftest.platform.hmcts.net/health
+      - url: https://administer-orgs.perftest.platform.hmcts.net/health
         description: administer-orgs.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -2310,7 +2294,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org.perftest.platform.hmcts.net/health
+      - url: https://manage-org.perftest.platform.hmcts.net/health
         description: manage-org.perftest.platform.hmcts.net
         method: GET
         configuration:
@@ -2326,7 +2310,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case.perftest.platform.hmcts.net/health
+      - url: https://manage-case.perftest.platform.hmcts.net/health
         description: manage-case.perftest.platform.hmcts.net
         method: GET
         configuration:
