@@ -1088,38 +1088,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: finrem-dgcs-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-dgcs-perftest.service.core-compute-perftest.internal/health
-        description: finrem-dgcs-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-emca-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-emca-perftest.service.core-compute-perftest.internal/health
-        description: finrem-emca-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: finrem-ns-java
     management_zone_name: CFT-FINANCIAL-REMEDY-PERFTEST
     enabled: true
