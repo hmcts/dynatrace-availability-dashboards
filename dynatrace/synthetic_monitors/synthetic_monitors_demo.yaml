@@ -624,22 +624,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: div-da-nodejs
-    management_zone_name: CFT-DIVORCE-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://decree-absolute-aks.demo.platform.hmcts.net/health
-        description: decree-absolute-aks.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: div-dgs-java
     management_zone_name: CFT-DIVORCE-DEMO
     enabled: true
@@ -648,22 +632,6 @@ synthetic_monitors:
     requests:
       - url: http://div-dgs-demo.service.core-compute-demo.internal/health
         description: div-dgs-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: div-dn-nodejs
-    management_zone_name: CFT-DIVORCE-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://decree-nisi-aks.demo.platform.hmcts.net/health
-        description: decree-nisi-aks.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -712,22 +680,6 @@ synthetic_monitors:
     requests:
       - url: https://petitioner-frontend-aks.demo.platform.hmcts.net/health
         description: petitioner-frontend-aks.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: div-rfe-nodejs
-    management_zone_name: CFT-DIVORCE-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://respond-divorce-aks.demo.platform.hmcts.net/health
-        description: respond-divorce-aks.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -896,22 +848,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: et-sya-nodejs
-    management_zone_name: CFT-ET-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://et-sya.demo.platform.hmcts.net/health
-        description: et-sya.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: ecm-consumer-java
     management_zone_name: CFT-ETHOS-DEMO
     enabled: true
@@ -968,38 +904,6 @@ synthetic_monitors:
     requests:
       - url: http://fpl-case-service-demo.service.core-compute-demo.internal/health
         description: fpl-case-service-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: ccpay-bubble-frontend-int-nodejs
-    management_zone_name: CFT-FEES-PAY-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://paybubble-int.demo.platform.hmcts.net/health
-        description: paybubble-int.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: ccpay-bubble-frontend-nodejs
-    management_zone_name: CFT-FEES-PAY-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://paybubble.demo.platform.hmcts.net/health
-        description: paybubble.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1128,22 +1032,6 @@ synthetic_monitors:
     requests:
       - url: http://payment-api-demo.service.core-compute-demo.internal/health
         description: payment-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: ccpay-paymentoutcome-web-nodejs
-    management_zone_name: CFT-FEES-PAY-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://paymentoutcome-web.demo.platform.hmcts.net/health
-        description: paymentoutcome-web.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
