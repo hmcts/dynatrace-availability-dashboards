@@ -1,6 +1,7 @@
 ---
 management_zones:
   - name: CFT-AAC-DEMO
+  - name: CFT-ADMIN-DEMO
   - name: CFT-ADOPTION-DEMO
   - name: CFT-AM-DEMO
   - name: CFT-BAR-DEMO
@@ -36,6 +37,7 @@ management_zones:
   - name: CFT-REFORM-SCAN-DEMO
   - name: CFT-RPE-DEMO
   - name: CFT-RPTS-DEMO
+  - name: CFT-SPTRIBS-DEMO
   - name: CFT-SSCS-DEMO
   - name: CFT-TS-DEMO
   - name: CFT-WA-DEMO
