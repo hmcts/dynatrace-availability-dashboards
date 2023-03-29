@@ -1456,6 +1456,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: jps-judicial-payment-frontend-nodejs
+    management_zone_name: CFT-JPS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://jps-judicial-payment-frontend.perftest.platform.hmcts.net/health
+        description: jps-judicial-payment-frontend.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: lau-case-backend-java
     management_zone_name: CFT-LAU-PERFTEST
     enabled: true
