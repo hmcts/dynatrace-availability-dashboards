@@ -85,7 +85,7 @@ parameters:
           name: cft-perftest-00-aks
 
       - deployment: test_dt_availability_dashboards_yaml
-        environment: test
+        environment: perftest
         component: dt-availability-dashboards-yaml
         service_connection: DTS-SHAREDSERVICES-TEST
         department: sds
