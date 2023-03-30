@@ -88,7 +88,7 @@ parameters:
         environment: test
         component: dt-availability-dashboards-yaml
         service_connection: DTS-SHAREDSERVICES-TEST
-        department: cft
+        department: sds
         aks:
           subscription: DTS-SHAREDSERVICES-TEST
           resource_group: ss-test-00-rg
