@@ -1926,8 +1926,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau-idam-backend-int-demo.service.core-compute-demo.internal/health
-        description: lau-idam-backend-int-demo.service.core-compute-demo.internal
+      - url: http://lau-idam-backend-demo.service.core-compute-demo.internal/health
+        description: lau-idam-backend-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
