@@ -38,7 +38,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://adoption-web.ithc.platform.hmcts.net/health
+      - url: https://adoption-web.ithc.platform.hmcts.net/health
         description: adoption-web.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -118,7 +118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar.ithc.platform.hmcts.net/health
+      - url: https://bar.ithc.platform.hmcts.net/health
         description: bar.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -150,7 +150,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-optimize.ithc.platform.hmcts.net/health
+      - url: https://camunda-optimize.ithc.platform.hmcts.net/health
         description: camunda-optimize.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -166,7 +166,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-bpm.ithc.platform.hmcts.net/health
+      - url: https://camunda-bpm.ithc.platform.hmcts.net/health
         description: camunda-bpm.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -182,7 +182,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.ithc.platform.hmcts.net/health
+      - url: https://ccd-admin-web.ithc.platform.hmcts.net/health
         description: ccd-admin-web.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -198,7 +198,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://gateway-ccd.ithc.platform.hmcts.net/health
+      - url: https://gateway-ccd.ithc.platform.hmcts.net/health
         description: gateway-ccd.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -246,7 +246,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://return-case-doc-ccd.ithc.platform.hmcts.net/health
+      - url: https://return-case-doc-ccd.ithc.platform.hmcts.net/health
         description: return-case-doc-ccd.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -326,7 +326,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.ithc.platform.hmcts.net/health
+      - url: https://civil-citizen-ui.ithc.platform.hmcts.net/health
         description: civil-citizen-ui.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -374,7 +374,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum.ithc.platform.hmcts.net/health
+      - url: https://plum.ithc.platform.hmcts.net/health
         description: plum.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -486,7 +486,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-absolute-aks.ithc.platform.hmcts.net/health
+      - url: https://decree-absolute-aks.ithc.platform.hmcts.net/health
         description: decree-absolute-aks.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -518,7 +518,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-nisi-aks.ithc.platform.hmcts.net/health
+      - url: https://decree-nisi-aks.ithc.platform.hmcts.net/health
         description: decree-nisi-aks.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -566,7 +566,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://petitioner-frontend-aks.ithc.platform.hmcts.net/health
+      - url: https://petitioner-frontend-aks.ithc.platform.hmcts.net/health
         description: petitioner-frontend-aks.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -582,24 +582,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://respond-divorce-aks.ithc.platform.hmcts.net/health
+      - url: https://respond-divorce-aks.ithc.platform.hmcts.net/health
         description: respond-divorce-aks.ithc.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: dm-store-cdam-java
-    management_zone_name: CFT-DM-STORE-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://dm-store-cdam-ithc.service.core-compute-ithc.internal/health
-        description: dm-store-cdam-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -630,7 +614,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.ithc.platform.hmcts.net/health
+      - url: https://docmosis.ithc.platform.hmcts.net/health
         description: docmosis.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -774,7 +758,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.ithc.platform.hmcts.net/health
+      - url: https://et-sya.ithc.platform.hmcts.net/health
         description: et-sya.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -790,7 +774,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact-admin.ithc.platform.hmcts.net/health
+      - url: https://fact-admin.ithc.platform.hmcts.net/health
         description: fact-admin.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -822,7 +806,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact.ithc.platform.hmcts.net/health
+      - url: https://fact.ithc.platform.hmcts.net/health
         description: fact.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -854,7 +838,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble.ithc.platform.hmcts.net/health
+      - url: https://paybubble.ithc.platform.hmcts.net/health
         description: paybubble.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -934,7 +918,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paymentoutcome-web.ithc.platform.hmcts.net/health
+      - url: https://paymentoutcome-web.ithc.platform.hmcts.net/health
         description: paymentoutcome-web.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -982,7 +966,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register.ithc.platform.hmcts.net/health
+      - url: https://fees-register.ithc.platform.hmcts.net/health
         description: fees-register.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1000,38 +984,6 @@ synthetic_monitors:
     requests:
       - url: http://finrem-cos-ithc.service.core-compute-ithc.internal/health
         description: finrem-cos-ithc.service.core-compute-ithc.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-dgcs-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-dgcs-ithc.service.core-compute-ithc.internal/health
-        description: finrem-dgcs-ithc.service.core-compute-ithc.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-emca-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-emca-ithc.service.core-compute-ithc.internal/health
-        description: finrem-emca-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1094,8 +1046,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-update-web.ithc.platform.hmcts.net/health
-        description: fis-ds-update-web.ithc.platform.hmcts.net
+      - url: https://dss-update-case.ithc.platform.hmcts.net/health
+        description: dss-update-case.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1110,7 +1062,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-web.ithc.platform.hmcts.net/health
+      - url: https://fis-ds-web.ithc.platform.hmcts.net/health
         description: fis-ds-web.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1190,7 +1142,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://immigration-appeal.ithc.platform.hmcts.net/health
+      - url: https://immigration-appeal.ithc.platform.hmcts.net/health
         description: immigration-appeal.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1440,6 +1392,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: jps-judicial-payment-frontend-nodejs
+    management_zone_name: CFT-JPS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://judicial-payments.ithc.platform.hmcts.net/health
+        description: judicial-payments.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: lau-case-backend-java
     management_zone_name: CFT-LAU-ITHC
     enabled: true
@@ -1462,7 +1430,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau.ithc.platform.hmcts.net/health
+      - url: https://lau.ithc.platform.hmcts.net/health
         description: lau.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1494,7 +1462,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.ithc.platform.hmcts.net/health
+      - url: https://moneyclaims.ithc.platform.hmcts.net/health
         description: moneyclaims.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1526,7 +1494,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.ithc.platform.hmcts.net/health
+      - url: https://alertmanager-00.ithc.platform.hmcts.net/health
         description: alertmanager-00.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1542,7 +1510,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.ithc.platform.hmcts.net/health
+      - url: https://prometheus-00.ithc.platform.hmcts.net/health
         description: prometheus-00.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1606,7 +1574,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://nfdiv.ithc.platform.hmcts.net/health
+      - url: https://nfdiv.ithc.platform.hmcts.net/health
         description: nfdiv.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1638,7 +1606,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq.ithc.platform.hmcts.net/health
+      - url: https://pcq.ithc.platform.hmcts.net/health
         description: pcq.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1654,7 +1622,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://privatelaw.ithc.platform.hmcts.net/health
+      - url: https://privatelaw.ithc.platform.hmcts.net/health
         description: privatelaw.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1734,7 +1702,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://probate.ithc.platform.hmcts.net/health
+      - url: https://probate.ithc.platform.hmcts.net/health
         description: probate.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -1974,7 +1942,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts.ithc.platform.hmcts.net/health
+      - url: https://rpts.ithc.platform.hmcts.net/health
         description: rpts.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -2038,7 +2006,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://sscs-cor.ithc.platform.hmcts.net/health
+      - url: https://sscs-cor.ithc.platform.hmcts.net/health
         description: sscs-cor.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -2102,7 +2070,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://benefit-appeal.ithc.platform.hmcts.net/health
+      - url: https://benefit-appeal.ithc.platform.hmcts.net/health
         description: benefit-appeal.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -2214,7 +2182,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs.ithc.platform.hmcts.net/health
+      - url: https://administer-orgs.ithc.platform.hmcts.net/health
         description: administer-orgs.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -2230,7 +2198,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org.ithc.platform.hmcts.net/health
+      - url: https://manage-org.ithc.platform.hmcts.net/health
         description: manage-org.ithc.platform.hmcts.net
         method: GET
         configuration:
@@ -2246,7 +2214,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case.ithc.platform.hmcts.net/health
+      - url: https://manage-case.ithc.platform.hmcts.net/health
         description: manage-case.ithc.platform.hmcts.net
         method: GET
         configuration:

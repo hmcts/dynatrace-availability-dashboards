@@ -27,19 +27,19 @@ sample_app = {
         ],
     },
 }
-sample_idam_app = {
-    "name": "idam-sample-app",
-    "namespace": "idam",
+sample_https_app = {
+    "name": "https-sample-https-app",
+    "namespace": "cnp",
     "labels": {
-        "aadpodidbinding": "idam",
-        "helm.toolkit.fluxcd.io/name": "idamsampleapp",
+        "aadpodidbinding": "cnp",
+        "helm.toolkit.fluxcd.io/name": "httpssampleapp",
     },
     "annotations": {"meta.helm.sh/release-name": "samplevalue"},
     "spec": {
         "ingressClassName": "traefik-no-proxy",
         "rules": [
             {
-                "host": "idam-sample-app.internal",
+                "host": "cnp-sample-app.platform.hmcts.net",
             }
         ],
     },
@@ -102,12 +102,12 @@ class TestHelperResources(unittest.TestCase):
             f'http://{filtered_data[0]["host"]}/health',
         )
 
-    def test_format_dt_monitors_yaml_idam_https(self):
+    def test_format_dt_monitors_yaml_https(self):
         filtered_data = [
             {
-                "name": sample_idam_app["name"],
-                "namespace": sample_idam_app["namespace"],
-                "host": sample_idam_app["spec"]["rules"][0]["host"],
+                "name": sample_https_app["name"],
+                "namespace": sample_https_app["namespace"],
+                "host": sample_https_app["spec"]["rules"][0]["host"],
             }
         ]
         formatted_data = format_dt_monitors_yaml("cft", filtered_data, "demo")

@@ -36,6 +36,7 @@ management_zones:
   - name: CFT-REFORM-SCAN-DEMO
   - name: CFT-RPE-DEMO
   - name: CFT-RPTS-DEMO
+  - name: CFT-SPTRIBS-DEMO
   - name: CFT-SSCS-DEMO
   - name: CFT-TS-DEMO
   - name: CFT-WA-DEMO
