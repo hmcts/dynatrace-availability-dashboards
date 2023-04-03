@@ -6,7 +6,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://backstage.sandbox.platform.hmcts.net/health
+      - url: https://backstage.sandbox.platform.hmcts.net/health
         description: backstage.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -22,7 +22,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://sandbox-build.platform.hmcts.net/health
+      - url: https://sandbox-build.platform.hmcts.net/health
         description: sandbox-build.platform.hmcts.net
         method: GET
         configuration:
@@ -38,7 +38,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://static-sandbox-build.platform.hmcts.net/health
+      - url: https://static-sandbox-build.platform.hmcts.net/health
         description: static-sandbox-build.platform.hmcts.net
         method: GET
         configuration:
@@ -54,7 +54,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-mgmt-sbox.sandbox.platform.hmcts.net/health
+      - url: https://alertmanager-mgmt-sbox.sandbox.platform.hmcts.net/health
         description: alertmanager-mgmt-sbox.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -70,7 +70,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://grafana.sandbox.platform.hmcts.net/health
+      - url: https://grafana.sandbox.platform.hmcts.net/health
         description: grafana.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -86,7 +86,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-mgmt-sbox.sandbox.platform.hmcts.net/health
+      - url: https://prometheus-mgmt-sbox.sandbox.platform.hmcts.net/health
         description: prometheus-mgmt-sbox.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -102,7 +102,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pact-broker.sandbox.platform.hmcts.net/health
+      - url: https://pact-broker.sandbox.platform.hmcts.net/health
         description: pact-broker.sandbox.platform.hmcts.net
         method: GET
         configuration:
