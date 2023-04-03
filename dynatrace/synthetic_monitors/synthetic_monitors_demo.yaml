@@ -32,22 +32,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: oauth2-proxy
-    management_zone_name: CFT-ADMIN-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://cft-oauth-proxy-00.demo.platform.hmcts.net/health
-        description: cft-oauth-proxy-00.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: adoption-cos-api-java
     management_zone_name: CFT-ADOPTION-DEMO
     enabled: true
