@@ -1398,8 +1398,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://jps-judicial-payment-frontend.ithc.platform.hmcts.net/health
-        description: jps-judicial-payment-frontend.ithc.platform.hmcts.net
+      - url: https://judicial-payments.ithc.platform.hmcts.net/health
+        description: judicial-payments.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
