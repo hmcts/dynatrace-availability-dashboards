@@ -1606,8 +1606,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00-api.service.core-compute-perftest.internal/health
-        description: neuvector00-api.service.core-compute-perftest.internal
+      - url: https://cft-neuvector00-api.perftest.platform.hmcts.net/health
+        description: cft-neuvector00-api.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1622,8 +1622,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00.service.core-compute-perftest.internal/health
-        description: neuvector00.service.core-compute-perftest.internal
+      - url: https://cft-neuvector00.perftest.platform.hmcts.net/health
+        description: cft-neuvector00.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
