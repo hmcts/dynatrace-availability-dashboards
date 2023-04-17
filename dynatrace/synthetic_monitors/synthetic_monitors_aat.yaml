@@ -1702,8 +1702,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00.service.core-compute-aat.internal/health
-        description: neuvector00.service.core-compute-aat.internal
+      - url: http://neuvector.hmcts.com/health
+        description: neuvector.hmcts.com
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1718,8 +1718,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00.service.core-compute-aat.internal/health
-        description: neuvector00.service.core-compute-aat.internal
+      - url: https://cft-neuvector00.aat.platform.hmcts.net/health
+        description: cft-neuvector00.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2264,22 +2264,6 @@ synthetic_monitors:
     requests:
       - url: http://sscs-hearings-api-aat.service.core-compute-aat.internal/health
         description: sscs-hearings-api-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-hmc-stub-java
-    management_zone_name: CFT-SSCS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-hmc-stub-aat.service.core-compute-aat.internal/health
-        description: sscs-hmc-stub-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
