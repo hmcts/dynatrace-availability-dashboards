@@ -1,5 +1,53 @@
 ---
 synthetic_monitors:
+  - name: camunda-api-java
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://camunda-api-sandbox.service.core-compute-sandbox.internal/health
+        description: camunda-api-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: camunda-optimize-base
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://camunda-optimize.sandbox.platform.hmcts.net/health
+        description: camunda-optimize.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: camunda-ui-java
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://camunda-bpm.sandbox.platform.hmcts.net/health
+        description: camunda-bpm.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: plum-frontend-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true
@@ -200,22 +248,6 @@ synthetic_monitors:
     requests:
       - url: http://rpe-service-auth-provider-sandbox.service.core-compute-sandbox.internal/health
         description: rpe-service-auth-provider-sandbox.service.core-compute-sandbox.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: safe-settings
-    management_zone_name: CFT-SAFE-SETTINGS-SBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://safe-settings.sandbox.platform.hmcts.net/health
-        description: safe-settings.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
