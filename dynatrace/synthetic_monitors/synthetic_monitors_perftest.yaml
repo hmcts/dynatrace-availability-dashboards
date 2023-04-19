@@ -838,8 +838,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ecm-consumer-perftest.service.core-compute-perftest.internal/health
-        description: ecm-consumer-perftest.service.core-compute-perftest.internal
+      - url: http://ethos-ecm-consumer-perftest.service.core-compute-perftest.internal/health
+        description: ethos-ecm-consumer-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1592,6 +1592,22 @@ synthetic_monitors:
     requests:
       - url: https://prometheus-00.perftest.platform.hmcts.net/health
         description: prometheus-00.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: neuvector-redirect-ingress
+    management_zone_name: CFT-NEUVECTOR-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cft-neuvector00.perftest.platform.hmcts.net/health
+        description: cft-neuvector00.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

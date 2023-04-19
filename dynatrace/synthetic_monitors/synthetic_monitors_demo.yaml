@@ -998,8 +998,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ecm-consumer-demo.service.core-compute-demo.internal/health
-        description: ecm-consumer-demo.service.core-compute-demo.internal
+      - url: http://ethos-ecm-consumer-demo.service.core-compute-demo.internal/health
+        description: ethos-ecm-consumer-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
