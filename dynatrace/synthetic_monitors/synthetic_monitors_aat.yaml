@@ -902,8 +902,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ecm-consumer-aat.service.core-compute-aat.internal/health
-        description: ecm-consumer-aat.service.core-compute-aat.internal
+      - url: http://ethos-ecm-consumer-aat.service.core-compute-aat.internal/health
+        description: ethos-ecm-consumer-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1704,6 +1704,22 @@ synthetic_monitors:
     requests:
       - url: https://cft-neuvector00.aat.platform.hmcts.net/health
         description: cft-neuvector00.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: neuvector-restapi-ingress
+    management_zone_name: CFT-NEUVECTOR-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cft-neuvector00-api.aat.platform.hmcts.net/health
+        description: cft-neuvector00-api.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
