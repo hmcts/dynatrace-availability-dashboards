@@ -1088,22 +1088,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: finrem-ns-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-ns-perftest.service.core-compute-perftest.internal/health
-        description: finrem-ns-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: fis-bulk-scan-api-java
     management_zone_name: CFT-FIS-PERFTEST
     enabled: true
@@ -2104,6 +2088,22 @@ synthetic_monitors:
     requests:
       - url: http://sptribs-dss-backend-perftest.service.core-compute-perftest.internal/health
         description: sptribs-dss-backend-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-frontend-nodejs
+    management_zone_name: CFT-SPTRIBS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://sptribs-frontend.perftest.platform.hmcts.net/health
+        description: sptribs-frontend.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
