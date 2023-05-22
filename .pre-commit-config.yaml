@@ -16,7 +16,7 @@ repos:
         ]
   # renovate: datasource=github-tags
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.31.0
+    rev: v1.32.0
     hooks:
       - id: yamllint
   # renovate: datasource=github-releases
