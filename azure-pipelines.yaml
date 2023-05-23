@@ -11,7 +11,7 @@ resources:
       type: github
       ref: refs/heads/master
       name: hmcts/cnp-azuredevops-libraries
-      endpoint: 'hmcts (1)'
+      endpoint: 'hmcts'
 
 parameters:
   - name: overrideAction
