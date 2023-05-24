@@ -592,22 +592,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: plum-frontend-publicaccess-nodejs
-    management_zone_name: CFT-CNP-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://plum-public.demo.platform.hmcts.net/health
-        description: plum-public.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: plum-recipe-backend-java
     management_zone_name: CFT-CNP-DEMO
     enabled: true
@@ -952,6 +936,22 @@ synthetic_monitors:
     requests:
       - url: http://et-cos-demo.service.core-compute-demo.internal/health
         description: et-cos-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-demo.service.core-compute-demo.internal/health
+        description: et-hearings-api-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true

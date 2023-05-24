@@ -70,8 +70,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-sandbox.internal/health
-        description: plum-recipe-backend.service.core-compute-sandbox.internal
+      - url: http://plum-recipe-backend-sandbox.service.core-compute-sandbox.internal/health
+        description: plum-recipe-backend-sandbox.service.core-compute-sandbox.internal
         method: GET
         configuration:
           accept_any_certificate: true
