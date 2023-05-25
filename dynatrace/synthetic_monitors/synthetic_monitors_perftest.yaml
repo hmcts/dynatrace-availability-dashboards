@@ -454,8 +454,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-perftest.internal/health
-        description: plum-recipe-backend.service.core-compute-perftest.internal
+      - url: http://plum-recipe-backend-perftest.service.core-compute-perftest.internal/health
+        description: plum-recipe-backend-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -776,6 +776,22 @@ synthetic_monitors:
     requests:
       - url: http://et-cos-perftest.service.core-compute-perftest.internal/health
         description: et-cos-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-perftest.service.core-compute-perftest.internal/health
+        description: et-hearings-api-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
