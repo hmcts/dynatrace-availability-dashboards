@@ -390,8 +390,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-ithc.internal/health
-        description: plum-recipe-backend.service.core-compute-ithc.internal
+      - url: http://plum-recipe-backend-ithc.service.core-compute-ithc.internal/health
+        description: plum-recipe-backend-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -712,6 +712,22 @@ synthetic_monitors:
     requests:
       - url: http://et-cos-ithc.service.core-compute-ithc.internal/health
         description: et-cos-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-ithc.service.core-compute-ithc.internal/health
+        description: et-hearings-api-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
