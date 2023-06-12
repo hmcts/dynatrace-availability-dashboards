@@ -848,6 +848,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-aat.service.core-compute-aat.internal/health
+        description: et-hearings-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-msg-handler-java
     management_zone_name: CFT-ET-AAT
     enabled: true
@@ -1144,22 +1160,6 @@ synthetic_monitors:
     requests:
       - url: http://finrem-cos-aat.service.core-compute-aat.internal/health
         description: finrem-cos-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-ns-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-ns-aat.service.core-compute-aat.internal/health
-        description: finrem-ns-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2200,6 +2200,22 @@ synthetic_monitors:
     requests:
       - url: http://sptribs-dss-backend-aat.service.core-compute-aat.internal/health
         description: sptribs-dss-backend-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-frontend-nodejs
+    management_zone_name: CFT-SPTRIBS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://sptribs-frontend.aat.platform.hmcts.net/health
+        description: sptribs-frontend.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

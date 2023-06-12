@@ -390,8 +390,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-ithc.internal/health
-        description: plum-recipe-backend.service.core-compute-ithc.internal
+      - url: http://plum-recipe-backend-ithc.service.core-compute-ithc.internal/health
+        description: plum-recipe-backend-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -720,6 +720,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-ithc.service.core-compute-ithc.internal/health
+        description: et-hearings-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-msg-handler-java
     management_zone_name: CFT-ET-ITHC
     enabled: true
@@ -984,22 +1000,6 @@ synthetic_monitors:
     requests:
       - url: http://finrem-cos-ithc.service.core-compute-ithc.internal/health
         description: finrem-cos-ithc.service.core-compute-ithc.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-ns-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-ns-ithc.service.core-compute-ithc.internal/health
-        description: finrem-ns-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2008,6 +2008,22 @@ synthetic_monitors:
     requests:
       - url: http://sptribs-dss-backend-ithc.service.core-compute-ithc.internal/health
         description: sptribs-dss-backend-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-frontend-nodejs
+    management_zone_name: CFT-SPTRIBS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://sptribs-frontend.ithc.platform.hmcts.net/health
+        description: sptribs-frontend.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
