@@ -2848,22 +2848,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: xui-ao-webapp-integration-nodejs
-    management_zone_name: CFT-XUI-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://administer-orgs-int.demo.platform.hmcts.net/health
-        description: administer-orgs-int.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: xui-ao-webapp-nodejs
     management_zone_name: CFT-XUI-DEMO
     enabled: true
@@ -2872,22 +2856,6 @@ synthetic_monitors:
     requests:
       - url: https://administer-orgs.demo.platform.hmcts.net/health
         description: administer-orgs.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: xui-mo-webapp-integration-nodejs
-    management_zone_name: CFT-XUI-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://manage-org-int.demo.platform.hmcts.net/health
-        description: manage-org-int.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
