@@ -352,6 +352,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-sdt-commissioning-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-commissioning-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-commissioning-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-gateway-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-gateway-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-gateway-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: civil-service-java
     management_zone_name: CFT-CIVIL-ITHC
     enabled: true
