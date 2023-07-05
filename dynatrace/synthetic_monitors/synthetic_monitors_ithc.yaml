@@ -352,6 +352,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-orchestrator-service-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-orchestrator-service-ithc.service.core-compute-ithc.internal/health
+        description: civil-orchestrator-service-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: civil-sdt-commissioning-java
     management_zone_name: CFT-CIVIL-ITHC
     enabled: true
