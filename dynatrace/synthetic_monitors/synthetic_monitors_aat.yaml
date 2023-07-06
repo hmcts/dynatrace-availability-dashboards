@@ -432,22 +432,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: civil-orchestrator-service-java
-    management_zone_name: CFT-CIVIL-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://civil-orchestrator-service-aat.service.core-compute-aat.internal/health
-        description: civil-orchestrator-service-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: civil-service-java
     management_zone_name: CFT-CIVIL-AAT
     enabled: true
@@ -486,8 +470,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-aat.internal/health
-        description: plum-recipe-backend.service.core-compute-aat.internal
+      - url: http://plum-recipe-backend-aat.service.core-compute-aat.internal/health
+        description: plum-recipe-backend-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
