@@ -11,7 +11,7 @@ resources:
       type: github
       ref: refs/heads/master
       name: hmcts/cnp-azuredevops-libraries
-      endpoint: 'hmcts (1)'
+      endpoint: 'hmcts'
 
 parameters:
   - name: overrideAction
@@ -109,7 +109,7 @@ stages:
           - template: steps/terraform-precheck.yaml@cnp-azuredevops-libraries
             parameters:
               keyvaultName: 'infra-vault-nonprod'
-              keyvaultSecret: 'azure-devops-token'
+              keyvaultSecret: 'azure-devops-sp-token'
               serviceConnection: ${{ parameters.kvConnectedServiceName }}
               overrideAction: ${{ parameters.overrideAction }}
 

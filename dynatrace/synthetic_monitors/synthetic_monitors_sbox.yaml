@@ -1,12 +1,60 @@
 ---
 synthetic_monitors:
+  - name: camunda-api-java
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://camunda-api-sandbox.service.core-compute-sandbox.internal/health
+        description: camunda-api-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: camunda-optimize-base
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://camunda-optimize.sandbox.platform.hmcts.net/health
+        description: camunda-optimize.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: camunda-ui-java
+    management_zone_name: CFT-CAMUNDA-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://camunda-bpm.sandbox.platform.hmcts.net/health
+        description: camunda-bpm.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: plum-frontend-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum.sandbox.platform.hmcts.net/health
+      - url: https://plum.sandbox.platform.hmcts.net/health
         description: plum.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -22,8 +70,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-sandbox.internal/health
-        description: plum-recipe-backend.service.core-compute-sandbox.internal
+      - url: http://plum-recipe-backend-sandbox.service.core-compute-sandbox.internal/health
+        description: plum-recipe-backend-sandbox.service.core-compute-sandbox.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -38,7 +86,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.sandbox.platform.hmcts.net/health
+      - url: https://docmosis.sandbox.platform.hmcts.net/health
         description: docmosis.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -112,6 +160,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: idam-user-profile-bridge-java
+    management_zone_name: CFT-IDAM-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal/health
+        description: idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: idam-web-admin
     management_zone_name: CFT-IDAM-SBOX
     enabled: true
@@ -150,7 +214,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.sandbox.platform.hmcts.net/health
+      - url: https://alertmanager-00.sandbox.platform.hmcts.net/health
         description: alertmanager-00.sandbox.platform.hmcts.net
         method: GET
         configuration:
@@ -166,7 +230,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.sandbox.platform.hmcts.net/health
+      - url: https://prometheus-00.sandbox.platform.hmcts.net/health
         description: prometheus-00.sandbox.platform.hmcts.net
         method: GET
         configuration:

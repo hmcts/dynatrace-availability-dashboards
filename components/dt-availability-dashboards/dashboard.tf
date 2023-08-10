@@ -24,7 +24,7 @@ resource "dynatrace_dashboard" "availability" {
       name_size  = "small"
       configured = true
       filter {
-        timeframe = "-1w"
+        timeframe = "-30d"
       }
       bounds {
         # automatically compute position of tile depending of odd/even number of slo index.
