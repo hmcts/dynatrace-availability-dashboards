@@ -31,7 +31,6 @@ management_zones:
   - name: CFT-LAU-AAT
   - name: CFT-MONEY-CLAIMS-AAT
   - name: CFT-MONITORING-AAT
-  - name: CFT-NEUVECTOR-AAT
   - name: CFT-NFDIV-AAT
   - name: CFT-PCQ-AAT
   - name: CFT-PRIVATE-LAW-AAT
