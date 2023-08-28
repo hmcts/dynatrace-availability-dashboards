@@ -544,6 +544,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: cui-ra-nodejs
+    management_zone_name: CFT-CUI-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cui-ra.perftest.platform.hmcts.net/health
+        description: cui-ra.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: dg-docassembly-java
     management_zone_name: CFT-DG-PERFTEST
     enabled: true
@@ -1480,6 +1496,22 @@ synthetic_monitors:
     requests:
       - url: https://idam-user-dashboard.perftest.platform.hmcts.net/health
         description: idam-user-dashboard.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-user-profile-bridge-java
+    management_zone_name: CFT-IDAM-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://idam-user-profile-bridge.perftest.platform.hmcts.net/health
+        description: idam-user-profile-bridge.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
