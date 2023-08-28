@@ -166,8 +166,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal/health
-        description: idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal
+      - url: https://idam-user-profile-bridge.sandbox.platform.hmcts.net/health
+        description: idam-user-profile-bridge.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
