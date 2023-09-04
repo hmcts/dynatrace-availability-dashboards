@@ -448,6 +448,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: cui-ra-nodejs
+    management_zone_name: CFT-CUI-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cui-ra.ithc.platform.hmcts.net/health
+        description: cui-ra.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: dg-docassembly-java
     management_zone_name: CFT-DG-ITHC
     enabled: true
@@ -1144,6 +1160,22 @@ synthetic_monitors:
     requests:
       - url: https://idam-user-dashboard.ithc.platform.hmcts.net/health
         description: idam-user-dashboard.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-user-profile-bridge-java
+    management_zone_name: CFT-IDAM-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://idam-user-profile-bridge.ithc.platform.hmcts.net/health
+        description: idam-user-profile-bridge.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
