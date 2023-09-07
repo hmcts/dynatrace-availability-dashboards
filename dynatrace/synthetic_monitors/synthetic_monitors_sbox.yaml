@@ -166,8 +166,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal/health
-        description: idam-user-profile-bridge-sandbox.service.core-compute-sandbox.internal
+      - url: https://idam-user-profile-bridge.sandbox.platform.hmcts.net/health
+        description: idam-user-profile-bridge.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -214,8 +214,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://alertmanager-00.sandbox.platform.hmcts.net/health
-        description: alertmanager-00.sandbox.platform.hmcts.net
+      - url: https://alertmanager-01.sandbox.platform.hmcts.net/health
+        description: alertmanager-01.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -230,8 +230,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://prometheus-00.sandbox.platform.hmcts.net/health
-        description: prometheus-00.sandbox.platform.hmcts.net
+      - url: https://prometheus-01.sandbox.platform.hmcts.net/health
+        description: prometheus-01.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
