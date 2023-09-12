@@ -17,6 +17,7 @@ management_zones:
   - name: CFT-DOCMOSIS-PERFTEST
   - name: CFT-EM-PERFTEST
   - name: CFT-ET-PERFTEST
+  - name: CFT-ET-PET-PERFTEST
   - name: CFT-ETHOS-PERFTEST
   - name: CFT-FACT-PERFTEST
   - name: CFT-FAMILY-PUBLIC-LAW-PERFTEST

@@ -848,6 +848,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et1-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1.perftest.platform.hmcts.net/health
+        description: et-pet-et1.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-cos-java
     management_zone_name: CFT-ET-PERFTEST
     enabled: true
