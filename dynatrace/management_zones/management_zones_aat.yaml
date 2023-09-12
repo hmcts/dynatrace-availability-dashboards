@@ -18,6 +18,7 @@ management_zones:
   - name: CFT-DTSSE-AAT
   - name: CFT-EM-AAT
   - name: CFT-ET-AAT
+  - name: CFT-ET-PET-AAT
   - name: CFT-ETHOS-AAT
   - name: CFT-FACT-AAT
   - name: CFT-FAMILY-PUBLIC-LAW-AAT
