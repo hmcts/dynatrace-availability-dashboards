@@ -41,6 +41,7 @@ management_zones:
   - name: CFT-RPTS-DEMO
   - name: CFT-SPTRIBS-DEMO
   - name: CFT-SSCS-DEMO
+  - name: CFT-TAX-TRIBUNALS-DEMO
   - name: CFT-TS-DEMO
   - name: CFT-WA-DEMO
   - name: CFT-XUI-DEMO
