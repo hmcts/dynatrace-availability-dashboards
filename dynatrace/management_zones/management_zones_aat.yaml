@@ -18,12 +18,14 @@ management_zones:
   - name: CFT-DTSSE-AAT
   - name: CFT-EM-AAT
   - name: CFT-ET-AAT
+  - name: CFT-ET-PET-AAT
   - name: CFT-ETHOS-AAT
   - name: CFT-FACT-AAT
   - name: CFT-FAMILY-PUBLIC-LAW-AAT
   - name: CFT-FEES-PAY-AAT
   - name: CFT-FINANCIAL-REMEDY-AAT
   - name: CFT-FIS-AAT
+  - name: CFT-HELP-WITH-FEES-AAT
   - name: CFT-HMC-AAT
   - name: CFT-IA-AAT
   - name: CFT-IDAM-AAT
@@ -42,6 +44,7 @@ management_zones:
   - name: CFT-RPTS-AAT
   - name: CFT-SPTRIBS-AAT
   - name: CFT-SSCS-AAT
+  - name: CFT-TAX-TRIBUNALS-AAT
   - name: CFT-TS-AAT
   - name: CFT-WA-AAT
   - name: CFT-XUI-AAT
