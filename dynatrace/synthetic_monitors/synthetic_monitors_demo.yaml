@@ -2960,22 +2960,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: tax-tribunals-application-sidekiq
-    management_zone_name: CFT-TAX-TRIBUNALS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://tax-tribunals-datacapture.demo.platform.hmcts.net/health
-        description: tax-tribunals-datacapture.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: ts-translation-service-int-java
     management_zone_name: CFT-TS-DEMO
     enabled: true
