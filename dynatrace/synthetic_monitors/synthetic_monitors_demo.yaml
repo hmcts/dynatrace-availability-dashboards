@@ -1654,8 +1654,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://hwf-benefit-checker-api.demo.platform.hmcts.net/health
-        description: hwf-benefit-checker-api.demo.platform.hmcts.net
+      - url: http://hwf-benefit-checker-api.demo.service.core-compute-demo.internal/health
+        description: hwf-benefit-checker-api.demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
