@@ -2032,7 +2032,7 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: idam-user-profile-bridge-java
+  - name: idam-user-profile-bridge
     management_zone_name: CFT-IDAM-DEMO
     enabled: true
     locations:
