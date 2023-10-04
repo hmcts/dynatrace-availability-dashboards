@@ -2080,6 +2080,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: jps-judicial-payment-service-java
+    management_zone_name: CFT-JPS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://jps-judicial-payment-service-demo.service.core-compute-demo.internal/health
+        description: jps-judicial-payment-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: lau-case-backend-int-java
     management_zone_name: CFT-LAU-DEMO
     enabled: true
