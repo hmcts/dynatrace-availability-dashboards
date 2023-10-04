@@ -28,6 +28,7 @@ management_zones:
   - name: CFT-HMC-DEMO
   - name: CFT-IA-DEMO
   - name: CFT-IDAM-DEMO
+  - name: CFT-JPS-DEMO
   - name: CFT-LAU-DEMO
   - name: CFT-MONEY-CLAIMS-DEMO
   - name: CFT-MONITORING-DEMO
