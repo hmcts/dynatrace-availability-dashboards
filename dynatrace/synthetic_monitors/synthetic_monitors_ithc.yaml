@@ -614,8 +614,24 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://et-pet-api.ithc.platform.hmcts.net/health
-        description: et-pet-api.ithc.platform.hmcts.net
+      - url: http://et-pet-api-ithc.service.core-compute-ithc.internal/health
+        description: et-pet-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-sidekiq
+    management_zone_name: CFT-ET-PET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-api-sidekiq.ithc.platform.hmcts.net/health
+        description: et-pet-api-sidekiq.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -630,24 +646,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://et-pet-ccd-export.ithc.platform.hmcts.net/health
-        description: et-pet-ccd-export.ithc.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: et1-base
-    management_zone_name: CFT-ET-PET-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://et-pet-et1.ithc.platform.hmcts.net/health
-        description: et-pet-et1.ithc.platform.hmcts.net
+      - url: http://et-pet-ccd-export-ithc.service.core-compute-ithc.internal/health
+        description: et-pet-ccd-export-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
