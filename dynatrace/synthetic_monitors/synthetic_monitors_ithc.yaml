@@ -656,6 +656,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et1-base
+    management_zone_name: CFT-ET-PET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1.ithc.platform.hmcts.net/health
+        description: et-pet-et1.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-sidekiq
+    management_zone_name: CFT-ET-PET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1-sidekiq.ithc.platform.hmcts.net/health
+        description: et-pet-et1-sidekiq.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et3-base
     management_zone_name: CFT-ET-PET-ITHC
     enabled: true
@@ -982,8 +1014,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://hwf-benefit-checker-api.ithc.platform.hmcts.net/health
-        description: hwf-benefit-checker-api.ithc.platform.hmcts.net
+      - url: http://hwf-benefit-checker-api.ithc.service.core-compute-ithc.internal/health
+        description: hwf-benefit-checker-api.ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
