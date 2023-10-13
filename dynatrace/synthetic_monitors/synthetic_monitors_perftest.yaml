@@ -870,8 +870,24 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://et-pet-api.perftest.platform.hmcts.net/health
-        description: et-pet-api.perftest.platform.hmcts.net
+      - url: http://et-pet-api-perftest.service.core-compute-perftest.internal/health
+        description: et-pet-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-sidekiq
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-api-sidekiq.perftest.platform.hmcts.net/health
+        description: et-pet-api-sidekiq.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -886,8 +902,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://et-pet-ccd-export.perftest.platform.hmcts.net/health
-        description: et-pet-ccd-export.perftest.platform.hmcts.net
+      - url: http://et-pet-ccd-export-perftest.service.core-compute-perftest.internal/health
+        description: et-pet-ccd-export-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -904,6 +920,22 @@ synthetic_monitors:
     requests:
       - url: https://et-pet-et1.perftest.platform.hmcts.net/health
         description: et-pet-et1.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-sidekiq
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1-sidekiq.perftest.platform.hmcts.net/health
+        description: et-pet-et1-sidekiq.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
