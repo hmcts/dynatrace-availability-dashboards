@@ -1600,22 +1600,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: ia-hearings-api-java
-    management_zone_name: CFT-IA-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://ia-hearings-api-aat.service.core-compute-aat.internal/health
-        description: ia-hearings-api-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: ia-home-office-integration-api-java
     management_zone_name: CFT-IA-AAT
     enabled: true
@@ -2374,8 +2358,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts-api-aat.service.core-compute-aat.internal/health
-        description: rpts-api-aat.service.core-compute-aat.internal
+      - url: https://rpts-api-aat.platform.hmcts.net/health
+        description: rpts-api-aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
