@@ -784,6 +784,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ecm-consumer-java
+    management_zone_name: CFT-ETHOS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ethos-ecm-consumer-ithc.service.core-compute-ithc.internal/health
+        description: ethos-ecm-consumer-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: repl-docmosis-service-java
+    management_zone_name: CFT-ETHOS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ethos-repl-docmosis-backend-ithc.service.core-compute-ithc.internal/health
+        description: ethos-repl-docmosis-backend-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: fact-admin-nodejs
     management_zone_name: CFT-FACT-ITHC
     enabled: true
@@ -1846,8 +1878,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts-api-ithc.service.core-compute-ithc.internal/health
-        description: rpts-api-ithc.service.core-compute-ithc.internal
+      - url: https://rpts-api-ithc.platform.hmcts.net/health
+        description: rpts-api-ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

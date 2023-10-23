@@ -15,6 +15,7 @@ management_zones:
   - name: CFT-EM-ITHC
   - name: CFT-ET-ITHC
   - name: CFT-ET-PET-ITHC
+  - name: CFT-ETHOS-ITHC
   - name: CFT-FACT-ITHC
   - name: CFT-FAMILY-PUBLIC-LAW-ITHC
   - name: CFT-FEES-PAY-ITHC
