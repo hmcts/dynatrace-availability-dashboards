@@ -1878,8 +1878,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://rpts-api-ithc.platform.hmcts.net/health
-        description: rpts-api-ithc.platform.hmcts.net
+      - url: http://rpts-api-ithc.service.core-compute-ithc.internal/health
+        description: rpts-api-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
