@@ -1,13 +1,13 @@
 ---
 synthetic_monitors:
-  - name: camunda-api-java
-    management_zone_name: CFT-CAMUNDA-SBOX
+  - name: plum-frontend-classic
+    management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-api-sandbox.service.core-compute-sandbox.internal/health
-        description: camunda-api-sandbox.service.core-compute-sandbox.internal
+      - url: https://plumclassic.sandbox.platform.hmcts.net/health
+        description: plumclassic.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -16,14 +16,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: camunda-optimize-base
-    management_zone_name: CFT-CAMUNDA-SBOX
+  - name: plum-frontend-classic2
+    management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://camunda-optimize.sandbox.platform.hmcts.net/health
-        description: camunda-optimize.sandbox.platform.hmcts.net
+      - url: https://plumclassic2.sandbox.platform.hmcts.net/health
+        description: plumclassic2.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -32,14 +32,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: camunda-ui-java
-    management_zone_name: CFT-CAMUNDA-SBOX
+  - name: plum-frontend-classic3
+    management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://camunda-bpm.sandbox.platform.hmcts.net/health
-        description: camunda-bpm.sandbox.platform.hmcts.net
+      - url: https://frontdoor.sandbox.platform.hmcts.net/health
+        description: frontdoor.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -152,6 +152,22 @@ synthetic_monitors:
     requests:
       - url: https://idam-user-dashboard.sandbox.platform.hmcts.net/health
         description: idam-user-dashboard.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: idam-user-profile-bridge
+    management_zone_name: CFT-IDAM-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://idam-user-profile-bridge.sandbox.platform.hmcts.net/health
+        description: idam-user-profile-bridge.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

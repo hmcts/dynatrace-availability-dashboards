@@ -544,6 +544,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: cui-ra-nodejs
+    management_zone_name: CFT-CUI-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cui-ra.perftest.platform.hmcts.net/health
+        description: cui-ra.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: dg-docassembly-java
     management_zone_name: CFT-DG-PERFTEST
     enabled: true
@@ -824,6 +840,118 @@ synthetic_monitors:
     requests:
       - url: http://em-stitching-perftest.service.core-compute-perftest.internal/health
         description: em-stitching-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: admin-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-admin.perftest.platform.hmcts.net/health
+        description: et-pet-admin.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-api-perftest.service.core-compute-perftest.internal/health
+        description: et-pet-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-sidekiq
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-api-sidekiq.perftest.platform.hmcts.net/health
+        description: et-pet-api-sidekiq.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-export-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-ccd-export-perftest.service.core-compute-perftest.internal/health
+        description: et-pet-ccd-export-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1.perftest.platform.hmcts.net/health
+        description: et-pet-et1.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-sidekiq
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1-sidekiq.perftest.platform.hmcts.net/health
+        description: et-pet-et1-sidekiq.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et3-base
+    management_zone_name: CFT-ET-PET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et3.perftest.platform.hmcts.net/health
+        description: et-pet-et3.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1296,6 +1424,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ia-aip-frontend-nodejs
+    management_zone_name: CFT-IA-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://immigration-appeal.perftest.platform.hmcts.net/health
+        description: immigration-appeal.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ia-bail-case-api-java
     management_zone_name: CFT-IA-PERFTEST
     enabled: true
@@ -1488,6 +1632,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: idam-user-profile-bridge
+    management_zone_name: CFT-IDAM-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://idam-user-profile-bridge.perftest.platform.hmcts.net/health
+        description: idam-user-profile-bridge.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: idam-web-admin
     management_zone_name: CFT-IDAM-PERFTEST
     enabled: true
@@ -1512,6 +1672,22 @@ synthetic_monitors:
     requests:
       - url: https://idam-web-public.perftest.platform.hmcts.net/health
         description: idam-web-public.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: jps-judicial-payment-frontend-nodejs
+    management_zone_name: CFT-JPS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://judicial-payments.perftest.platform.hmcts.net/health
+        description: judicial-payments.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2102,8 +2278,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts-api-perftest.service.core-compute-perftest.internal/health
-        description: rpts-api-perftest.service.core-compute-perftest.internal
+      - url: https://rpts-api-perftest.platform.hmcts.net/health
+        description: rpts-api-perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

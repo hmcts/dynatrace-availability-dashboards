@@ -502,8 +502,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://civil-citizen-ui.demo.platform.hmcts.net/health
-        description: civil-citizen-ui.demo.platform.hmcts.net
+      - url: https://moneyclaims.demo.platform.hmcts.net/health
+        description: moneyclaims.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -664,6 +664,22 @@ synthetic_monitors:
     requests:
       - url: http://cpo-case-payment-orders-api-demo.service.core-compute-demo.internal/health
         description: cpo-case-payment-orders-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: cui-ra-nodejs
+    management_zone_name: CFT-CUI-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cui-ra.demo.platform.hmcts.net/health
+        description: cui-ra.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -952,6 +968,118 @@ synthetic_monitors:
     requests:
       - url: http://em-stitching-demo.service.core-compute-demo.internal/health
         description: em-stitching-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: admin-base
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-admin.demo.platform.hmcts.net/health
+        description: et-pet-admin.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-base
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-api-demo.service.core-compute-demo.internal/health
+        description: et-pet-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-sidekiq
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-api-sidekiq.demo.platform.hmcts.net/health
+        description: et-pet-api-sidekiq.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-export-base
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-ccd-export-demo.service.core-compute-demo.internal/health
+        description: et-pet-ccd-export-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-base
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1.demo.platform.hmcts.net/health
+        description: et-pet-et1.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-sidekiq
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1-sidekiq.demo.platform.hmcts.net/health
+        description: et-pet-et1-sidekiq.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et3-base
+    management_zone_name: CFT-ET-PET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et3.demo.platform.hmcts.net/health
+        description: et-pet-et3.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1520,6 +1648,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: help-with-fees-benefit-checker-api-base
+    management_zone_name: CFT-HELP-WITH-FEES-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hwf-benefit-checker-api.demo.service.core-compute-demo.internal/health
+        description: hwf-benefit-checker-api.demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-publicapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-publicapp.demo.platform.hmcts.net/health
+        description: hwf-publicapp.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-staffapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-staffapp.demo.platform.hmcts.net/health
+        description: hwf-staffapp.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: hmc-cft-hearing-service-int-java
     management_zone_name: CFT-HMC-DEMO
     enabled: true
@@ -1728,6 +1904,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ia-hearings-api-java
+    management_zone_name: CFT-IA-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-hearings-api-demo.service.core-compute-demo.internal/health
+        description: ia-hearings-api-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ia-home-office-integration-api-java
     management_zone_name: CFT-IA-DEMO
     enabled: true
@@ -1840,6 +2032,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: idam-user-profile-bridge
+    management_zone_name: CFT-IDAM-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://idam-user-profile-bridge.demo.platform.hmcts.net/health
+        description: idam-user-profile-bridge.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: idam-web-admin
     management_zone_name: CFT-IDAM-DEMO
     enabled: true
@@ -1864,6 +2072,38 @@ synthetic_monitors:
     requests:
       - url: https://idam-web-public.demo.platform.hmcts.net/health
         description: idam-web-public.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: jps-judicial-payment-frontend-nodejs
+    management_zone_name: CFT-JPS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://judicial-payments.demo.platform.hmcts.net/health
+        description: judicial-payments.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: jps-judicial-payment-service-java
+    management_zone_name: CFT-JPS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://jps-judicial-payment-service-demo.service.core-compute-demo.internal/health
+        description: jps-judicial-payment-service-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1974,8 +2214,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://moneyclaims.demo.platform.hmcts.net/health
-        description: moneyclaims.demo.platform.hmcts.net
+      - url: https://moneyclaims1.demo.platform.hmcts.net/health
+        description: moneyclaims1.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2744,6 +2984,22 @@ synthetic_monitors:
     requests:
       - url: http://sscs-tya-notif-demo.service.core-compute-demo.internal/health
         description: sscs-tya-notif-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: tax-tribunals-application-base
+    management_zone_name: CFT-TAX-TRIBUNALS-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://tax-tribunals-datacapture.demo.platform.hmcts.net/health
+        description: tax-tribunals-datacapture.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true

@@ -22,8 +22,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://sandbox-build.platform.hmcts.net/health
-        description: sandbox-build.platform.hmcts.net
+      - url: http://sandbox-build.hmcts.net/health
+        description: sandbox-build.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -38,8 +38,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://static-sandbox-build.platform.hmcts.net/health
-        description: static-sandbox-build.platform.hmcts.net
+      - url: http://static-sandbox-build.hmcts.net/health
+        description: static-sandbox-build.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
