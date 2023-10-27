@@ -502,8 +502,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://civil-citizen-ui.demo.platform.hmcts.net/health
-        description: civil-citizen-ui.demo.platform.hmcts.net
+      - url: https://moneyclaims.demo.platform.hmcts.net/health
+        description: moneyclaims.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2214,8 +2214,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://moneyclaims.demo.platform.hmcts.net/health
-        description: moneyclaims.demo.platform.hmcts.net
+      - url: https://moneyclaims1.demo.platform.hmcts.net/health
+        description: moneyclaims1.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
