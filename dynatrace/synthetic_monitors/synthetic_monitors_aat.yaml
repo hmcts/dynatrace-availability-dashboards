@@ -2358,8 +2358,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://rpts-api-aat.platform.hmcts.net/health
-        description: rpts-api-aat.platform.hmcts.net
+      - url: http://rpts-api-aat.service.core-compute-aat.internal/health
+        description: rpts-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
