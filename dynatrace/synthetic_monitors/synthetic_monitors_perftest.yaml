@@ -2278,8 +2278,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://rpts-api-perftest.platform.hmcts.net/health
-        description: rpts-api-perftest.platform.hmcts.net
+      - url: http://rpts-api-perftest.service.core-compute-perftest.internal/health
+        description: rpts-api-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
