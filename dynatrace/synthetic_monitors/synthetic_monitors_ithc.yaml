@@ -1584,22 +1584,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: neuvector-managedsvc-ingress
-    management_zone_name: CFT-NEUVECTOR-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://cft-neuvector00-multi-cluster.ithc.platform.hmcts.net/health
-        description: cft-neuvector00-multi-cluster.ithc.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: neuvector-redirect-ingress
     management_zone_name: CFT-NEUVECTOR-ITHC
     enabled: true
