@@ -1600,6 +1600,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: neuvector-restapi-ingress
+    management_zone_name: CFT-NEUVECTOR-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://neuvector.hmcts.com/health
+        description: neuvector.hmcts.com
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: neuvector-webui-ingress
     management_zone_name: CFT-NEUVECTOR-ITHC
     enabled: true
