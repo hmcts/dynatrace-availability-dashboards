@@ -1,21 +1,5 @@
 ---
 synthetic_monitors:
-  - name: plum-frontend-classic3
-    management_zone_name: CFT-CNP-SBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://frontdoor.sandbox.platform.hmcts.net/health
-        description: frontdoor.sandbox.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: plum-frontend-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true
@@ -182,8 +166,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://alertmanager-01.sandbox.platform.hmcts.net/health
-        description: alertmanager-01.sandbox.platform.hmcts.net
+      - url: https://alertmanager-00.sandbox.platform.hmcts.net/health
+        description: alertmanager-00.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -198,8 +182,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://prometheus-01.sandbox.platform.hmcts.net/health
-        description: prometheus-01.sandbox.platform.hmcts.net
+      - url: https://prometheus-00.sandbox.platform.hmcts.net/health
+        description: prometheus-00.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
