@@ -2432,6 +2432,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: sscs-tribunals-frontend-nodejs
+    management_zone_name: CFT-SSCS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://benefit-appeal.perftest.platform.hmcts.net/health
+        description: benefit-appeal.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: sscs-tya-notif-java
     management_zone_name: CFT-SSCS-PERFTEST
     enabled: true
