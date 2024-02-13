@@ -240,22 +240,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: rpe-send-letter-service-java
-    management_zone_name: CFT-RPE-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpe-send-letter-service-demo.service.core-compute-demo.internal/health
-        description: rpe-send-letter-service-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: camunda-api-java
     management_zone_name: CFT-CAMUNDA-DEMO
     enabled: true
@@ -2760,6 +2744,22 @@ synthetic_monitors:
     requests:
       - url: http://rpe-pdf-service-demo.service.core-compute-demo.internal/health
         description: rpe-pdf-service-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: rpe-send-letter-service-java
+    management_zone_name: CFT-RPE-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-send-letter-service-demo.service.core-compute-demo.internal/health
+        description: rpe-send-letter-service-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
