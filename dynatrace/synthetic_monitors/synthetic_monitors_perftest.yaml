@@ -193,7 +193,7 @@ synthetic_monitors:
             value: '>400'
             pass_if_found: false
   - name: rpe-send-letter-service-java
-    management_zone_name: CFT-RPE-PERFTEST
+    management_zone_name: CFT-BSP-PERFTEST
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
