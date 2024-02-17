@@ -192,6 +192,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: rpe-send-letter-service-java
+    management_zone_name: CFT-BSP-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-send-letter-service-aat.service.core-compute-aat.internal/health
+        description: rpe-send-letter-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: camunda-api-java
     management_zone_name: CFT-CAMUNDA-AAT
     enabled: true
@@ -384,6 +400,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-citizen-ui-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://aac-manage-case-assignment-aat.service.core-compute-aat.internal/health
+        description: aac-manage-case-assignment-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: civil-citizen-ui-nodejs
     management_zone_name: CFT-CIVIL-AAT
     enabled: true
@@ -424,6 +456,54 @@ synthetic_monitors:
     requests:
       - url: http://civil-orchestrator-service-aat.service.core-compute-aat.internal/health
         description: civil-orchestrator-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-commissioning-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-commissioning-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-commissioning-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-gateway-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-gateway-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-gateway-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2328,22 +2408,6 @@ synthetic_monitors:
     requests:
       - url: http://rpe-pdf-service-aat.service.core-compute-aat.internal/health
         description: rpe-pdf-service-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: rpe-send-letter-service-java
-    management_zone_name: CFT-RPE-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpe-send-letter-service-aat.service.core-compute-aat.internal/health
-        description: rpe-send-letter-service-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
