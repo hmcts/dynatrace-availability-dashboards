@@ -1696,22 +1696,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: hmc-cft-hearing-service-int-java
-    management_zone_name: CFT-HMC-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://hmc-cft-hearing-service-int-demo.service.core-compute-demo.internal/health
-        description: hmc-cft-hearing-service-int-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: hmc-cft-hearing-service-java
     management_zone_name: CFT-HMC-DEMO
     enabled: true
@@ -1728,22 +1712,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: hmc-hmi-inbound-adapter-int-java
-    management_zone_name: CFT-HMC-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://hmc-hmi-inbound-adapter-int-demo.service.core-compute-demo.internal/health
-        description: hmc-hmi-inbound-adapter-int-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: hmc-hmi-inbound-adapter-java
     management_zone_name: CFT-HMC-DEMO
     enabled: true
@@ -1752,22 +1720,6 @@ synthetic_monitors:
     requests:
       - url: http://hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal/health
         description: hmc-hmi-inbound-adapter-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: hmc-hmi-outbound-adapter-int-java
-    management_zone_name: CFT-HMC-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://hmc-hmi-outbound-adapter-int-demo.service.core-compute-demo.internal/health
-        description: hmc-hmi-outbound-adapter-int-demo.service.core-compute-demo.internal
         method: GET
         configuration:
           accept_any_certificate: true
