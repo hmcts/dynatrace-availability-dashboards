@@ -518,8 +518,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://plum.perftest.platform.hmcts.net/health
-        description: plum.perftest.platform.hmcts.net
+      - url: https://plum-test.perftest.platform.hmcts.net/health
+        description: plum-test.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
