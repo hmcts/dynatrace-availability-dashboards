@@ -614,8 +614,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://plum-test.demo.platform.hmcts.net/health
-        description: plum-test.demo.platform.hmcts.net
+      - url: https://plum.demo.platform.hmcts.net/health
+        description: plum.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
