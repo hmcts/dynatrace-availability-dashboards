@@ -2016,22 +2016,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: sscs-ccd-callback-orchestrator-java
-    management_zone_name: CFT-SSCS-ITHC
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-ccd-callback-orchestrator-ithc.service.core-compute-ithc.internal/health
-        description: sscs-ccd-callback-orchestrator-ithc.service.core-compute-ithc.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sscs-cor-frontend-nodejs
     management_zone_name: CFT-SSCS-ITHC
     enabled: true
