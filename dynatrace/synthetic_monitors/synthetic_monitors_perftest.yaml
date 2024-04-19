@@ -2400,22 +2400,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: sscs-evidence-share-java
-    management_zone_name: CFT-SSCS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-evidence-share-perftest.service.core-compute-perftest.internal/health
-        description: sscs-evidence-share-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sscs-hearings-api-java
     management_zone_name: CFT-SSCS-PERFTEST
     enabled: true
