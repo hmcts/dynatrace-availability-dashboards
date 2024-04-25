@@ -128,22 +128,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: idam-web-admin
-    management_zone_name: CFT-IDAM-SBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://idam-web-admin.sandbox.platform.hmcts.net/health
-        description: idam-web-admin.sandbox.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: idam-web-public
     management_zone_name: CFT-IDAM-SBOX
     enabled: true
