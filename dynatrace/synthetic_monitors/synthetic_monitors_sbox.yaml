@@ -192,6 +192,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: pdf-service-java
+    management_zone_name: CFT-RPE-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-pdf-service-sandbox.service.core-compute-sandbox.internal/health
+        description: rpe-pdf-service-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: rpe-service-auth-provider-java
     management_zone_name: CFT-RPE-SBOX
     enabled: true
