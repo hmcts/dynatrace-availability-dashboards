@@ -1974,8 +1974,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://sptribs-dss-update-case-web.ithc.platform.hmcts.net/health
-        description: sptribs-dss-update-case-web.ithc.platform.hmcts.net
+      - url: https://update.sptribs-frontend.ithc.platform.hmcts.net/health
+        description: update.sptribs-frontend.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
