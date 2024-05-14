@@ -496,22 +496,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: civil-citizen-ui-nodejs
-    management_zone_name: CFT-CIVIL-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://moneyclaims.demo.platform.hmcts.net/health
-        description: moneyclaims.demo.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: civil-general-applications-java
     management_zone_name: CFT-CIVIL-DEMO
     enabled: true
