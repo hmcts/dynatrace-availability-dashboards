@@ -96,6 +96,70 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: bulk-scan-orchestrator-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-orchestrator-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-orchestrator-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: bulk-scan-payment-processor-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-payment-processor-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-payment-processor-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: bulk-scan-processor-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-processor-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-processor-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: rpe-send-letter-service-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-send-letter-service-ithc.service.core-compute-ithc.internal/health
+        description: rpe-send-letter-service-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: camunda-api-java
     management_zone_name: CFT-CAMUNDA-ITHC
     enabled: true

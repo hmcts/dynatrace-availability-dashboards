@@ -3,6 +3,7 @@ management_zones:
   - name: CFT-AAC-ITHC
   - name: CFT-ADOPTION-ITHC
   - name: CFT-AM-ITHC
+  - name: CFT-BSP-ITHC
   - name: CFT-CAMUNDA-ITHC
   - name: CFT-CCD-ITHC
   - name: CFT-CIVIL-ITHC
