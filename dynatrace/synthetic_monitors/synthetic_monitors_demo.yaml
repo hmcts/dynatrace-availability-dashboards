@@ -1184,6 +1184,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et-syr-nodejs
+    management_zone_name: CFT-ET-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-syr.demo.platform.hmcts.net/health
+        description: et-syr.demo.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ecm-consumer-java
     management_zone_name: CFT-ETHOS-DEMO
     enabled: true
