@@ -1414,8 +1414,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://fis-ds-web.aat.platform.hmcts.net/health
-        description: fis-ds-web.aat.platform.hmcts.net
+      - url: https://dss.aat.platform.hmcts.net/health
+        description: dss.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
