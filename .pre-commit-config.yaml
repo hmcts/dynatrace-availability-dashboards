@@ -2,7 +2,7 @@
 repos:
   # renovate: datasource=github-releases
   - repo: https://github.com/antonbabenko/pre-commit-terraform
-    rev: v1.77.1
+    rev: v1.77.2
     hooks:
       - id: terraform_fmt
   # renovate: datasource=github-releases
@@ -16,7 +16,7 @@ repos:
         ]
   # renovate: datasource=github-tags
   - repo: https://github.com/adrienverge/yamllint
-    rev: v1.29.0
+    rev: v1.34.0
     hooks:
       - id: yamllint
   # renovate: datasource=github-releases
@@ -29,11 +29,11 @@ repos:
       - id: trailing-whitespace
   # renovate: datasource=github-tags
   - repo: https://github.com/psf/black
-    rev: 23.1.0
+    rev: 23.7.0
     hooks:
       - id: black
   # renovate: datasource=github-tags
   - repo: https://github.com/PyCQA/flake8
-    rev: 6.0.0
+    rev: 6.1.0
     hooks:
       - id: flake8

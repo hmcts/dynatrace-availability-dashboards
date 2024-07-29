@@ -38,7 +38,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://adoption-web.aat.platform.hmcts.net/health
+      - url: https://adoption-web.aat.platform.hmcts.net/health
         description: adoption-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -118,7 +118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://bar.aat.platform.hmcts.net/health
+      - url: https://bar.aat.platform.hmcts.net/health
         description: bar.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -192,6 +192,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: rpe-send-letter-service-java
+    management_zone_name: CFT-BSP-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-send-letter-service-aat.service.core-compute-aat.internal/health
+        description: rpe-send-letter-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: camunda-api-java
     management_zone_name: CFT-CAMUNDA-AAT
     enabled: true
@@ -208,29 +224,13 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: camunda-optimize-base
-    management_zone_name: CFT-CAMUNDA-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://camunda-optimize.aat.platform.hmcts.net/health
-        description: camunda-optimize.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: camunda-ui-java
     management_zone_name: CFT-CAMUNDA-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://camunda-bpm.aat.platform.hmcts.net/health
+      - url: https://camunda-bpm.aat.platform.hmcts.net/health
         description: camunda-bpm.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -246,7 +246,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ccd-admin-web.aat.platform.hmcts.net/health
+      - url: https://ccd-admin-web.aat.platform.hmcts.net/health
         description: ccd-admin-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -262,7 +262,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://gateway-ccd.aat.platform.hmcts.net/health
+      - url: https://gateway-ccd.aat.platform.hmcts.net/health
         description: gateway-ccd.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -310,7 +310,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://return-case-doc-ccd.aat.platform.hmcts.net/health
+      - url: https://return-case-doc-ccd.aat.platform.hmcts.net/health
         description: return-case-doc-ccd.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -406,7 +406,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://civil-citizen-ui.aat.platform.hmcts.net/health
+      - url: https://civil-citizen-ui.aat.platform.hmcts.net/health
         description: civil-citizen-ui.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -424,6 +424,70 @@ synthetic_monitors:
     requests:
       - url: http://civil-general-applications-aat.service.core-compute-aat.internal/health
         description: civil-general-applications-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-orchestrator-service-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-orchestrator-service-aat.service.core-compute-aat.internal/health
+        description: civil-orchestrator-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-commissioning-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-commissioning-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-commissioning-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-gateway-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-gateway-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-gateway-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-aat.service.core-compute-aat.internal/health
+        description: civil-sdt-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -454,7 +518,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum.aat.platform.hmcts.net/health
+      - url: https://plum.aat.platform.hmcts.net/health
         description: plum.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -470,8 +534,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://plum-recipe-backend.service.core-compute-aat.internal/health
-        description: plum-recipe-backend.service.core-compute-aat.internal
+      - url: http://plum-recipe-backend-aat.service.core-compute-aat.internal/health
+        description: plum-recipe-backend-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -488,6 +552,22 @@ synthetic_monitors:
     requests:
       - url: http://cpo-case-payment-orders-api-aat.service.core-compute-aat.internal/health
         description: cpo-case-payment-orders-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: cui-ra-nodejs
+    management_zone_name: CFT-CUI-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://cui-ra.aat.platform.hmcts.net/health
+        description: cui-ra.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -566,7 +646,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-absolute-aks.aat.platform.hmcts.net/health
+      - url: https://decree-absolute-aks.aat.platform.hmcts.net/health
         description: decree-absolute-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -598,7 +678,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://decree-nisi-aks.aat.platform.hmcts.net/health
+      - url: https://decree-nisi-aks.aat.platform.hmcts.net/health
         description: decree-nisi-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -646,7 +726,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://petitioner-frontend-aks.aat.platform.hmcts.net/health
+      - url: https://petitioner-frontend-aks.aat.platform.hmcts.net/health
         description: petitioner-frontend-aks.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -662,24 +742,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://respond-divorce-aks.aat.platform.hmcts.net/health
+      - url: https://respond-divorce-aks.aat.platform.hmcts.net/health
         description: respond-divorce-aks.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: dm-store-cdam-java
-    management_zone_name: CFT-DM-STORE-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://dm-store-cdam-aat.service.core-compute-aat.internal/health
-        description: dm-store-cdam-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -710,7 +774,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://docmosis.aat.platform.hmcts.net/health
+      - url: https://docmosis.aat.platform.hmcts.net/health
         description: docmosis.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -726,7 +790,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://dtsse-ardoq-adapter.aat.platform.hmcts.net/health
+      - url: https://dtsse-ardoq-adapter.aat.platform.hmcts.net/health
         description: dtsse-ardoq-adapter.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -790,7 +854,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://em-icp.aat.platform.hmcts.net/health
+      - url: https://em-icp.aat.platform.hmcts.net/health
         description: em-icp.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -808,22 +872,6 @@ synthetic_monitors:
     requests:
       - url: http://em-npa-aat.service.core-compute-aat.internal/health
         description: em-npa-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: em-ped-api-java
-    management_zone_name: CFT-EM-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://em-ped-api-aat.service.core-compute-aat.internal/health
-        description: em-ped-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -864,6 +912,118 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: admin-base
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-admin.aat.platform.hmcts.net/health
+        description: et-pet-admin.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-base
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-api-aat.service.core-compute-aat.internal/health
+        description: et-pet-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: api-sidekiq
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-api-sidekiq.aat.platform.hmcts.net/health
+        description: et-pet-api-sidekiq.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ccd-export-base
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-pet-ccd-export-aat.service.core-compute-aat.internal/health
+        description: et-pet-ccd-export-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-base
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1.aat.platform.hmcts.net/health
+        description: et-pet-et1.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et1-sidekiq
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et1-sidekiq.aat.platform.hmcts.net/health
+        description: et-pet-et1-sidekiq.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et3-base
+    management_zone_name: CFT-ET-PET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-pet-et3.aat.platform.hmcts.net/health
+        description: et-pet-et3.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-cos-java
     management_zone_name: CFT-ET-AAT
     enabled: true
@@ -872,6 +1032,22 @@ synthetic_monitors:
     requests:
       - url: http://et-cos-aat.service.core-compute-aat.internal/health
         description: et-cos-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-aat.service.core-compute-aat.internal/health
+        description: et-hearings-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -918,8 +1094,24 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://et-sya.aat.platform.hmcts.net/health
+      - url: https://et-sya.aat.platform.hmcts.net/health
         description: et-sya.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-syr-nodejs
+    management_zone_name: CFT-ET-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-syr.aat.platform.hmcts.net/health
+        description: et-syr.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -934,8 +1126,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://ecm-consumer-aat.service.core-compute-aat.internal/health
-        description: ecm-consumer-aat.service.core-compute-aat.internal
+      - url: http://ethos-ecm-consumer-aat.service.core-compute-aat.internal/health
+        description: ethos-ecm-consumer-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -966,7 +1158,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact-admin.aat.platform.hmcts.net/health
+      - url: https://fact-admin.aat.platform.hmcts.net/health
         description: fact-admin.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -998,7 +1190,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fact.aat.platform.hmcts.net/health
+      - url: https://fact.aat.platform.hmcts.net/health
         description: fact.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1030,7 +1222,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paybubble.aat.platform.hmcts.net/health
+      - url: https://paybubble.aat.platform.hmcts.net/health
         description: paybubble.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1110,7 +1302,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://paymentoutcome-web.aat.platform.hmcts.net/health
+      - url: https://paymentoutcome-web.aat.platform.hmcts.net/health
         description: paymentoutcome-web.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1158,7 +1350,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fees-register.aat.platform.hmcts.net/health
+      - url: https://fees-register.aat.platform.hmcts.net/health
         description: fees-register.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1176,70 +1368,6 @@ synthetic_monitors:
     requests:
       - url: http://finrem-cos-aat.service.core-compute-aat.internal/health
         description: finrem-cos-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-dgcs-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-dgcs-aat.service.core-compute-aat.internal/health
-        description: finrem-dgcs-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-emca-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-emca-aat.service.core-compute-aat.internal/health
-        description: finrem-emca-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: finrem-ns-java
-    management_zone_name: CFT-FINANCIAL-REMEDY-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://finrem-ns-aat.service.core-compute-aat.internal/health
-        description: finrem-ns-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-bulk-scan-api-java
-    management_zone_name: CFT-FIS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://fis-bulk-scan-api-aat.service.core-compute-aat.internal/health
-        description: fis-bulk-scan-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1270,8 +1398,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-update-web.aat.platform.hmcts.net/health
-        description: fis-ds-update-web.aat.platform.hmcts.net
+      - url: https://dss-update-case.aat.platform.hmcts.net/health
+        description: dss-update-case.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1286,8 +1414,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://fis-ds-web.aat.platform.hmcts.net/health
-        description: fis-ds-web.aat.platform.hmcts.net
+      - url: https://dss.aat.platform.hmcts.net/health
+        description: dss.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1304,6 +1432,54 @@ synthetic_monitors:
     requests:
       - url: http://fis-hmc-api-aat.service.core-compute-aat.internal/health
         description: fis-hmc-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-benefit-checker-api-base
+    management_zone_name: CFT-HELP-WITH-FEES-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hwf-benefit-checker-api.aat.service.core-compute-aat.internal/health
+        description: hwf-benefit-checker-api.aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-publicapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-publicapp.aat.platform.hmcts.net/health
+        description: hwf-publicapp.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-staffapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-staffapp.aat.platform.hmcts.net/health
+        description: hwf-staffapp.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1366,7 +1542,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://immigration-appeal.aat.platform.hmcts.net/health
+      - url: https://immigration-appeal.aat.platform.hmcts.net/health
         description: immigration-appeal.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1464,6 +1640,22 @@ synthetic_monitors:
     requests:
       - url: http://ia-case-payments-api-aat.service.core-compute-aat.internal/health
         description: ia-case-payments-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-hearings-api-java
+    management_zone_name: CFT-IA-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-hearings-api-aat.service.core-compute-aat.internal/health
+        description: ia-hearings-api-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1584,14 +1776,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: idam-web-admin
+  - name: idam-user-profile-bridge
     management_zone_name: CFT-IDAM-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://idam-web-admin.aat.platform.hmcts.net/health
-        description: idam-web-admin.aat.platform.hmcts.net
+      - url: https://idam-user-profile-bridge.aat.platform.hmcts.net/health
+        description: idam-user-profile-bridge.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1638,7 +1830,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://lau.aat.platform.hmcts.net/health
+      - url: https://lau.aat.platform.hmcts.net/health
         description: lau.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1670,7 +1862,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://moneyclaims.aat.platform.hmcts.net/health
+      - url: https://moneyclaims.aat.platform.hmcts.net/health
         description: moneyclaims.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1702,8 +1894,24 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://alertmanager-00.aat.platform.hmcts.net/health
+      - url: https://alertmanager-00.aat.platform.hmcts.net/health
         description: alertmanager-00.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: kube-prometheus-stack-grafana
+    management_zone_name: CFT-MONITORING-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://grafana.aat.platform.hmcts.net/health
+        description: grafana.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1718,7 +1926,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://prometheus-00.aat.platform.hmcts.net/health
+      - url: https://prometheus-00.aat.platform.hmcts.net/health
         description: prometheus-00.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1728,14 +1936,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: neuvector-restapi-ingress
+  - name: neuvector-redirect-ingress
     management_zone_name: CFT-NEUVECTOR-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00.service.core-compute-aat.internal/health
-        description: neuvector00.service.core-compute-aat.internal
+      - url: https://cft-neuvector00.aat.platform.hmcts.net/health
+        description: cft-neuvector00.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1750,8 +1958,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://neuvector00.service.core-compute-aat.internal/health
-        description: neuvector00.service.core-compute-aat.internal
+      - url: https://cft-neuvector00.aat.platform.hmcts.net/health
+        description: cft-neuvector00.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1782,7 +1990,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://nfdiv.aat.platform.hmcts.net/health
+      - url: https://nfdiv.aat.platform.hmcts.net/health
         description: nfdiv.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1814,7 +2022,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://pcq.aat.platform.hmcts.net/health
+      - url: https://pcq.aat.platform.hmcts.net/health
         description: pcq.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1830,7 +2038,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://privatelaw.aat.platform.hmcts.net/health
+      - url: https://privatelaw.aat.platform.hmcts.net/health
         description: privatelaw.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -1910,7 +2118,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://probate.aat.platform.hmcts.net/health
+      - url: https://probate.aat.platform.hmcts.net/health
         description: probate.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2128,22 +2336,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: rpe-send-letter-service-java
-    management_zone_name: CFT-RPE-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpe-send-letter-service-aat.service.core-compute-aat.internal/health
-        description: rpe-send-letter-service-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: rpe-service-auth-provider-java
     management_zone_name: CFT-RPE-AAT
     enabled: true
@@ -2182,7 +2374,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://rpts.aat.platform.hmcts.net/health
+      - url: https://rpts.aat.platform.hmcts.net/health
         description: rpts.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2208,14 +2400,30 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: sptribs-dss-backend-java
+  - name: sptribs-dss-update-case-web-nodejs
     management_zone_name: CFT-SPTRIBS-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://sptribs-dss-backend-aat.service.core-compute-aat.internal/health
-        description: sptribs-dss-backend-aat.service.core-compute-aat.internal
+      - url: https://sptribs-dss-update-case-web.aat.platform.hmcts.net/health
+        description: sptribs-dss-update-case-web.aat.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sptribs-frontend-nodejs
+    management_zone_name: CFT-SPTRIBS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://sptribs-frontend.aat.platform.hmcts.net/health
+        description: sptribs-frontend.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2240,46 +2448,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: sscs-ccd-callback-orchestrator-java
-    management_zone_name: CFT-SSCS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-ccd-callback-orchestrator-aat.service.core-compute-aat.internal/health
-        description: sscs-ccd-callback-orchestrator-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sscs-cor-frontend-nodejs
     management_zone_name: CFT-SSCS-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://sscs-cor.aat.platform.hmcts.net/health
+      - url: https://sscs-cor.aat.platform.hmcts.net/health
         description: sscs-cor.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-evidence-share-java
-    management_zone_name: CFT-SSCS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-evidence-share-aat.service.core-compute-aat.internal/health
-        description: sscs-evidence-share-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2296,22 +2472,6 @@ synthetic_monitors:
     requests:
       - url: http://sscs-hearings-api-aat.service.core-compute-aat.internal/health
         description: sscs-hearings-api-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-hmc-stub-java
-    management_zone_name: CFT-SSCS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-hmc-stub-aat.service.core-compute-aat.internal/health
-        description: sscs-hmc-stub-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2342,7 +2502,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://benefit-appeal.aat.platform.hmcts.net/health
+      - url: https://benefit-appeal.aat.platform.hmcts.net/health
         description: benefit-appeal.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2360,6 +2520,22 @@ synthetic_monitors:
     requests:
       - url: http://sscs-tya-notif-aat.service.core-compute-aat.internal/health
         description: sscs-tya-notif-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: tax-tribunals-application-base
+    management_zone_name: CFT-TAX-TRIBUNALS-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://tax-tribunals-datacapture.aat.platform.hmcts.net/health
+        description: tax-tribunals-datacapture.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2454,7 +2630,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://administer-orgs.aat.platform.hmcts.net/health
+      - url: https://administer-orgs.aat.platform.hmcts.net/health
         description: administer-orgs.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2470,7 +2646,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-org.aat.platform.hmcts.net/health
+      - url: https://manage-org.aat.platform.hmcts.net/health
         description: manage-org.aat.platform.hmcts.net
         method: GET
         configuration:
@@ -2486,7 +2662,7 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: http://manage-case.aat.platform.hmcts.net/health
+      - url: https://manage-case.aat.platform.hmcts.net/health
         description: manage-case.aat.platform.hmcts.net
         method: GET
         configuration:

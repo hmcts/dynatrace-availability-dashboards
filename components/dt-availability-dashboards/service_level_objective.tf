@@ -24,5 +24,5 @@ resource "dynatrace_slo" "availability" {
   filter            = "type(HTTP_CHECK), mzName(${each.value.triggers.name})"
   target            = 98
   warning           = 99
-  timeframe         = "-1w"
+  timeframe         = "-30d"
 }

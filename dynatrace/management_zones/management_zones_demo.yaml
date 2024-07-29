@@ -10,18 +10,21 @@ management_zones:
   - name: CFT-CIVIL-DEMO
   - name: CFT-CNP-DEMO
   - name: CFT-CPO-DEMO
+  - name: CFT-CUI-DEMO
   - name: CFT-DG-DEMO
   - name: CFT-DIVORCE-DEMO
   - name: CFT-DM-STORE-DEMO
   - name: CFT-DOCMOSIS-DEMO
   - name: CFT-EM-DEMO
   - name: CFT-ET-DEMO
+  - name: CFT-ET-PET-DEMO
   - name: CFT-ETHOS-DEMO
   - name: CFT-FACT-DEMO
   - name: CFT-FAMILY-PUBLIC-LAW-DEMO
   - name: CFT-FEES-PAY-DEMO
   - name: CFT-FINANCIAL-REMEDY-DEMO
   - name: CFT-FIS-DEMO
+  - name: CFT-HELP-WITH-FEES-DEMO
   - name: CFT-HMC-DEMO
   - name: CFT-IA-DEMO
   - name: CFT-IDAM-DEMO
@@ -36,7 +39,9 @@ management_zones:
   - name: CFT-REFORM-SCAN-DEMO
   - name: CFT-RPE-DEMO
   - name: CFT-RPTS-DEMO
+  - name: CFT-SPTRIBS-DEMO
   - name: CFT-SSCS-DEMO
+  - name: CFT-TAX-TRIBUNALS-DEMO
   - name: CFT-TS-DEMO
   - name: CFT-WA-DEMO
   - name: CFT-XUI-DEMO
