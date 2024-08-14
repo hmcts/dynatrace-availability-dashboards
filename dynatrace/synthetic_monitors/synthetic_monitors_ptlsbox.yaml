@@ -102,8 +102,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://response-api.platform.hmcts.net/health
-        description: response-api.platform.hmcts.net
+      - url: https://response-api.sandbox.platform.hmcts.net/health
+        description: response-api.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -118,8 +118,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://response.platform.hmcts.net/health
-        description: response.platform.hmcts.net
+      - url: https://response.sandbox.platform.hmcts.net/health
+        description: response.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
