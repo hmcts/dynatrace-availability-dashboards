@@ -1,6 +1,6 @@
 terraform {
   backend "azurerm" {}
-  required_version = "1.4.0"
+  required_version = "1.9.5"
   required_providers {
     dynatrace = {
       version = "1.21.0"
