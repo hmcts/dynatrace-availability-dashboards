@@ -96,6 +96,70 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: bulk-scan-orchestrator-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-orchestrator-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-orchestrator-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: bulk-scan-payment-processor-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-payment-processor-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-payment-processor-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: bulk-scan-processor-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://bulk-scan-processor-ithc.service.core-compute-ithc.internal/health
+        description: bulk-scan-processor-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: rpe-send-letter-service-java
+    management_zone_name: CFT-BSP-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://rpe-send-letter-service-ithc.service.core-compute-ithc.internal/health
+        description: rpe-send-letter-service-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: camunda-api-java
     management_zone_name: CFT-CAMUNDA-ITHC
     enabled: true
@@ -264,6 +328,118 @@ synthetic_monitors:
     requests:
       - url: http://ccd-message-publisher-ithc.service.core-compute-ithc.internal/health
         description: ccd-message-publisher-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-citizen-ui-nodejs
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://civil-citizen-ui.ithc.platform.hmcts.net/health
+        description: civil-citizen-ui.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-general-applications-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-general-applications-ithc.service.core-compute-ithc.internal/health
+        description: civil-general-applications-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-orchestrator-service-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-orchestrator-service-ithc.service.core-compute-ithc.internal/health
+        description: civil-orchestrator-service-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-commissioning-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-commissioning-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-commissioning-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-gateway-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-gateway-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-gateway-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-sdt-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-sdt-ithc.service.core-compute-ithc.internal/health
+        description: civil-sdt-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-service-java
+    management_zone_name: CFT-CIVIL-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-service-ithc.service.core-compute-ithc.internal/health
+        description: civil-service-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -592,6 +768,86 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et-cos-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-cos-ithc.service.core-compute-ithc.internal/health
+        description: et-cos-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-hearings-api-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-hearings-api-ithc.service.core-compute-ithc.internal/health
+        description: et-hearings-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-msg-handler-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-msg-handler-ithc.service.core-compute-ithc.internal/health
+        description: et-msg-handler-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-sya-api-java
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://et-sya-api-ithc.service.core-compute-ithc.internal/health
+        description: et-sya-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: et-sya-nodejs
+    management_zone_name: CFT-ET-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-sya.ithc.platform.hmcts.net/health
+        description: et-sya.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ecm-consumer-java
     management_zone_name: CFT-ETHOS-ITHC
     enabled: true
@@ -832,6 +1088,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: finrem-cos-java
+    management_zone_name: CFT-FINANCIAL-REMEDY-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://finrem-cos-ithc.service.core-compute-ithc.internal/health
+        description: finrem-cos-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: fis-bulk-scan-api-java
     management_zone_name: CFT-FIS-ITHC
     enabled: true
@@ -912,6 +1184,54 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: help-with-fees-benefit-checker-api-base
+    management_zone_name: CFT-HELP-WITH-FEES-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://hwf-benefit-checker-api.ithc.service.core-compute-ithc.internal/health
+        description: hwf-benefit-checker-api.ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-publicapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-publicapp.ithc.platform.hmcts.net/health
+        description: hwf-publicapp.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: help-with-fees-staffapp-base
+    management_zone_name: CFT-HELP-WITH-FEES-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://hwf-staffapp.ithc.platform.hmcts.net/health
+        description: hwf-staffapp.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: hmc-cft-hearing-service-java
     management_zone_name: CFT-HMC-ITHC
     enabled: true
@@ -952,6 +1272,182 @@ synthetic_monitors:
     requests:
       - url: http://hmc-hmi-outbound-adapter-ithc.service.core-compute-ithc.internal/health
         description: hmc-hmi-outbound-adapter-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-aip-frontend-nodejs
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://immigration-appeal.ithc.platform.hmcts.net/health
+        description: immigration-appeal.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-bail-case-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-bail-case-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-bail-case-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-case-access-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-case-access-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-case-access-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-case-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-case-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-case-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-case-documents-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-case-documents-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-case-documents-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-case-notifications-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-case-notifications-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-case-notifications-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-case-payments-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-case-payments-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-case-payments-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-hearings-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-hearings-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-hearings-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-home-office-integration-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-home-office-integration-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-home-office-integration-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-home-office-mock-api-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-home-office-mock-api-ithc.service.core-compute-ithc.internal/health
+        description: ia-home-office-mock-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-timed-event-service-java
+    management_zone_name: CFT-IA-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ia-timed-event-service-ithc.service.core-compute-ithc.internal/health
+        description: ia-timed-event-service-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1560,6 +2056,86 @@ synthetic_monitors:
     requests:
       - url: https://sptribs-frontend.ithc.platform.hmcts.net/health
         description: sptribs-frontend.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-cor-frontend-nodejs
+    management_zone_name: CFT-SSCS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://sscs-cor.ithc.platform.hmcts.net/health
+        description: sscs-cor.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-hearings-api-java
+    management_zone_name: CFT-SSCS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sscs-hearings-api-ithc.service.core-compute-ithc.internal/health
+        description: sscs-hearings-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-tribunals-api-java
+    management_zone_name: CFT-SSCS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sscs-tribunals-api-ithc.service.core-compute-ithc.internal/health
+        description: sscs-tribunals-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-tribunals-frontend-nodejs
+    management_zone_name: CFT-SSCS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://benefit-appeal.ithc.platform.hmcts.net/health
+        description: benefit-appeal.ithc.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: sscs-tya-notif-java
+    management_zone_name: CFT-SSCS-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://sscs-tya-notif-ithc.service.core-compute-ithc.internal/health
+        description: sscs-tya-notif-ithc.service.core-compute-ithc.internal
         method: GET
         configuration:
           accept_any_certificate: true
