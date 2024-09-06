@@ -1,21 +1,5 @@
 ---
 synthetic_monitors:
-  - name: artifactory-oss
-    management_zone_name: CFT-ARTIFACTORY-PTLSBOX
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://artifactory.sandbox.platform.hmcts.net/health
-        description: artifactory.sandbox.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: jenkins
     management_zone_name: CFT-JENKINS-PTLSBOX
     enabled: true
