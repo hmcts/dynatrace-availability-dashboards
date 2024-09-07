@@ -304,38 +304,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: ccd-ac-int-data-store-api-java
-    management_zone_name: CFT-CCD-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://ccd-ac-int-data-store-api-demo.service.core-compute-demo.internal/health
-        description: ccd-ac-int-data-store-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: ccd-ac-int-definition-store-api-java
-    management_zone_name: CFT-CCD-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://ccd-ac-int-definition-store-api-demo.service.core-compute-demo.internal/health
-        description: ccd-ac-int-definition-store-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: ccd-admin-web-nodejs
     management_zone_name: CFT-CCD-DEMO
     enabled: true
@@ -1768,6 +1736,22 @@ synthetic_monitors:
     requests:
       - url: http://hmc-hmi-outbound-adapter-demo.service.core-compute-demo.internal/health
         description: hmc-hmi-outbound-adapter-demo.service.core-compute-demo.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: ia-aip-frontend-nodejs
+    management_zone_name: CFT-IA-DEMO
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://immigration-appeal.demo.platform.hmcts.net/health
+        description: immigration-appeal.demo.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
