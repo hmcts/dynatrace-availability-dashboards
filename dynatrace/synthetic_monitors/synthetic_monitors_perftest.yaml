@@ -960,6 +960,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: et-syr-nodejs
+    management_zone_name: CFT-ET-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://et-syr.perftest.platform.hmcts.net/health
+        description: et-syr.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ecm-consumer-java
     management_zone_name: CFT-ETHOS-PERFTEST
     enabled: true
@@ -2008,22 +2024,6 @@ synthetic_monitors:
     requests:
       - url: http://rd-professional-api-perftest.service.core-compute-perftest.internal/health
         description: rd-professional-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: rd-profile-sync-java
-    management_zone_name: CFT-RD-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rd-profile-sync-perftest.service.core-compute-perftest.internal/health
-        description: rd-profile-sync-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
