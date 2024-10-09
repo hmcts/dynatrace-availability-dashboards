@@ -29,7 +29,7 @@ repos:
       - id: trailing-whitespace
   # renovate: datasource=github-tags
   - repo: https://github.com/psf/black
-    rev: 24.8.0
+    rev: 24.10.0
     hooks:
       - id: black
   # renovate: datasource=github-tags
