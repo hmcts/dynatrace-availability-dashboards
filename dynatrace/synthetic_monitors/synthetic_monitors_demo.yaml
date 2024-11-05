@@ -2768,22 +2768,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: sscs-hearings-api-java
-    management_zone_name: CFT-SSCS-DEMO
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-hearings-api-demo.service.core-compute-demo.internal/health
-        description: sscs-hearings-api-demo.service.core-compute-demo.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sscs-tribunals-api-java
     management_zone_name: CFT-SSCS-DEMO
     enabled: true
