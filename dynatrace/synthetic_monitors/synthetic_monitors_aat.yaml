@@ -2086,8 +2086,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://pcs-frontend.aat.platform.hmcts.net/health
-        description: pcs-frontend.aat.platform.hmcts.net
+      - url: https://pcs.aat.platform.hmcts.net/health
+        description: pcs.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
