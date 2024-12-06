@@ -32,7 +32,6 @@ management_zones:
   - name: CFT-NEUVECTOR-PERFTEST
   - name: CFT-NFDIV-PERFTEST
   - name: CFT-PCQ-PERFTEST
-  - name: CFT-PCS-PERFTEST
   - name: CFT-PRIVATE-LAW-PERFTEST
   - name: CFT-PROBATE-PERFTEST
   - name: CFT-RD-PERFTEST
