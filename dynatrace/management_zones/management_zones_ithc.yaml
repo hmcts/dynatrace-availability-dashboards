@@ -31,7 +31,6 @@ management_zones:
   - name: CFT-MONITORING-ITHC
   - name: CFT-NEUVECTOR-ITHC
   - name: CFT-PCQ-ITHC
-  - name: CFT-PCS-ITHC
   - name: CFT-PRIVATE-LAW-ITHC
   - name: CFT-PROBATE-ITHC
   - name: CFT-RD-ITHC
