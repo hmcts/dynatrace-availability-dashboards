@@ -33,7 +33,6 @@ management_zones:
   - name: CFT-MONITORING-DEMO
   - name: CFT-NFDIV-DEMO
   - name: CFT-PCQ-DEMO
-  - name: CFT-PCS-DEMO
   - name: CFT-PRIVATE-LAW-DEMO
   - name: CFT-PROBATE-DEMO
   - name: CFT-RD-DEMO
