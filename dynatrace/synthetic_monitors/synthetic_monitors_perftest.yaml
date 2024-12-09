@@ -352,6 +352,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: ccd-test-stubs-service-java
+    management_zone_name: CFT-CCD-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://ccd-test-stubs-service-perftest.service.core-compute-perftest.internal/health
+        description: ccd-test-stubs-service-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: ccd-user-profile-api-java
     management_zone_name: CFT-CCD-PERFTEST
     enabled: true
