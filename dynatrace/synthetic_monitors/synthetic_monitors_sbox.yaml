@@ -32,6 +32,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: recipes-backend-java
+    management_zone_name: CFT-CNP-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://recipes-backend-sandbox.service.core-compute-sandbox.internal/health
+        description: recipes-backend-sandbox.service.core-compute-sandbox.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: docmosis-base
     management_zone_name: CFT-DOCMOSIS-SBOX
     enabled: true
