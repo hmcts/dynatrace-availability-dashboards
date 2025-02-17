@@ -448,6 +448,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: civil-rtl-export-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-rtl-export-aat.service.core-compute-aat.internal/health
+        description: civil-rtl-export-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: civil-sdt-commissioning-java
     management_zone_name: CFT-CIVIL-AAT
     enabled: true
