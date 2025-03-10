@@ -3,7 +3,6 @@ management_zones:
   - name: CFT-AAC-AAT
   - name: CFT-ADOPTION-AAT
   - name: CFT-AM-AAT
-  - name: CFT-BAR-AAT
   - name: CFT-BSP-AAT
   - name: CFT-CAMUNDA-AAT
   - name: CFT-CCD-AAT
