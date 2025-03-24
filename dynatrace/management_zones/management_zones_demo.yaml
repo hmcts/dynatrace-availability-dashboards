@@ -3,7 +3,6 @@ management_zones:
   - name: CFT-AAC-DEMO
   - name: CFT-ADOPTION-DEMO
   - name: CFT-AM-DEMO
-  - name: CFT-BAR-DEMO
   - name: CFT-BSP-DEMO
   - name: CFT-CAMUNDA-DEMO
   - name: CFT-CCD-DEMO
