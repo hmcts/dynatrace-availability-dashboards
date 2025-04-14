@@ -816,6 +816,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: enforcement-api-java
+    management_zone_name: CFT-ENFORCEMENT-ITHC
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://enforcement-api-ithc.service.core-compute-ithc.internal/health
+        description: enforcement-api-ithc.service.core-compute-ithc.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: admin-base
     management_zone_name: CFT-ET-PET-ITHC
     enabled: true
@@ -1334,8 +1350,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://dss.ithc.platform.hmcts.net/health
-        description: dss.ithc.platform.hmcts.net
+      - url: https://fis-ds-web.ithc.platform.hmcts.net/health
+        description: fis-ds-web.ithc.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
