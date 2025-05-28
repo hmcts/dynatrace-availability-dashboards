@@ -96,38 +96,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: bar-api-java
-    management_zone_name: CFT-BAR-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://bar-api-perftest.service.core-compute-perftest.internal/health
-        description: bar-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: bar-web-nodejs
-    management_zone_name: CFT-BAR-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://bar.perftest.platform.hmcts.net/health
-        description: bar.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: bulk-scan-orchestrator-java
     management_zone_name: CFT-BSP-PERFTEST
     enabled: true
@@ -896,6 +864,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: enforcement-api-java
+    management_zone_name: CFT-ENFORCEMENT-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://enforcement-api-perftest.service.core-compute-perftest.internal/health
+        description: enforcement-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-cos-java
     management_zone_name: CFT-ET-PERFTEST
     enabled: true
@@ -1240,86 +1224,6 @@ synthetic_monitors:
     requests:
       - url: http://finrem-cos-perftest.service.core-compute-perftest.internal/health
         description: finrem-cos-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-bulk-scan-api-java
-    management_zone_name: CFT-FIS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://fis-bulk-scan-api-perftest.service.core-compute-perftest.internal/health
-        description: fis-bulk-scan-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-cos-api-java
-    management_zone_name: CFT-FIS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://fis-cos-api-perftest.service.core-compute-perftest.internal/health
-        description: fis-cos-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-ds-update-web-nodejs
-    management_zone_name: CFT-FIS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://dss-update-case.perftest.platform.hmcts.net/health
-        description: dss-update-case.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-ds-web-nodejs
-    management_zone_name: CFT-FIS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://dss.perftest.platform.hmcts.net/health
-        description: dss.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: fis-hmc-api-java
-    management_zone_name: CFT-FIS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://fis-hmc-api-perftest.service.core-compute-perftest.internal/health
-        description: fis-hmc-api-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2216,22 +2120,6 @@ synthetic_monitors:
     requests:
       - url: https://sptribs-frontend.perftest.platform.hmcts.net/health
         description: sptribs-frontend.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-bulk-scan-java
-    management_zone_name: CFT-SSCS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-bulk-scan-perftest.service.core-compute-perftest.internal/health
-        description: sscs-bulk-scan-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
