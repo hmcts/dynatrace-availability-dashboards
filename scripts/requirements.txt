@@ -1,2 +1,2 @@
-kubernetes==31.0.0
+kubernetes==33.1.0
 PyYAML==6.0.1
