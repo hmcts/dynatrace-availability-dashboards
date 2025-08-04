@@ -96,38 +96,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: bar-api-java
-    management_zone_name: CFT-BAR-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://bar-api-perftest.service.core-compute-perftest.internal/health
-        description: bar-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: bar-web-nodejs
-    management_zone_name: CFT-BAR-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://bar.perftest.platform.hmcts.net/health
-        description: bar.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: bulk-scan-orchestrator-java
     management_zone_name: CFT-BSP-PERFTEST
     enabled: true
@@ -168,22 +136,6 @@ synthetic_monitors:
     requests:
       - url: http://bulk-scan-processor-perftest.service.core-compute-perftest.internal/health
         description: bulk-scan-processor-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: bulk-scan-sample-app-java
-    management_zone_name: CFT-BSP-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://bulk-scan-sample-app-perftest.service.core-compute-perftest.internal/health
-        description: bulk-scan-sample-app-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -896,6 +848,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: enforcement-api-java
+    management_zone_name: CFT-ENFORCEMENT-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://enforcement-api-perftest.service.core-compute-perftest.internal/health
+        description: enforcement-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: et-cos-java
     management_zone_name: CFT-ET-PERFTEST
     enabled: true
@@ -1302,8 +1270,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://dss.perftest.platform.hmcts.net/health
-        description: dss.perftest.platform.hmcts.net
+      - url: https://fis-ds-web.perftest.platform.hmcts.net/health
+        description: fis-ds-web.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1744,14 +1712,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: neuvector-redirect-ingress
+  - name: neuvector-restapi-ingress
     management_zone_name: CFT-NEUVECTOR-PERFTEST
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://cft-neuvector00.perftest.platform.hmcts.net/health
-        description: cft-neuvector00.perftest.platform.hmcts.net
+      - url: https://cft-neuvector00-api.perftest.platform.hmcts.net/health
+        description: cft-neuvector00-api.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1766,8 +1734,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://cft-neuvector00.perftest.platform.hmcts.net/health
-        description: cft-neuvector00.perftest.platform.hmcts.net
+      - url: http://cft-neuvector-perftest00.hmcts.net/health
+        description: cft-neuvector-perftest00.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1832,6 +1800,38 @@ synthetic_monitors:
     requests:
       - url: https://pcq.perftest.platform.hmcts.net/health
         description: pcq.perftest.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: pcs-api-java
+    management_zone_name: CFT-PCS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://pcs-api-perftest.service.core-compute-perftest.internal/health
+        description: pcs-api-perftest.service.core-compute-perftest.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: pcs-frontend-nodejs
+    management_zone_name: CFT-PCS-PERFTEST
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://pcs.perftest.platform.hmcts.net/health
+        description: pcs.perftest.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2144,38 +2144,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: rpts-api-java
-    management_zone_name: CFT-RPTS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://rpts-api-perftest.service.core-compute-perftest.internal/health
-        description: rpts-api-perftest.service.core-compute-perftest.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: rpts-frontend-nodejs
-    management_zone_name: CFT-RPTS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://rpts.perftest.platform.hmcts.net/health
-        description: rpts.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: sptribs-case-api-java
     management_zone_name: CFT-SPTRIBS-PERFTEST
     enabled: true
@@ -2216,22 +2184,6 @@ synthetic_monitors:
     requests:
       - url: https://sptribs-frontend.perftest.platform.hmcts.net/health
         description: sptribs-frontend.perftest.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-bulk-scan-java
-    management_zone_name: CFT-SSCS-PERFTEST
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-bulk-scan-perftest.service.core-compute-perftest.internal/health
-        description: sscs-bulk-scan-perftest.service.core-compute-perftest.internal
         method: GET
         configuration:
           accept_any_certificate: true
