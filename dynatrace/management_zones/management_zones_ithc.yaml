@@ -15,6 +15,7 @@ management_zones:
   - name: CFT-DM-STORE-ITHC
   - name: CFT-DOCMOSIS-ITHC
   - name: CFT-EM-ITHC
+  - name: CFT-ENFORCEMENT-ITHC
   - name: CFT-ET-ITHC
   - name: CFT-ET-PET-ITHC
   - name: CFT-ETHOS-ITHC
@@ -30,12 +31,14 @@ management_zones:
   - name: CFT-LAU-ITHC
   - name: CFT-MONITORING-ITHC
   - name: CFT-NEUVECTOR-ITHC
+  - name: CFT-NFDIV-ITHC
   - name: CFT-PCQ-ITHC
+  - name: CFT-PCS-ITHC
   - name: CFT-PRIVATE-LAW-ITHC
   - name: CFT-PROBATE-ITHC
   - name: CFT-RD-ITHC
+  - name: CFT-REFORM-SCAN-ITHC
   - name: CFT-RPE-ITHC
-  - name: CFT-RPTS-ITHC
   - name: CFT-SPTRIBS-ITHC
   - name: CFT-SSCS-ITHC
   - name: CFT-TAX-TRIBUNALS-ITHC
