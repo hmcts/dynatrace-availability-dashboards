@@ -96,38 +96,6 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: bar-api-java
-    management_zone_name: CFT-BAR-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://bar-api-aat.service.core-compute-aat.internal/health
-        description: bar-api-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: bar-web-nodejs
-    management_zone_name: CFT-BAR-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://bar.aat.platform.hmcts.net/health
-        description: bar.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
   - name: bulk-scan-orchestrator-java
     management_zone_name: CFT-BSP-AAT
     enabled: true
@@ -168,22 +136,6 @@ synthetic_monitors:
     requests:
       - url: http://bulk-scan-processor-aat.service.core-compute-aat.internal/health
         description: bulk-scan-processor-aat.service.core-compute-aat.internal
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: bulk-scan-sample-app-java
-    management_zone_name: CFT-BSP-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://bulk-scan-sample-app-aat.service.core-compute-aat.internal/health
-        description: bulk-scan-sample-app-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -440,6 +392,22 @@ synthetic_monitors:
     requests:
       - url: http://civil-orchestrator-service-aat.service.core-compute-aat.internal/health
         description: civil-orchestrator-service-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: civil-rtl-export-java
+    management_zone_name: CFT-CIVIL-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://civil-rtl-export-aat.service.core-compute-aat.internal/health
+        description: civil-rtl-export-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
@@ -928,6 +896,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: enforcement-api-java
+    management_zone_name: CFT-ENFORCEMENT-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://enforcement-api-aat.service.core-compute-aat.internal/health
+        description: enforcement-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: admin-base
     management_zone_name: CFT-ET-PET-AAT
     enabled: true
@@ -1000,22 +984,6 @@ synthetic_monitors:
     requests:
       - url: https://et-pet-et1.aat.platform.hmcts.net/health
         description: et-pet-et1.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: et1-sidekiq
-    management_zone_name: CFT-ET-PET-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: https://et-pet-et1-sidekiq.aat.platform.hmcts.net/health
-        description: et-pet-et1-sidekiq.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1192,6 +1160,22 @@ synthetic_monitors:
     requests:
       - url: http://fact-api-aat.service.core-compute-aat.internal/health
         description: fact-api-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: fact-data-api-java
+    management_zone_name: CFT-FACT-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://fact-data-api.aat.platform.hmcts.net/health
+        description: fact-data-api.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1446,8 +1430,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://dss.aat.platform.hmcts.net/health
-        description: dss.aat.platform.hmcts.net
+      - url: https://fis-ds-web.aat.platform.hmcts.net/health
+        description: fis-ds-web.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1856,6 +1840,22 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: lau-eud-backend-java
+    management_zone_name: CFT-LAU-AAT
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: http://lau-eud-backend-aat.service.core-compute-aat.internal/health
+        description: lau-eud-backend-aat.service.core-compute-aat.internal
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: lau-frontend-nodejs
     management_zone_name: CFT-LAU-AAT
     enabled: true
@@ -1968,14 +1968,14 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: neuvector-redirect-ingress
+  - name: neuvector-restapi-ingress
     management_zone_name: CFT-NEUVECTOR-AAT
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://cft-neuvector00.aat.platform.hmcts.net/health
-        description: cft-neuvector00.aat.platform.hmcts.net
+      - url: https://cft-neuvector00-api.aat.platform.hmcts.net/health
+        description: cft-neuvector00-api.aat.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -1990,8 +1990,8 @@ synthetic_monitors:
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://cft-neuvector00.aat.platform.hmcts.net/health
-        description: cft-neuvector00.aat.platform.hmcts.net
+      - url: http://cft-neuvector-aat00.hmcts.net/health
+        description: cft-neuvector-aat00.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -2472,22 +2472,6 @@ synthetic_monitors:
     requests:
       - url: https://sptribs-frontend.aat.platform.hmcts.net/health
         description: sptribs-frontend.aat.platform.hmcts.net
-        method: GET
-        configuration:
-          accept_any_certificate: true
-          follow_redirects: true
-        rules:
-          - type: httpStatusesList
-            value: '>400'
-            pass_if_found: false
-  - name: sscs-bulk-scan-java
-    management_zone_name: CFT-SSCS-AAT
-    enabled: true
-    locations:
-      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
-    requests:
-      - url: http://sscs-bulk-scan-aat.service.core-compute-aat.internal/health
-        description: sscs-bulk-scan-aat.service.core-compute-aat.internal
         method: GET
         configuration:
           accept_any_certificate: true
