@@ -16,6 +16,38 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
+  - name: plum-frontend-tlse2e-nodejs
+    management_zone_name: CFT-CNP-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://plum-tlse2e.sandbox.platform.hmcts.net/health
+        description: plum-tlse2e.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-recipe-backend-apim-test-java
+    management_zone_name: CFT-CNP-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://plum-recipe-backend-tls.sandbox.platform.hmcts.net/health
+        description: plum-recipe-backend-tls.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
   - name: plum-recipe-backend-java
     management_zone_name: CFT-CNP-SBOX
     enabled: true
