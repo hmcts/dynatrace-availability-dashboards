@@ -1,13 +1,29 @@
 ---
 synthetic_monitors:
-  - name: plum-frontend-nodejs
+  - name: plum-frontend-tlse2e-nodejs
     management_zone_name: CFT-CNP-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://plum.sandbox.platform.hmcts.net/health
-        description: plum.sandbox.platform.hmcts.net
+      - url: https://plum-tlse2e.sandbox.platform.hmcts.net/health
+        description: plum-tlse2e.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: plum-recipe-backend-apim-test-java
+    management_zone_name: CFT-CNP-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://plum-recipe-backend-tls.sandbox.platform.hmcts.net/health
+        description: plum-recipe-backend-tls.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
@@ -32,14 +48,62 @@ synthetic_monitors:
           - type: httpStatusesList
             value: '>400'
             pass_if_found: false
-  - name: docmosis-base
-    management_zone_name: CFT-DOCMOSIS-SBOX
+  - name: devextreme-poc-spa-nodejs
+    management_zone_name: CFT-DTSSE-RICHUI-SBOX
     enabled: true
     locations:
       - SYNTHETIC_LOCATION-CC3E4D2657A13D18
     requests:
-      - url: https://docmosis.sandbox.platform.hmcts.net/health
-        description: docmosis.sandbox.platform.hmcts.net
+      - url: https://devextreme-poc-spa.sandbox.platform.hmcts.net/health
+        description: devextreme-poc-spa.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: devextreme-poc-ssr-nodejs
+    management_zone_name: CFT-DTSSE-RICHUI-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://devextreme-poc-ssr.sandbox.platform.hmcts.net/health
+        description: devextreme-poc-ssr.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: telerik-poc-spa-nodejs
+    management_zone_name: CFT-DTSSE-RICHUI-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://telerik-poc-spa.sandbox.platform.hmcts.net/health
+        description: telerik-poc-spa.sandbox.platform.hmcts.net
+        method: GET
+        configuration:
+          accept_any_certificate: true
+          follow_redirects: true
+        rules:
+          - type: httpStatusesList
+            value: '>400'
+            pass_if_found: false
+  - name: telerik-poc-ssr-nodejs
+    management_zone_name: CFT-DTSSE-RICHUI-SBOX
+    enabled: true
+    locations:
+      - SYNTHETIC_LOCATION-CC3E4D2657A13D18
+    requests:
+      - url: https://telerik-poc-ssr.sandbox.platform.hmcts.net/health
+        description: telerik-poc-ssr.sandbox.platform.hmcts.net
         method: GET
         configuration:
           accept_any_certificate: true
