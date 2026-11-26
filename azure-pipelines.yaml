@@ -23,7 +23,7 @@ parameters:
       - destroy
   - name: kvConnectedServiceName
     type: string
-    default: DCD-CFT-Sandbox
+    default: DCD-CFT-Sandbox-WIF
 
   - name: environment_components
     type: object
@@ -31,7 +31,7 @@ parameters:
       - deployment: sbox_dynatrace_availability_dashboards
         environment: sbox
         component: dt-availability-dashboards
-        service_connection: dts-sharedservices-sbox
+        service_connection: DTS-SHAREDSERVICES-SBOX-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod
@@ -40,7 +40,7 @@ parameters:
       - deployment: demo_dynatrace_availability_dashboards
         environment: demo
         component: dt-availability-dashboards
-        service_connection: dts-sharedservices-demo
+        service_connection: DTS-SHAREDSERVICES-DEMO-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod
@@ -49,7 +49,7 @@ parameters:
       - deployment: ithc_dynatrace_availability_dashboards
         environment: ithc
         component: dt-availability-dashboards
-        service_connection: dts-sharedservices-ithc
+        service_connection: DTS-SHAREDSERVICES-ITHC-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod
@@ -58,7 +58,7 @@ parameters:
       - deployment: ptlsbox_dynatrace_availability_dashboards
         environment: ptlsbox
         component: dt-availability-dashboards
-        service_connection: dts-sharedservicesptl-sbox
+        service_connection: DTS-SHAREDSERVICESPTL-SBOX-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod
@@ -67,7 +67,7 @@ parameters:
       - deployment: aat_dynatrace_availability_dashboards
         environment: stg
         component: dt-availability-dashboards
-        service_connection: dts-sharedservices-stg
+        service_connection: DTS-SHAREDSERVICES-STG-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod
@@ -76,7 +76,7 @@ parameters:
       - deployment: perftest_dynatrace_availability_dashboards
         environment: test
         component: dt-availability-dashboards
-        service_connection: dts-sharedservices-test
+        service_connection: DTS-SHAREDSERVICES-TEST-WIF
         dependsOn: Precheck
         keyvault:
           name: infra-vault-nonprod

@@ -20,14 +20,14 @@ resources:
 
 parameters:
   - name: kvConnectedServiceName
-    default: 'azurerm-sandbox'
+    default: 'DCD-CFT-Sandbox-WIF'
   - name: environment_components
     type: object
     default:
       - deployment: sbox_dt_availability_dashboards_yaml
         environment: sbox
         component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-sbox
+        service_connection: DCD-CFTAPPS-SBOX-WIF
         department: cft
         aks:
           subscription: DCD-CFTAPPS-SBOX
@@ -37,7 +37,7 @@ parameters:
       - deployment: demo_dt_availability_dashboards_yaml
         environment: demo
         component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-demo
+        service_connection: DCD-CFTAPPS-DEMO-WIF
         department: cft
         aks:
           subscription: DCD-CFTAPPS-DEMO
@@ -47,7 +47,7 @@ parameters:
       - deployment: ithc_dt_availability_dashboards_yaml
         environment: ithc
         component: dt-availability-dashboards-yaml
-        service_connection: dcd-cftapps-ithc
+        service_connection: DCD-CFTAPPS-ITHC-WIF
         department: cft
         aks:
           subscription: DCD-CFTAPPS-ITHC
@@ -57,7 +57,7 @@ parameters:
       - deployment: ptlsbox_dt_availability_dashboards_yaml
         environment: ptlsbox
         component: dt-availability-dashboards-yaml
-        service_connection: DTS-CFTSBOX-INTSVC
+        service_connection: DTS-CFTSBOX-INTSVC-WIF
         department: cft
         aks:
           subscription: DTS-CFTSBOX-INTSVC
@@ -67,7 +67,7 @@ parameters:
       - deployment: aat_dt_availability_dashboards_yaml
         environment: aat
         component: dt-availability-dashboards-yaml
-        service_connection: DCD-CFTAPPS-STG
+        service_connection: DCD-CFTAPPS-STG-WIF
         department: cft
         aks:
           subscription: DCD-CFTAPPS-STG
@@ -77,7 +77,7 @@ parameters:
       - deployment: perftest_dt_availability_dashboards_yaml
         environment: perftest
         component: dt-availability-dashboards-yaml
-        service_connection: DCD-CFTAPPS-TEST
+        service_connection: DCD-CFTAPPS-TEST-WIF
         department: cft
         aks:
           subscription: DCD-CFTAPPS-TEST
